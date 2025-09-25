@@ -62,14 +62,14 @@ export function Header() {
           : 'bg-blue-800'
       )}
     >
-      <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
+      <div className="container mx-auto flex h-28 items-center justify-between px-4 md:px-6">
         <Link href="#home" className="flex items-center gap-2 text-lg font-bold">
           <Image 
             src="https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/Blue%20Modern%20Podcast%20Typographic%20Logo.png?alt=media&token=1f54d3a7-3088-486f-be18-aa917a2fadf9" 
             alt="COMMUNICATIONAL Logo"
-            width={200}
-            height={60}
-            style={{ height: '60px', width: 'auto' }}
+            width={346}
+            height={110}
+            style={{ height: '110px', width: 'auto' }}
             priority
           />
         </Link>
@@ -97,9 +97,9 @@ export function Header() {
                      <Image 
                         src="https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/Blue%20Modern%20Podcast%20Typographic%20Logo.png?alt=media&token=1f54d3a7-3088-486f-be18-aa917a2fadf9" 
                         alt="COMMUNICATIONAL Logo"
-                        width={180}
-                        height={54}
-                        style={{ height: '54px', width: 'auto' }}
+                        width={313}
+                        height={100}
+                        style={{ height: '100px', width: 'auto' }}
                      />
                   </Link>
                 </div>
