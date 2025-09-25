@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogDescription, AlertDialogHeader, AlertDialogTitle } from '@/components/ui/alert-dialog';
 
 export const metadata: Metadata = {
-  title: 'BrandBloom',
-  description: 'A vibrant and positive brand experience.',
+  title: 'COMMUNICATIONAL',
+  description: 'Connect with clarity, confidence, and creativity.',
 };
 
 export default function RootLayout({

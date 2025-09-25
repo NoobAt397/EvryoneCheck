@@ -2,18 +2,17 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Leaf, Menu, X } from 'lucide-react';
+import { MessageSquare, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
   { href: '#home', label: 'Home' },
-  { href: '#about', label: 'About' },
+  { href: '#about', label: 'About Us' },
+  { href: '#services', label: 'Services' },
   { href: '#events', label: 'Events' },
-  { href: '#testimonials', label: 'Testimonials' },
   { href: '#contact', label: 'Contact' },
-  { href: '/shop', label: 'Shop', isExternal: true },
 ];
 
 export function Header() {
@@ -28,23 +27,17 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const renderNavLink = (link: typeof navLinks[0], isMobile = false) => {
-    const commonClasses =
-      'text-sm font-medium transition-colors hover:text-primary-foreground hover:bg-primary/80 px-3 py-2 rounded-md';
-    const mobileClasses = isMobile ? 'block w-full text-left' : '';
-
-    const linkContent = link.isExternal ? (
-      <Link href={link.href} className={cn(commonClasses, mobileClasses)}>
-        {link.label}
-      </Link>
-    ) : (
-      <a href={link.href} className={cn(commonClasses, mobileClasses)}>
+  const renderNavLink = (link: typeof navLinks[0]) => (
+    <li key={link.href}>
+      <a
+        href={link.href}
+        onClick={() => setIsMobileMenuOpen(false)}
+        className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-primary/80 hover:text-primary-foreground md:inline-block"
+      >
         {link.label}
       </a>
-    );
-
-    return <li key={link.href}>{linkContent}</li>;
-  };
+    </li>
+  );
 
   return (
     <header
@@ -56,13 +49,13 @@ export function Header() {
       )}
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        <Link href="#home" className="flex items-center gap-2 font-bold text-lg">
-          <Leaf className="h-6 w-6 text-primary" />
-          <span>BrandBloom</span>
+        <Link href="#home" className="flex items-center gap-2 text-lg font-bold">
+          <MessageSquare className="h-6 w-6 text-primary" />
+          <span>COMMUNICATIONAL</span>
         </Link>
         <nav className="hidden md:block">
           <ul className="flex items-center gap-2">
-            {navLinks.map((link) => renderNavLink(link))}
+            {navLinks.map(renderNavLink)}
           </ul>
         </nav>
         <div className="md:hidden">
@@ -81,16 +74,13 @@ export function Header() {
                     className="flex items-center gap-2 font-bold"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <Leaf className="h-6 w-6 text-primary" />
-                    <span>BrandBloom</span>
+                    <MessageSquare className="h-6 w-6 text-primary" />
+                    <span>COMMUNICATIONAL</span>
                   </Link>
                 </div>
                 <nav className="mt-6 flex-grow">
-                  <ul
-                    className="flex flex-col gap-4"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {navLinks.map((link) => renderNavLink(link, true))}
+                  <ul className="flex flex-col gap-4">
+                    {navLinks.map(renderNavLink)}
                   </ul>
                 </nav>
               </div>

@@ -5,30 +5,26 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent } from '../ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle } from 'lucide-react';
 
 export function ContactForm() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     // In a real app, you'd handle form submission here (e.g., API call)
-    console.log({ name, email, message });
     setSubmitted(true);
   };
 
   if (submitted) {
     return (
-      <Card className="bg-background">
+      <Card className="bg-background shadow-lg">
         <CardContent className="p-8 text-center">
           <CheckCircle className="mx-auto h-12 w-12 text-green-500" />
           <h3 className="mt-4 text-2xl font-semibold">Thank you!</h3>
           <p className="mt-2 text-muted-foreground">
-            Your message has been sent. We'll be in touch soon.
+            We'll be in touch soon.
           </p>
         </CardContent>
       </Card>
@@ -36,38 +32,22 @@ export function ContactForm() {
   }
 
   return (
-    <Card className="bg-background">
+    <Card className="bg-background shadow-lg">
       <CardContent className="p-8">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
             <Label htmlFor="name">Name</Label>
-            <Input
-              id="name"
-              type="text"
-              placeholder="Your Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
+            <Input id="name" type="text" placeholder="Your Name" required />
           </div>
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
-              type="email"
-              placeholder="your@email.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+            <Input id="email" type="email" placeholder="your@email.com" required />
           </div>
           <div className="space-y-2">
             <Label htmlFor="message">Message</Label>
             <Textarea
               id="message"
-              placeholder="How can we help you bloom?"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
+              placeholder="How can we help you?"
               required
               rows={5}
             />

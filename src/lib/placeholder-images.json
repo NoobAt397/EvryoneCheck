@@ -1,34 +1,40 @@
 {
   "placeholderImages": [
     {
-      "id": "founder",
-      "description": "Photo of the founder",
-      "imageUrl": "https://images.unsplash.com/photo-1751576027223-5880cadd5145?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxmb3VuZGVyJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzU4ODE2NjgzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "id": "founder1",
+      "description": "Photo of a founder",
+      "imageUrl": "https://images.unsplash.com/photo-1583934555852-537536e49071?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Zm91bmRlciUyMHBvcnRyYWl0fGVufDB8fHx8MTc1ODgxNjY4M3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "founder portrait"
+    },
+    {
+      "id": "founder2",
+      "description": "Photo of another founder",
+      "imageUrl": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdHxlbnwwfHx8fDE3NTg4MDYxNDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional headshot"
     },
     {
       "id": "event1",
       "description": "A photo from a past event",
-      "imageUrl": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb21tdW5pdHklMjBldmVudHxlbnwwfHx8fDE3NTg4MjAxNzN8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "community event"
+      "imageUrl": "https://images.unsplash.com/photo-1660795774538-55c89a99723e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3b3Jrc2hvcCUyMGNvbmZlcmVuY2V8ZW58MHx8fHwxNzU4NzExMjU1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "workshop conference"
     },
     {
       "id": "event2",
       "description": "A photo from a past event",
-      "imageUrl": "https://images.unsplash.com/photo-1557180491-4c2f503222d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3b3Jrc2hvcCUyMHBlb3BsZXxlbnwwfHx8fDE3NTg4MjQxNTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "workshop people"
+      "imageUrl": "https://images.unsplash.com/photo-1531058020387-3be344556be6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwZW9wbGUlMjBuZXR3b3JraW5nfGVufDB8fHx8MTc1ODc3NzE5Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "people networking"
     },
     {
       "id": "event3",
       "description": "A photo from a past event",
-      "imageUrl": "https://images.unsplash.com/photo-1615133878310-b053dda98b04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxvdXRkb29yJTIwZ2F0aGVyaW5nfGVufDB8fHx8MTc1ODc1MzkyOXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "outdoor gathering"
+      "imageUrl": "https://images.unsplash.com/photo-1554936970-ce06538caf54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzZW1pbmFyJTIwcHJlc2VudGF0aW9ufGVufDB8fHx8MTc1ODgxMjQ2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "seminar presentation"
     },
     {
       "id": "event4",
       "description": "A photo from a past event",
-      "imageUrl": "https://images.unsplash.com/photo-1601569747662-60a1415d9fc0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y2VsZWJyYXRpb24lMjBoYXBweXxlbnwwfHx8fDE3NTg4MjQxNTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "celebration happy"
+      "imageUrl": "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwY29sbGFib3JhdGlvbnxlbnwwfHx8fDE3NTg3OTQ0Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "team collaboration"
     }
   ]
 }

@@ -1,23 +1,20 @@
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Star } from 'lucide-react';
 
 const testimonials = [
   {
-    name: 'Sarah L.',
-    title: 'A Life-Changing Experience!',
-    quote: "Joining the BrandBloom community was the best decision I've made. The workshops are inspiring, and I've met so many wonderful people.",
+    name: 'Emily R.',
+    quote: "The Personal Branding workshop was a game-changer. I feel so much more confident in how I present myself professionally.",
     rating: 5,
   },
   {
-    name: 'Michael B.',
-    title: 'Incredibly Positive Atmosphere',
-    quote: "From the moment I attended my first event, I felt welcomed. The positivity is contagious, and I always leave feeling uplifted and motivated.",
+    name: 'David Chen',
+    quote: "An incredibly positive and supportive atmosphere. The trainers are experts who genuinely care about your growth.",
     rating: 5,
   },
   {
-    name: 'Jessica T.',
-    title: 'Finally Found My Tribe',
-    quote: "I've been searching for a community like this for years. BrandBloom is more than a brand; it's a family. I'm so grateful to be a part of it.",
+    name: 'Maria G.',
+    quote: "I used to be terrified of public speaking. After the coaching sessions, I can now command a room with confidence. Highly recommend!",
     rating: 5,
   },
 ];
@@ -28,15 +25,15 @@ export function TestimonialsSection() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
-            What Our Community is Saying
+            What Our Clients Say
           </h2>
           <p className="mt-4 text-lg text-foreground/80">
-            Real stories from real people who have blossomed with us.
+            Real stories from people who found their voice with us.
           </p>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="flex flex-col">
+            <Card key={index} className="flex flex-col shadow-md">
               <CardHeader>
                 <div className="flex items-center gap-1">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
