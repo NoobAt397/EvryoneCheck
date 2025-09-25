@@ -63,7 +63,7 @@ export function Header() {
       )}
     >
       <div className="container mx-auto flex h-28 items-center justify-between px-4 md:px-6">
-        <Link href="#home" className="flex items-center gap-2 text-lg font-bold">
+        <Link href="#home" className="flex items-center gap-2 text-lg font-bold -ml-8">
           <Image 
             src="https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/Blue%20Modern%20Podcast%20Typographic%20Logo.png?alt=media&token=1f54d3a7-3088-486f-be18-aa917a2fadf9" 
             alt="COMMUNICATIONAL Logo"
