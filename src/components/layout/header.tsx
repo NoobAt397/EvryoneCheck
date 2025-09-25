@@ -68,8 +68,8 @@ export function Header() {
             src="https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/Blue%20Modern%20Podcast%20Typographic%20Logo.png?alt=media&token=1f54d3a7-3088-486f-be18-aa917a2fadf9" 
             alt="COMMUNICATIONAL Logo"
             width={346}
-            height={110}
-            style={{ height: '110px', width: 'auto' }}
+            height={150}
+            style={{ height: '150px', width: 'auto' }}
             priority
           />
         </Link>
@@ -98,8 +98,8 @@ export function Header() {
                         src="https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/Blue%20Modern%20Podcast%20Typographic%20Logo.png?alt=media&token=1f54d3a7-3088-486f-be18-aa917a2fadf9" 
                         alt="COMMUNICATIONAL Logo"
                         width={313}
-                        height={100}
-                        style={{ height: '100px', width: 'auto' }}
+                        height={150}
+                        style={{ height: '150px', width: 'auto' }}
                      />
                   </Link>
                 </div>

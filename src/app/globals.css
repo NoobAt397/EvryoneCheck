@@ -34,7 +34,7 @@
     --border: 240 6% 90%;
     --input: 240 6% 94%;
     --ring: 51 100% 50%;
-    --radius: 0.5rem;
+    --radius: 9999px;
   }
   .dark {
     --background: 240 10% 3.9%;
