@@ -24,10 +24,23 @@ export function Header() {
       setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Set initial state
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const renderNavLink = (link: typeof navLinks[0]) => (
+    <li key={link.href}>
+      <a
+        href={link.href}
+        onClick={() => setIsMobileMenuOpen(false)}
+        className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-background/20 md:inline-block"
+      >
+        {link.label}
+      </a>
+    </li>
+  );
+  
+  const mobileRenderNavLink = (link: typeof navLinks[0]) => (
     <li key={link.href}>
       <a
         href={link.href}
@@ -42,10 +55,10 @@ export function Header() {
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 w-full transition-all duration-300',
+        'sticky top-0 z-50 w-full text-background transition-all duration-300',
         isScrolled
-          ? 'bg-background/80 shadow-md backdrop-blur-sm'
-          : 'bg-transparent'
+          ? 'bg-foreground/90 shadow-md backdrop-blur-sm'
+          : 'bg-foreground'
       )}
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
@@ -61,12 +74,12 @@ export function Header() {
         <div className="md:hidden">
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className="text-background hover:bg-background/20 hover:text-foreground">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[240px] bg-background">
+            <SheetContent side="right" className="w-[240px] bg-background text-foreground">
               <div className="flex h-full flex-col">
                 <div className="flex items-center justify-between border-b pb-4">
                   <Link
@@ -80,7 +93,7 @@ export function Header() {
                 </div>
                 <nav className="mt-6 flex-grow">
                   <ul className="flex flex-col gap-4">
-                    {navLinks.map(renderNavLink)}
+                    {navLinks.map(mobileRenderNavLink)}
                   </ul>
                 </nav>
               </div>
