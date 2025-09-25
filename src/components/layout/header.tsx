@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { MessageSquare, Menu, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 const navLinks = [
   { href: '#home', label: 'Home' },
@@ -57,14 +58,20 @@ export function Header() {
       className={cn(
         'sticky top-0 z-50 w-full text-background transition-all duration-300',
         isScrolled
-          ? 'bg-foreground/90 shadow-md backdrop-blur-sm'
-          : 'bg-foreground'
+          ? 'bg-blue-800/90 shadow-md backdrop-blur-sm'
+          : 'bg-blue-800'
       )}
     >
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="#home" className="flex items-center gap-2 text-lg font-bold">
-          <MessageSquare className="h-6 w-6 text-primary" />
-          <span>COMMUNICATIONAL</span>
+          <Image 
+            src="https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/Blue%20Modern%20Podcast%20Typographic%20Logo.png?alt=media&token=1f54d3a7-3088-486f-be18-aa917a2fadf9" 
+            alt="COMMUNICATIONAL Logo"
+            width={200}
+            height={40}
+            style={{ height: '40px', width: 'auto' }}
+            priority
+          />
         </Link>
         <nav className="hidden md:block">
           <ul className="flex items-center gap-2">
@@ -87,8 +94,13 @@ export function Header() {
                     className="flex items-center gap-2 font-bold"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <MessageSquare className="h-6 w-6 text-primary" />
-                    <span>COMMUNICATIONAL</span>
+                     <Image 
+                        src="https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/Blue%20Modern%20Podcast%20Typographic%20Logo.png?alt=media&token=1f54d3a7-3088-486f-be18-aa917a2fadf9" 
+                        alt="COMMUNICATIONAL Logo"
+                        width={180}
+                        height={36}
+                        style={{ height: '36px', width: 'auto' }}
+                     />
                   </Link>
                 </div>
                 <nav className="mt-6 flex-grow">
