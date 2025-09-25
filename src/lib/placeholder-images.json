@@ -1,3 +1,34 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "founder",
+      "description": "Photo of the founder",
+      "imageUrl": "https://images.unsplash.com/photo-1751576027223-5880cadd5145?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxmb3VuZGVyJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzU4ODE2NjgzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "founder portrait"
+    },
+    {
+      "id": "event1",
+      "description": "A photo from a past event",
+      "imageUrl": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb21tdW5pdHklMjBldmVudHxlbnwwfHx8fDE3NTg4MjAxNzN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "community event"
+    },
+    {
+      "id": "event2",
+      "description": "A photo from a past event",
+      "imageUrl": "https://images.unsplash.com/photo-1557180491-4c2f503222d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3b3Jrc2hvcCUyMHBlb3BsZXxlbnwwfHx8fDE3NTg4MjQxNTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "workshop people"
+    },
+    {
+      "id": "event3",
+      "description": "A photo from a past event",
+      "imageUrl": "https://images.unsplash.com/photo-1615133878310-b053dda98b04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxvdXRkb29yJTIwZ2F0aGVyaW5nfGVufDB8fHx8MTc1ODc1MzkyOXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "outdoor gathering"
+    },
+    {
+      "id": "event4",
+      "description": "A photo from a past event",
+      "imageUrl": "https://images.unsplash.com/photo-1601569747662-60a1415d9fc0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y2VsZWJyYXRpb24lMjBoYXBweXxlbnwwfHx8fDE3NTg4MjQxNTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "celebration happy"
+    }
+  ]
 }
