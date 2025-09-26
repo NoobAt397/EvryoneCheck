@@ -10,7 +10,6 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
 const services = [
@@ -56,7 +55,7 @@ export function ServicesSection() {
                 </CardContent>
                 <CardFooter>
                   <AlertDialogTrigger asChild>
-                    <Button className="w-full">Buy Now</Button>
+                    <button className="neu-button w-full">Buy Now</button>
                   </AlertDialogTrigger>
                 </CardFooter>
               </Card>

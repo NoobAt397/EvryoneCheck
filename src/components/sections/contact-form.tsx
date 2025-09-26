@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, type FormEvent } from 'react';
-import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
@@ -52,9 +51,9 @@ export function ContactForm() {
               rows={5}
             />
           </div>
-          <Button type="submit" className="w-full text-base" size="lg">
+          <button type="submit" className="neu-button w-full">
             Send Message
-          </Button>
+          </button>
         </form>
       </CardContent>
     </Card>

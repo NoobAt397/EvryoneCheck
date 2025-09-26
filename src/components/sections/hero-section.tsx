@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
 export function HeroSection() {
@@ -16,9 +15,9 @@ export function HeroSection() {
           Our vision is to empower individuals and organizations to connect with clarity, confidence, and creativity.
         </p>
         <div className="mt-10">
-          <Button asChild size="lg" className="text-lg">
-            <Link href="#services">Explore Our Services</Link>
-          </Button>
+          <Link href="#services" className="neu-button">
+            Explore Our Services
+          </Link>
         </div>
       </div>
     </section>

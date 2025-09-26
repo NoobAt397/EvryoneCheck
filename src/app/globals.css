@@ -34,7 +34,7 @@
     --border: 240 6% 90%;
     --input: 240 6% 94%;
     --ring: 51 100% 50%;
-    --radius: 0.5rem;
+    --radius: 0.3rem;
   }
   .dark {
     --background: 240 10% 3.9%;
@@ -66,4 +66,34 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Light Mode Neumorphic Button */
+.neu-button {
+  background-color: #e0e0e0;
+  border-radius: 50px;
+  box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
+  color: #4d4d4d;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px 40px;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid rgb(206, 206, 206);
+}
+.neu-button:hover, .neu-button:focus {
+outline: none;
+box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+}
+
+/* Dark Mode Neumorphic Button */
+.dark .neu-button {
+background-color: #313131;
+box-shadow: inset 4px 4px 10px #1f1f1f, inset -4px -4px 10px #434343;
+color: #e0e0e0;
+border-color: #2a2a2a;
+}
+
+.dark .neu-button:hover, .dark .neu-button:focus {
+box-shadow: inset 2px 2px 5px #1f1f1f, inset -2px -2px 5px #434343, 2px 2px 5px #1f1f1f, -2px -2px 5px #434343;
 }
