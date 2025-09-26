@@ -10,7 +10,6 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
 const services = [
   {
@@ -45,20 +44,20 @@ export function ServicesSection() {
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <AlertDialog key={service.title}>
-              <Card className="flex flex-col shadow-md">
-                <CardHeader>
-                  <CardTitle>{service.title}</CardTitle>
-                  <CardDescription>{service.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <p className="text-3xl font-bold">{service.price}</p>
-                </CardContent>
-                <CardFooter>
-                  <AlertDialogTrigger asChild>
-                    <button className="neu-button w-full">Buy Now</button>
-                  </AlertDialogTrigger>
-                </CardFooter>
-              </Card>
+              <div className="service-card-gradient">
+                <div className="service-card-inner flex flex-col h-full">
+                  <div className="flex-grow">
+                    <h3 className="text-2xl font-bold">{service.title}</h3>
+                    <p className="mt-2 text-sm text-white/80">{service.description}</p>
+                    <p className="mt-4 text-3xl font-bold">{service.price}</p>
+                  </div>
+                  <div className="mt-6">
+                    <AlertDialogTrigger asChild>
+                      <button className="neu-button w-full">Buy Now</button>
+                    </AlertDialogTrigger>
+                  </div>
+                </div>
+              </div>
               <AlertDialogContent>
                 <AlertDialogHeader>
                   <AlertDialogTitle>Coming Soon!</AlertDialogTitle>
