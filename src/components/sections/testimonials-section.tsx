@@ -27,7 +27,7 @@ export function TestimonialsSection() {
           <h2 className="font-headline text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
             What Our Clients Say
           </h2>
-          <p className="mt-4 text-lg text-foreground/80">
+          <p className="mt-2 text-lg text-foreground/80">
             Real stories from people who found their voice with us.
           </p>
         </div>

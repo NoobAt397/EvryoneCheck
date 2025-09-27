@@ -38,7 +38,7 @@ export function ServicesSection() {
           <h2 className="font-headline text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
             Our Services
           </h2>
-          <p className="mt-4 text-lg text-foreground/80">
+          <p className="mt-2 text-lg text-foreground/80">
             Tailored solutions to help you or your organization communicate with impact.
           </p>
         </div>
@@ -46,7 +46,7 @@ export function ServicesSection() {
           {services.map((service) => (
             <AlertDialog key={service.title}>
               <Card className="flex flex-col text-center shadow-lg transition-transform duration-300 hover:scale-105">
-                <CardContent className="flex flex-col flex-grow p-6">
+                <CardContent className="flex flex-col flex-grow p-4">
                   <div className="flex-grow">
                     <h3 className="text-2xl font-bold">{service.title}</h3>
                     <p className="mt-2 text-sm text-foreground/80">{service.description}</p>
@@ -55,7 +55,7 @@ export function ServicesSection() {
                   <div className="mt-6">
                     <p className="text-3xl font-bold gradient-text">{service.price}</p>
                     <AlertDialogTrigger asChild>
-                      <button className="gradient-button mt-4 w-full">Buy Now</button>
+                      <button className="vibrant-neu-button mt-4 w-full">Buy Now</button>
                     </AlertDialogTrigger>
                   </div>
                 </CardContent>

@@ -25,11 +25,11 @@ export function AboutSection() {
           <h2 className="font-headline text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
             Meet Our Founders
           </h2>
-          <p className="mt-4 text-lg text-foreground/80">
+          <p className="mt-2 text-lg text-foreground/80">
             The driving force behind our vision of clearer communication.
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
           {founders.map((founder) => {
             const founderImage = founderImages.find(img => img.id === founder.id);
             return (
@@ -48,7 +48,7 @@ export function AboutSection() {
                   )}
                   <div className="p-6">
                     <h3 className="text-xl font-bold">{founder.name}</h3>
-                    <p className="mt-4 text-foreground/80">"{founder.message}"</p>
+                    <p className="mt-2 text-foreground/80">"{founder.message}"</p>
                   </div>
                 </CardContent>
               </Card>

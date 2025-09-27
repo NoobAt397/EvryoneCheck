@@ -8,7 +8,7 @@ export function ContactSection() {
           <h2 className="font-headline text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
             Let's Collaborate
           </h2>
-          <p className="mt-4 text-lg text-foreground/80">
+          <p className="mt-2 text-lg text-foreground/80">
             Have a question or an idea for a partnership? We'd love to hear from you.
           </p>
           <p className="mt-2 text-md text-foreground/70">
