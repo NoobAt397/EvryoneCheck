@@ -12,13 +12,12 @@ export function ContactForm() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    // In a real app, you'd handle form submission here (e.g., API call)
     setSubmitted(true);
   };
 
   if (submitted) {
     return (
-      <Card className="bg-background shadow-lg">
+      <Card className="bg-card shadow-lg">
         <CardContent className="p-8 text-center">
           <CheckCircle className="mx-auto h-12 w-12 text-green-500" />
           <h3 className="mt-4 text-2xl font-semibold">Thank you!</h3>
@@ -31,7 +30,7 @@ export function ContactForm() {
   }
 
   return (
-    <Card className="bg-background shadow-lg">
+    <Card className="bg-card shadow-lg">
       <CardContent className="p-8">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
@@ -51,7 +50,7 @@ export function ContactForm() {
               rows={5}
             />
           </div>
-          <button type="submit" className="neu-button w-full">
+          <button type="submit" className="gradient-button w-full">
             Send Message
           </button>
         </form>

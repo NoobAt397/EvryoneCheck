@@ -7,7 +7,7 @@
     @apply scroll-smooth;
   }
   :root {
-    --background: 240 20% 98%; /* Off-white */
+    --background: 48 100% 97%; /* Light Beige */
     --foreground: 224 71% 10%; /* Dark blue for good contrast */
 
     --card: 0 0% 100%;
@@ -16,46 +16,46 @@
     --popover: 0 0% 100%;
     --popover-foreground: 224 71% 10%;
 
-    --primary: 51 100% 50%; /* #FFD700 */
-    --primary-foreground: 224 71% 10%; /* Dark text on yellow bg */
+    --primary: 45 100% 70%; /* #FFDA63 - Sunny Yellow */
+    --primary-foreground: 224 71% 10%;
 
-    --secondary: 171 100% 38%; /* #00C49A */
-    --secondary-foreground: 0 0% 100%; /* White text on teal bg */
+    --secondary: 162 100% 56%; /* #7FFFD4 - Bright Teal (Aquamarine) */
+    --secondary-foreground: 224 71% 10%;
 
     --muted: 240 5% 96%;
     --muted-foreground: 240 4% 46%;
     
-    --accent: 240 5% 90%;
-    --accent-foreground: 240 6% 10%;
+    --accent: 162 100% 56%;
+    --accent-foreground: 224 71% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 240 6% 90%;
     --input: 240 6% 94%;
-    --ring: 51 100% 50%;
-    --radius: 0.3rem;
+    --ring: 45 100% 70%;
+    --radius: 0.5rem;
   }
   .dark {
-    --background: 240 10% 3.9%;
+    --background: 222 84% 5%; /* Dark Slate */
     --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
+    --card: 222 84% 5%;
     --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
+    --popover: 222 84% 5%;
     --popover-foreground: 0 0% 98%;
-    --primary: 51 100% 50%;
+    --primary: 45 100% 70%;
     --primary-foreground: 224 71% 10%;
-    --secondary: 171 100% 38%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 162 100% 56%;
+    --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 0 0% 63.9%;
-    --accent: 240 3.7% 15.9%;
+    --accent: 162 100% 56%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 51 100% 50%;
+    --ring: 45 100% 70%;
   }
 }
 
@@ -68,58 +68,12 @@
   }
 }
 
-/* Light Mode Neumorphic Button */
-.neu-button {
-  background-color: #e0e0e0;
-  border-radius: 50px;
-  box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
-  color: #4d4d4d;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: bold;
-  padding: 15px 40px;
-  transition: all 0.2s ease-in-out;
-  border: 2px solid rgb(206, 206, 206);
-}
-.neu-button:hover, .neu-button:focus {
-outline: none;
-box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
-}
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-secondary to-primary text-transparent bg-clip-text;
+  }
 
-/* Dark Mode Neumorphic Button */
-.dark .neu-button {
-background-color: #313131;
-box-shadow: inset 4px 4px 10px #1f1f1f, inset -4px -4px 10px #434343;
-color: #e0e0e0;
-border-color: #2a2a2a;
-}
-
-.dark .neu-button:hover, .dark .neu-button:focus {
-box-shadow: inset 2px 2px 5px #1f1f1f, inset -2px -2px 5px #434343, 2px 2px 5px #1f1f1f, -2px -2px 5px #434343;
-}
-
-/* The outer gradient wrapper for service cards */
-.service-card-gradient {
-  padding: 4px; /* Creates the border thickness */
-  background-image: linear-gradient(163deg, #FFD700 0%, #00C49A 100%); /* Sunny Yellow to Bright Teal */
-  border-radius: 22px;
-  transition: all .4s cubic-bezier(0.23, 1, 0.32, 1);
-}
-.service-card-gradient:hover {
-box-shadow: 0px 0px 20px 2px rgba(0, 196, 154, 0.4); /* Glow effect with the teal color */
-}
-
-/* The inner content card for services */
-.service-card-inner {
-background-color: #0F172A; /* A dark slate for the card content in dark mode */
-color: #FFFFFF;
-border-radius: 20px;
-transition: all .2s;
-padding: 24px;
-}
-
-/* Light mode style for the inner card */
-.light .service-card-inner {
-background-color: #ffffff;
-color: #0F172A;
+  .gradient-button {
+    @apply inline-block rounded-full bg-gradient-to-r from-secondary to-primary px-8 py-3 text-center font-bold text-white shadow-lg transition-transform duration-300 ease-in-out hover:scale-105;
+  }
 }

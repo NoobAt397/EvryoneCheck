@@ -25,7 +25,7 @@ export function Header() {
       setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Set initial state
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -34,7 +34,7 @@ export function Header() {
       <a
         href={link.href}
         onClick={() => setIsMobileMenuOpen(false)}
-        className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-background/20 md:inline-block"
+        className="block rounded-md px-3 py-2 text-sm font-medium text-slate-300 transition-colors hover:bg-slate-700 hover:text-white md:inline-block"
       >
         {link.label}
       </a>
@@ -46,7 +46,7 @@ export function Header() {
       <a
         href={link.href}
         onClick={() => setIsMobileMenuOpen(false)}
-        className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-primary/80 hover:text-primary-foreground md:inline-block"
+        className="block rounded-md px-3 py-2 text-base font-medium transition-colors hover:bg-primary/80 hover:text-primary-foreground"
       >
         {link.label}
       </a>
@@ -56,13 +56,13 @@ export function Header() {
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 w-full text-background transition-all duration-300',
+        'sticky top-0 z-50 w-full transition-all duration-300',
         isScrolled
-          ? 'bg-blue-800/90 shadow-md backdrop-blur-sm'
-          : 'bg-blue-800'
+          ? 'bg-slate-900/90 shadow-md backdrop-blur-sm'
+          : 'bg-slate-900'
       )}
     >
-      <div className="container mx-auto flex h-28 items-center justify-between px-4 md:px-6">
+      <div className="container mx-auto flex h-24 items-center justify-between px-4 md:px-6">
         <Link href="#home" className="flex items-center gap-2 text-lg font-bold -ml-8">
           <Image 
             src="https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/Blue%20Modern%20Podcast%20Typographic%20Logo.png?alt=media&token=1f54d3a7-3088-486f-be18-aa917a2fadf9" 
@@ -81,7 +81,7 @@ export function Header() {
         <div className="md:hidden">
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-background hover:bg-background/20 hover:text-foreground">
+              <Button variant="ghost" size="icon" className="text-slate-300 hover:bg-slate-700 hover:text-white">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
@@ -97,7 +97,7 @@ export function Header() {
                      <Image 
                         src="https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/Blue%20Modern%20Podcast%20Typographic%20Logo.png?alt=media&token=1f54d3a7-3088-486f-be18-aa917a2fadf9" 
                         alt="COMMUNICATIONAL Logo"
-                        width={313}
+                        width={346}
                         height={150}
                         style={{ height: '150px', width: 'auto' }}
                      />

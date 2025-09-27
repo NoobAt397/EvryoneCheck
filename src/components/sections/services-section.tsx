@@ -10,6 +10,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
+import { Card, CardContent } from '@/components/ui/card';
 
 const services = [
   {
@@ -31,10 +32,10 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-20 lg:py-32 bg-background">
+    <section id="services" className="py-16 lg:py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className="font-headline text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
             Our Services
           </h2>
           <p className="mt-4 text-lg text-foreground/80">
@@ -44,20 +45,21 @@ export function ServicesSection() {
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <AlertDialog key={service.title}>
-              <div className="service-card-gradient">
-                <div className="service-card-inner flex flex-col h-full">
+              <Card className="flex flex-col text-center shadow-lg transition-transform duration-300 hover:scale-105">
+                <CardContent className="flex flex-col flex-grow p-6">
                   <div className="flex-grow">
                     <h3 className="text-2xl font-bold">{service.title}</h3>
-                    <p className="mt-2 text-sm text-white/80">{service.description}</p>
-                    <p className="mt-4 text-3xl font-bold">{service.price}</p>
+                    <p className="mt-2 text-sm text-foreground/80">{service.description}</p>
+
                   </div>
                   <div className="mt-6">
+                    <p className="text-3xl font-bold gradient-text">{service.price}</p>
                     <AlertDialogTrigger asChild>
-                      <button className="neu-button w-full">Buy Now</button>
+                      <button className="gradient-button mt-4 w-full">Buy Now</button>
                     </AlertDialogTrigger>
                   </div>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
               <AlertDialogContent>
                 <AlertDialogHeader>
                   <AlertDialogTitle>Coming Soon!</AlertDialogTitle>

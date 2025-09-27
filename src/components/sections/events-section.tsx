@@ -6,10 +6,10 @@ export function EventsSection() {
   const eventImages = PlaceHolderImages.filter(img => img.id.startsWith('event'));
 
   return (
-    <section id="events" className="py-20 lg:py-32 bg-card">
+    <section id="events" className="py-16 lg:py-24 bg-slate-100">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className="font-headline text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
             Our Events in Action
           </h2>
           <p className="mt-4 text-lg text-foreground/80">
