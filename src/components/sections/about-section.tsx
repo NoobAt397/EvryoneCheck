@@ -19,7 +19,7 @@ export function AboutSection() {
   const founderImages = PlaceHolderImages.filter(img => img.id.startsWith('founder'));
 
   return (
-    <section id="about" className="py-16 lg:py-24 bg-slate-100">
+    <section id="about" className="py-16 lg:py-24 bg-transparent">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
@@ -33,15 +33,15 @@ export function AboutSection() {
           {founders.map((founder) => {
             const founderImage = founderImages.find(img => img.id === founder.id);
             return (
-              <Card key={founder.id} className="overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 bg-card">
-                <CardContent className="p-0">
+              <div key={founder.id} className="glass-card overflow-hidden">
+                <div className="p-0">
                   {founderImage && (
                     <div className="relative h-80 w-full">
                        <Image
                           src={founderImage.imageUrl}
                           alt={founderImage.description}
                           fill
-                          className="object-cover"
+                          className="object-cover rounded-t-lg"
                           data-ai-hint={founderImage.imageHint}
                        />
                     </div>
@@ -50,8 +50,8 @@ export function AboutSection() {
                     <h3 className="text-xl font-bold">{founder.name}</h3>
                     <p className="mt-2 text-foreground/80">"{founder.message}"</p>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             );
           })}
         </div>

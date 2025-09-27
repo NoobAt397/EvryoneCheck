@@ -6,7 +6,7 @@ export function EventsSection() {
   const eventImages = PlaceHolderImages.filter(img => img.id.startsWith('event'));
 
   return (
-    <section id="events" className="py-16 lg:py-24 bg-slate-100">
+    <section id="events" className="py-16 lg:py-24 bg-transparent">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
@@ -18,8 +18,8 @@ export function EventsSection() {
         </div>
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {eventImages.map((image) => (
-            <Card key={image.id} className="overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-              <CardContent className="p-0">
+            <div key={image.id} className="glass-card overflow-hidden">
+              <div className="p-0">
                 <div className="relative aspect-[4/3] w-full">
                   <Image
                     src={image.imageUrl}
@@ -30,8 +30,8 @@ export function EventsSection() {
                     data-ai-hint={image.imageHint}
                   />
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
       </div>

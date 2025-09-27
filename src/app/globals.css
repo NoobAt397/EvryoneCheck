@@ -7,32 +7,32 @@
     @apply scroll-smooth;
   }
   :root {
-    --background: 48 100% 97%; /* Light Beige */
-    --foreground: 224 71% 10%; /* Dark blue for good contrast */
+    --background: 222 84% 5%; /* Dark Slate */
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 224 71% 10%;
+    --card: 222 84% 5%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 71% 10%;
+    --popover: 222 84% 5%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 45 100% 70%; /* #FFDA63 - Sunny Yellow */
+    --primary: 45 100% 70%; /* Sunny Yellow */
     --primary-foreground: 224 71% 10%;
 
-    --secondary: 162 100% 56%; /* #7FFFD4 - Bright Teal (Aquamarine) */
-    --secondary-foreground: 224 71% 10%;
+    --secondary: 162 100% 39%; /* Bright Teal */
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 240 5% 96%;
-    --muted-foreground: 240 4% 46%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 0 0% 63.9%;
     
-    --accent: 162 100% 56%;
-    --accent-foreground: 224 71% 10%;
+    --accent: 162 100% 39%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 6% 90%;
-    --input: 240 6% 94%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
     --ring: 45 100% 70%;
     --radius: 0.5rem;
   }
@@ -45,11 +45,11 @@
     --popover-foreground: 0 0% 98%;
     --primary: 45 100% 70%;
     --primary-foreground: 224 71% 10%;
-    --secondary: 162 100% 56%;
+    --secondary: 162 100% 39%;
     --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 0 0% 63.9%;
-    --accent: 162 100% 56%;
+    --accent: 162 100% 39%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
@@ -70,11 +70,22 @@
 
 @layer components {
   .gradient-text {
-    @apply bg-gradient-to-r from-secondary to-primary text-transparent bg-clip-text;
+    @apply bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text;
   }
 
   .gradient-button {
     @apply inline-block rounded-full bg-gradient-to-r from-secondary to-primary px-8 py-3 text-center font-bold text-white shadow-lg transition-transform duration-300 ease-in-out hover:scale-105;
+  }
+  .glass-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    transition: all 0.3s ease-in-out;
+  }
+  .glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 196, 154, 0.3);
   }
 }
 
@@ -110,4 +121,55 @@ box-shadow: inset 2px 2px 5px #0c101b,
 inset -2px -2px 5px #28304f,
 5px 5px 10px #0c101b,
 -5px -5px 10px #28304f;
+}
+
+.service-card-gradient {
+  padding: 4px;
+  background-image: linear-gradient(163deg, #FFD700 0%, #00C49A 100%);
+  border-radius: 22px;
+  transition: all .4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.service-card-gradient:hover {
+box-shadow: 0px 0px 20px 2px rgba(0, 196, 154, 0.4);
+}
+
+.service-card-inner {
+background-color: #0F172A;
+color: #FFFFFF;
+border-radius: 20px;
+transition: all .2s;
+padding: 24px;
+}
+
+.light .service-card-inner {
+background-color: #ffffff;
+color: #0F172A;
+}
+
+.neu-button {
+  background-color: #e0e0e0;
+  border-radius: 50px;
+  box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
+  color: #4d4d4d;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px 40px;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid rgb(206, 206, 206);
+}
+.neu-button:hover, .neu-button:focus {
+outline: none;
+box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+}
+
+.dark .neu-button {
+background-color: #313131;
+box-shadow: inset 4px 4px 10px #1f1f1f, inset -4px -4px 10px #434343;
+color: #e0e0e0;
+border-color: #2a2a2a;
+}
+
+.dark .neu-button:hover, .dark .neu-button:focus {
+box-shadow: inset 2px 2px 5px #1f1f1f, inset -2px -2px 5px #434343, 2px 2px 5px #1f1f1f, -2px -2px 5px #434343;
 }

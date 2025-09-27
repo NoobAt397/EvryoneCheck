@@ -15,7 +15,7 @@ export function HeroSection() {
           Our vision is to empower individuals and organizations to connect with clarity, confidence, and creativity.
         </p>
         <div className="mt-10">
-          <Link href="#services" className="vibrant-neu-button">
+          <Link href="#services" className="gradient-button">
             Explore Our Services
           </Link>
         </div>
