@@ -12,15 +12,20 @@ export function AnnouncementBanner() {
 
   useEffect(() => {
     setIsMounted(true);
-    try {
-      const dismissed = localStorage.getItem(ANNOUNCEMENT_KEY);
-      if (dismissed !== 'true') {
-        setIsVisible(true);
-      }
-    } catch (error) {
-      console.error('Could not access localStorage:', error);
-    }
   }, []);
+
+  useEffect(() => {
+    if (isMounted) {
+      try {
+        const dismissed = localStorage.getItem(ANNOUNCEMENT_KEY);
+        if (dismissed !== 'true') {
+          setIsVisible(true);
+        }
+      } catch (error) {
+        console.error('Could not access localStorage:', error);
+      }
+    }
+  }, [isMounted]);
 
   const handleDismiss = () => {
     setIsVisible(false);
@@ -31,11 +36,7 @@ export function AnnouncementBanner() {
     }
   };
 
-  if (!isMounted) {
-    return null;
-  }
-
-  if (!isVisible) {
+  if (!isMounted || !isVisible) {
     return null;
   }
 
