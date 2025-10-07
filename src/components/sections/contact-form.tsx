@@ -4,7 +4,6 @@ import { useState, type FormEvent } from 'react';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle } from 'lucide-react';
 
 export function ContactForm() {
@@ -50,7 +49,7 @@ export function ContactForm() {
               rows={5}
             />
           </div>
-          <button type="submit" className="gradient-button w-full">
+          <button type="submit" className="night-sky-button w-full">
             Send Message
           </button>
         </form>
