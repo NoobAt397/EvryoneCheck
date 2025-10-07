@@ -1,8 +1,16 @@
+'use client';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Instagram, Linkedin, Twitter } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 export function Footer() {
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="bg-slate-900 text-slate-300">
       <div className="container mx-auto px-4 py-8 md:px-6">
@@ -29,7 +37,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-6 border-t border-slate-700 pt-6 text-center text-sm text-slate-400">
-          <p>&copy; {new Date().getFullYear()} COMMUNICATIONAL. All rights reserved.</p>
+          <p>&copy; {currentYear} COMMUNICATIONAL. All rights reserved.</p>
         </div>
       </div>
     </footer>
