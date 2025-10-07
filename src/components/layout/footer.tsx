@@ -37,7 +37,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-6 border-t border-slate-700 pt-6 text-center text-sm text-slate-400">
-          <p>&copy; {currentYear ?? new Date().getFullYear()} COMMUNICATIONAL. All rights reserved.</p>
+          <p>&copy; {currentYear ?? ''} COMMUNICATIONAL. All rights reserved.</p>
         </div>
       </div>
     </footer>
