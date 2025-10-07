@@ -70,11 +70,11 @@
 
 @layer components {
   .gradient-text {
-    @apply bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text;
+    @apply bg-gradient-to-r from-secondary to-primary text-transparent bg-clip-text;
   }
 
   .gradient-button {
-    @apply inline-block rounded-full bg-gradient-to-r from-secondary to-primary px-8 py-3 text-center font-bold text-white shadow-lg transition-transform duration-300 ease-in-out hover:scale-105;
+    @apply inline-block rounded-full bg-secondary px-8 py-3 text-center font-bold text-secondary-foreground shadow-lg transition-transform duration-300 ease-in-out hover:scale-105;
   }
   .glass-card {
     background-color: rgba(255, 255, 255, 0.05);
@@ -102,89 +102,4 @@
     box-shadow: 0 0 10px #FFEEB3;
     transform: scale(1.05);
   }
-}
-
-/* Vibrant Neumorphic Button - Light Mode */
-.vibrant-neu-button {
-  padding: 1rem 2.5rem;
-  font-weight: bold;
-  border-radius: 50px;
-  border: none;
-  background-color: #f0f0f0; /* Soft off-white */
-  color: #0F172A; /* Dark Slate text */
-  box-shadow: inset 5px 5px 10px #dcdcdc, 
-              inset -5px -5px 10px #ffffff;
-  transition: all 0.2s ease-in-out;
-}
-.vibrant-neu-button:hover {
-box-shadow: inset 2px 2px 5px #dcdcdc,
-inset -2px -2px 5px #ffffff,
-5px 5px 10px #d1d1d1,
--5px -5px 10px #ffffff;
-}
-
-/* Vibrant Neumorphic Button - Dark Mode */
-.dark .vibrant-neu-button {
-background-color: #1a2035; /* Darker Slate */
-color: #f0f0f0;
-box-shadow: inset 5px 5px 10px #0c101b,
-inset -5px -5px 10px #28304f;
-}
-
-.dark .vibrant-neu-button:hover {
-box-shadow: inset 2px 2px 5px #0c101b,
-inset -2px -2px 5px #28304f,
-5px 5px 10px #0c101b,
--5px -5px 10px #28304f;
-}
-
-.service-card-gradient {
-  padding: 4px;
-  background-image: linear-gradient(163deg, #FFD700 0%, #00C49A 100%);
-  border-radius: 22px;
-  transition: all .4s cubic-bezier(0.23, 1, 0.32, 1);
-}
-.service-card-gradient:hover {
-box-shadow: 0px 0px 20px 2px rgba(0, 196, 154, 0.4);
-}
-
-.service-card-inner {
-background-color: #0F172A;
-color: #FFFFFF;
-border-radius: 20px;
-transition: all .2s;
-padding: 24px;
-}
-
-.light .service-card-inner {
-background-color: #ffffff;
-color: #0F172A;
-}
-
-.neu-button {
-  background-color: #e0e0e0;
-  border-radius: 50px;
-  box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
-  color: #4d4d4d;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: bold;
-  padding: 15px 40px;
-  transition: all 0.2s ease-in-out;
-  border: 2px solid rgb(206, 206, 206);
-}
-.neu-button:hover, .neu-button:focus {
-outline: none;
-box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
-}
-
-.dark .neu-button {
-background-color: #313131;
-box-shadow: inset 4px 4px 10px #1f1f1f, inset -4px -4px 10px #434343;
-color: #e0e0e0;
-border-color: #2a2a2a;
-}
-
-.dark .neu-button:hover, .dark .neu-button:focus {
-box-shadow: inset 2px 2px 5px #1f1f1f, inset -2px -2px 5px #434343, 2px 2px 5px #1f1f1f, -2px -2px 5px #434343;
 }

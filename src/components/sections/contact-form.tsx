@@ -16,7 +16,7 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="glass-card">
+      <div className="rounded-lg border border-gray-200">
         <div className="p-8 text-center">
           <CheckCircle className="mx-auto h-12 w-12 text-green-500" />
           <h3 className="mt-4 text-2xl font-semibold">Thank you!</h3>
@@ -29,7 +29,7 @@ export function ContactForm() {
   }
 
   return (
-    <div className="glass-card">
+    <div className="rounded-lg border border-gray-200">
       <div className="p-8">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
@@ -55,7 +55,7 @@ export function ContactForm() {
               rows={5}
             />
           </div>
-          <button type="submit" className="night-sky-button w-full">
+          <button type="submit" className="gradient-button w-full">
             Send Message
           </button>
         </form>

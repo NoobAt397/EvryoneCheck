@@ -31,10 +31,10 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-16 lg:py-24 bg-transparent">
+    <section id="services" className="py-16 lg:py-24 bg-foreground/5">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
+          <h2 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl gradient-text">
             Our Services
           </h2>
           <p className="mt-2 text-lg text-foreground/80">
@@ -44,7 +44,7 @@ export function ServicesSection() {
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <AlertDialog key={service.title}>
-              <div className="glass-card flex flex-col text-center">
+              <div className="flex flex-col text-center rounded-lg border border-gray-200">
                 <div className="flex flex-col flex-grow p-6">
                   <div className="flex-grow">
                     <h3 className="text-2xl font-bold">{service.title}</h3>
