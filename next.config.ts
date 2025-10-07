@@ -36,6 +36,20 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // This suppresses hydration warnings caused by browser extensions.
+  onRecoverableError: (error: unknown) => {
+    // Check if the error is an object with a message property
+    if (
+      typeof error === 'object' &&
+      error !== null &&
+      'message' in error &&
+      typeof (error as { message: unknown }).message === 'string'
+    ) {
+      if ((error as { message: string }).message.includes('Hydration failed')) {
+        return;
+      }
+    }
+  },
   devServer: {
     allowedDevOrigins: [
       "https://9000-firebase-studio-1758822742873.cluster-wurh6gchdjcjmwrw2tqtufvhss.cloudworkstations.dev"
