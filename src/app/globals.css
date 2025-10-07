@@ -7,7 +7,7 @@
     @apply scroll-smooth;
   }
   :root {
-    --background: 0 0% 98%; /* Off-white */
+    --background: 60 33% 96%; /* Light Beige */
     --foreground: 222 84% 5%; /* Dark Slate text */
 
     --card: 222 84% 5%;
@@ -16,16 +16,16 @@
     --popover: 0 0% 98%;
     --popover-foreground: 222 84% 5%;
 
-    --primary: 45 100% 70%; /* Sunny Yellow */
+    --primary: 48 96% 69%; /* Sunny Yellow */
     --primary-foreground: 224 71% 10%;
 
-    --secondary: 162 100% 39%; /* Bright Teal */
+    --secondary: 160 100% 50%; /* Bright Teal */
     --secondary-foreground: 0 0% 98%;
 
     --muted: 222 84% 5%;
     --muted-foreground: 0 0% 63.9%;
     
-    --accent: 162 100% 39%;
+    --accent: 160 100% 50%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -33,7 +33,7 @@
 
     --border: 222 84% 15%;
     --input: 222 84% 15%;
-    --ring: 45 100% 70%;
+    --ring: 48 96% 69%;
     --radius: 0.5rem;
   }
   .dark {
@@ -43,19 +43,19 @@
     --card-foreground: 0 0% 98%;
     --popover: 222 84% 5%;
     --popover-foreground: 0 0% 98%;
-    --primary: 45 100% 70%;
+    --primary: 48 96% 69%;
     --primary-foreground: 224 71% 10%;
-    --secondary: 162 100% 39%;
+    --secondary: 160 100% 50%;
     --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 0 0% 63.9%;
-    --accent: 162 100% 39%;
+    --accent: 160 100% 50%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 45 100% 70%;
+    --ring: 48 96% 69%;
   }
 }
 
@@ -86,6 +86,21 @@
   .glass-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 0 20px rgba(0, 196, 154, 0.3);
+  }
+  .night-sky-heading {
+    @apply bg-gradient-to-r from-[#FFEEB3] to-[#F0F0F0] text-transparent bg-clip-text;
+    text-shadow: 0 0 15px rgba(255, 238, 179, 0.4);
+  }
+  .night-sky-button {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid #FFEEB3;
+    color: #F0F0F0;
+    @apply inline-block rounded-full px-8 py-3 text-center font-bold shadow-lg transition-all duration-300 ease-in-out;
+  }
+  .night-sky-button:hover {
+    box-shadow: 0 0 10px #FFEEB3;
+    transform: scale(1.05);
   }
 }
 
