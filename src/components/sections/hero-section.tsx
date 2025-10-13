@@ -20,12 +20,14 @@ export function HeroSection() {
           alt="COMMUNICATIONAL Logo"
           width={800}
           height={346}
-          style={{ 
+          style={{  
             filter: 'drop-shadow(0 0 10px #FFEEB3)',
-            mixBlendMode: 'lighten' 
+            mixBlendMode: 'lighten',
+            width: 'clamp(300px, 90vw, 700px)',
+            height: 'auto',
           }}
           priority
-          className="w-full max-w-lg md:max-w-xl lg:max-w-2xl"
+          className="" 
         />
         <p className="mt-6 max-w-3xl text-lg text-white md:text-xl">
           Everyone knows how to speak,
