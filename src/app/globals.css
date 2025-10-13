@@ -102,4 +102,60 @@
     box-shadow: 0 0 10px #FFEEB3;
     transform: scale(1.05);
   }
+
+  .speech-bubble {
+    position: relative;
+  }
+  .speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-top-color: inherit; /* Use the parent's background color */
+    border-bottom: 0;
+    margin-left: -20px;
+    margin-bottom: -20px;
+  }
+
+  /* Position tails for each bubble */
+  .grid > div:nth-child(1) .speech-bubble::after {
+    left: 25%;
+    border-right-color: transparent;
+    border-left-color: inherit; /* Use the parent's background color */
+  }
+  .grid > div:nth-child(2) .speech-bubble::after {
+    left: 50%;
+    border-right-color: inherit; /* Use the parent's background color */
+    border-left-color: transparent;
+  }
+  .grid > div:nth-child(3) .speech-bubble::after {
+    left: 75%;
+    border-right-color: transparent;
+    border-left-color: inherit; /* Use the parent's background color */
+  }
+
+  /* Responsive adjustments for tails */
+  @media (max-width: 1024px) {
+    .grid > div:nth-child(1) .speech-bubble::after,
+    .grid > div:nth-child(3) .speech-bubble::after {
+      left: 50%;
+      border-right-color: inherit;
+      border-left-color: transparent;
+    }
+    .grid > div:nth-child(2) .speech-bubble::after {
+      left: 25%;
+      border-right-color: transparent;
+      border-left-color: inherit;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .grid > div .speech-bubble::after {
+      left: 75%;
+      border-right-color: transparent;
+      border-left-color: inherit;
+    }
+  }
 }

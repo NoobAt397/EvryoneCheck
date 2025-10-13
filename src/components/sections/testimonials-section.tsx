@@ -1,21 +1,23 @@
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
-import { Star } from 'lucide-react';
+'use client';
 
 const testimonials = [
   {
-    name: 'Emily R.',
-    quote: "The Personal Branding workshop was a game-changer. I feel so much more confident in how I present myself professionally.",
-    rating: 5,
+    name: 'YASHASVI',
+    quote:
+      'I truly enjoyed attending the communicational workshop. It gave me new perspectives and helped me understand the depth and importance of effective communication.',
+    rotation: 'rotate-[-2deg]',
   },
   {
-    name: 'David Chen',
-    quote: "An incredibly positive and supportive atmosphere. The trainers are experts who genuinely care about your growth.",
-    rating: 5,
+    name: 'ANSHUL',
+    quote:
+      'I joined about 4 of the online sessions during my summer break and the interaction activities really helped me open up and it gave me a better perspective on networking.',
+    rotation: 'rotate-[2deg]',
   },
   {
-    name: 'Maria G.',
-    quote: "I used to be terrified of public speaking. After the coaching sessions, I can now command a room with confidence. Highly recommend!",
-    rating: 5,
+    name: 'SADHYA',
+    quote:
+      'I had attended two sessions where I felt the concepts were clearly elaborated with help of a ppt, and I was pushed outside my comfort zone through the impromptu activities which made the learning fun for me.',
+    rotation: 'rotate-[-1deg]',
   },
 ];
 
@@ -31,24 +33,23 @@ export function TestimonialsSection() {
             Real stories from people who found their voice with us.
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-y-12 gap-x-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-12">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="flex flex-col p-6 rounded-lg border border-gray-200">
-              <div>
-                <div className="flex items-center gap-1">
-                  {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-primary text-primary" />
-                  ))}
-                </div>
+            <div
+              key={index}
+              className={`relative transform ${testimonial.rotation} transition-transform hover:scale-105`}
+            >
+              <div className="speech-bubble bg-slate-800 p-8 rounded-lg shadow-lg">
+                <p className="relative text-white">
+                  <span className="absolute -top-4 -left-4 text-6xl font-bold text-primary opacity-50">
+                    “
+                  </span>
+                  <span className="pl-4">{testimonial.quote}</span>
+                </p>
               </div>
-              <div className="flex-grow mt-4">
-                <blockquote className="text-lg font-medium leading-relaxed">
-                  "{testimonial.quote}"
-                </blockquote>
-              </div>
-              <div className="mt-4">
-                <p className="font-bold text-foreground">{testimonial.name}</p>
-              </div>
+              <p className="mt-6 text-right font-bold uppercase text-primary tracking-wider">
+                - {testimonial.name}
+              </p>
             </div>
           ))}
         </div>
