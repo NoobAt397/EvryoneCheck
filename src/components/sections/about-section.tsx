@@ -5,8 +5,8 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 const founders = [
   {
     id: 'founder1',
-    name: 'Alex Doe',
-    message: "Our goal is to build bridges through words. In a world that's more connected yet more divided than ever, clear and empathetic communication is the key to unlocking potential.",
+    name: 'Bineet Singh Chawla',
+    message: 'To build a future India where the mastery of communication is not a privilege, but a practical skill accessible to anyone, everywhere. By turning Indians into phenomenal communicators one person at a time.',
   },
   {
     id: 'founder2',

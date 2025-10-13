@@ -2,8 +2,8 @@
   "placeholderImages": [
     {
       "id": "founder1",
-      "description": "Photo of a founder",
-      "imageUrl": "https://images.unsplash.com/photo-1583934555852-537536e49071?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Zm91bmRlciUyMHBvcnRyYWl0fGVufDB8fHx8MTc1ODgxNjY4M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Photo of Bineet Singh Chawla",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/bineetimage.jpg?alt=media&token=ce1796e9-fc99-4008-b739-56aebc4c6651",
       "imageHint": "founder portrait"
     },
     {
