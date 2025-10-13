@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
 export function HeroSection() {
   return (
@@ -15,18 +15,12 @@ export function HeroSection() {
       }}
     >
       <div className="relative z-10 container mx-auto flex flex-col items-center justify-center px-4 text-center">
-        <Image
-          src="https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/Untitled%20design(1).png?alt=media&token=bf4cef65-cf2d-4aec-8b80-44dfa3385ec1"
-          alt="COMMUNICATIONAL Logo"
-          width={800}
-          height={346}
-          style={{  
-            filter: 'drop-shadow(0 0 10px #FFEEB3)',
-            mixBlendMode: 'lighten',
-          }}
-          priority
-          className="w-full max-w-2xl" 
-        />
+        <h1 
+          className="night-sky-heading font-logo"
+          style={{ fontSize: 'clamp(3rem, 12vw, 7rem)', lineHeight: '1.1' }}
+        >
+          COMMUNICATIONAL
+        </h1>
         <p className="mt-6 max-w-3xl text-lg text-white md:text-xl">
           Everyone knows how to speak,
           <br />

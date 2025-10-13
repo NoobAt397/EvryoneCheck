@@ -7,23 +7,23 @@
     @apply scroll-smooth;
   }
   :root {
-    --background: 60 33% 96%; /* Light Beige */
+    --background: 240 10% 98%; /* Off-white */
     --foreground: 222 84% 5%; /* Dark Slate text */
 
-    --card: 222 84% 5%;
-    --card-foreground: 0 0% 98%;
+    --card: 240 10% 98%;
+    --card-foreground: 222 84% 5%;
 
     --popover: 0 0% 98%;
     --popover-foreground: 222 84% 5%;
 
-    --primary: 48 96% 69%; /* Sunny Yellow */
-    --primary-foreground: 224 71% 10%;
+    --primary: 160 100% 35%; /* Bright Teal */
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 160 100% 50%; /* Bright Teal */
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 48 96% 69%; /* Sunny Yellow */
+    --secondary-foreground: 224 71% 10%;
 
-    --muted: 222 84% 5%;
-    --muted-foreground: 0 0% 63.9%;
+    --muted: 240 5% 96%; /* Light grey for alternating backgrounds */
+    --muted-foreground: 0 0% 45%;
     
     --accent: 160 100% 50%;
     --accent-foreground: 0 0% 98%;
@@ -31,9 +31,9 @@
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 222 84% 15%;
-    --input: 222 84% 15%;
-    --ring: 48 96% 69%;
+    --border: 240 5% 90%; /* Light grey border */
+    --input: 240 5% 90%;
+    --ring: 160 100% 35%;
     --radius: 0.5rem;
   }
   .dark {
@@ -43,10 +43,10 @@
     --card-foreground: 0 0% 98%;
     --popover: 222 84% 5%;
     --popover-foreground: 0 0% 98%;
-    --primary: 48 96% 69%;
-    --primary-foreground: 224 71% 10%;
-    --secondary: 160 100% 50%;
-    --secondary-foreground: 0 0% 98%;
+    --primary: 160 100% 35%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 48 96% 69%;
+    --secondary-foreground: 224 71% 10%;
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 0 0% 63.9%;
     --accent: 160 100% 50%;
@@ -55,7 +55,7 @@
     --destructive-foreground: 0 0% 98%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 48 96% 69%;
+    --ring: 160 100% 35%;
   }
 }
 
@@ -70,27 +70,18 @@
 
 @layer components {
   .gradient-text {
-    @apply bg-gradient-to-r from-secondary to-primary text-transparent bg-clip-text;
+    @apply bg-gradient-to-r from-teal-400 to-yellow-400 text-transparent bg-clip-text;
   }
 
-  .gradient-button {
-    @apply inline-block rounded-full bg-secondary px-8 py-3 text-center font-bold text-secondary-foreground shadow-lg transition-transform duration-300 ease-in-out hover:scale-105;
+  .primary-button {
+    @apply inline-block rounded-md bg-primary px-8 py-3 text-center font-bold text-primary-foreground shadow-md transition-transform duration-300 ease-in-out hover:scale-105 hover:brightness-110;
   }
-  .glass-card {
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    transition: all 0.3s ease-in-out;
-  }
-  .glass-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(0, 196, 154, 0.3);
-  }
+
   .night-sky-heading {
     @apply bg-gradient-to-r from-[#FFEEB3] to-[#F0F0F0] text-transparent bg-clip-text;
     text-shadow: 0 0 15px rgba(255, 238, 179, 0.4);
   }
+  
   .night-sky-button {
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -99,13 +90,23 @@
     @apply inline-block rounded-full px-8 py-3 text-center font-bold shadow-lg transition-all duration-300 ease-in-out;
   }
   .night-sky-button:hover {
-    box-shadow: 0 0 10px #FFEEB3;
+    box-shadow: 0 0 20px #FFEEB3;
     transform: scale(1.05);
   }
 
   .speech-bubble {
     position: relative;
+    background-color: #1E293B; /* deep blue */
+    border-radius: 1.5rem;
+    padding: 2rem;
+    transform: rotate(var(--tw-rotate, 0));
+    transition: transform 0.3s ease-in-out;
   }
+  
+  .speech-bubble:hover {
+    transform: scale(1.05) rotate(var(--tw-rotate, 0));
+  }
+  
   .speech-bubble::after {
     content: '';
     position: absolute;
@@ -113,27 +114,23 @@
     width: 0;
     height: 0;
     border: 20px solid transparent;
-    border-top-color: inherit; /* Use the parent's background color */
+    border-top-color: #1E293B; /* Match speech bubble background */
     border-bottom: 0;
-    margin-left: -20px;
     margin-bottom: -20px;
   }
 
-  /* Position tails for each bubble */
+  /* Position tails */
   .grid > div:nth-child(1) .speech-bubble::after {
     left: 25%;
-    border-right-color: transparent;
-    border-left-color: inherit; /* Use the parent's background color */
+    border-left-color: #1E293B;
   }
   .grid > div:nth-child(2) .speech-bubble::after {
     left: 50%;
-    border-right-color: inherit; /* Use the parent's background color */
-    border-left-color: transparent;
+    border-right-color: #1E293B;
   }
   .grid > div:nth-child(3) .speech-bubble::after {
     left: 75%;
-    border-right-color: transparent;
-    border-left-color: inherit; /* Use the parent's background color */
+    border-left-color: #1E293B;
   }
 
   /* Responsive adjustments for tails */
@@ -141,21 +138,21 @@
     .grid > div:nth-child(1) .speech-bubble::after,
     .grid > div:nth-child(3) .speech-bubble::after {
       left: 50%;
-      border-right-color: inherit;
       border-left-color: transparent;
+      border-right-color: #1E293B;
     }
     .grid > div:nth-child(2) .speech-bubble::after {
       left: 25%;
       border-right-color: transparent;
-      border-left-color: inherit;
+      border-left-color: #1E293B;
     }
   }
 
   @media (max-width: 768px) {
     .grid > div .speech-bubble::after {
-      left: 75%;
-      border-right-color: transparent;
-      border-left-color: inherit;
+      left: 75% !important;
+      border-right-color: transparent !important;
+      border-left-color: #1E293B !important;
     }
   }
 }

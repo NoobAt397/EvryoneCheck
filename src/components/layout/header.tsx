@@ -70,6 +70,7 @@ export function Header() {
             width={346}
             height={150}
             className="h-[150px] w-auto"
+            style={{ mixBlendMode: 'lighten' }}
             priority
           />
         </Link>
@@ -99,6 +100,7 @@ export function Header() {
                         alt="COMMUNICATIONAL Logo"
                         width={346}
                         height={150}
+                        style={{ mixBlendMode: 'lighten' }}
                         className="h-[150px] w-auto"
                      />
                   </Link>
