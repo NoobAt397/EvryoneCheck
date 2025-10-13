@@ -16,7 +16,7 @@ export function HeroSection() {
     >
       <div className="relative z-10 container mx-auto flex h-full flex-col items-center justify-center px-4 text-center">
         <Image
-          src="https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/Blue%20Modern%20Podcast%20Typographic%20Logo.png?alt=media&token=1f54d3a7-3088-486f-be18-aa917a2fadf9"
+          src="https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/Untitled%20design(1).png?alt=media&token=bf4cef65-cf2d-4aec-8b80-44dfa3385ec1"
           alt="COMMUNICATIONAL Logo"
           width={800}
           height={346}
