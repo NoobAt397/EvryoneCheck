@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function HeroSection() {
   return (
@@ -13,9 +14,14 @@ export function HeroSection() {
       }}
     >
       <div className="relative z-10 container mx-auto flex flex-col items-center justify-center px-4 text-center">
-        <h1 className="font-logo text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
-          <span className="night-sky-heading">COMMUNICATIONAL</span>
-        </h1>
+        <Image
+          src="https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/Blue%20Modern%20Podcast%20Typographic%20Logo.png?alt=media&token=1f54d3a7-3088-486f-be18-aa917a2fadf9"
+          alt="COMMUNICATIONAL Logo"
+          width={800}
+          height={346}
+          style={{ filter: 'drop-shadow(0 0 10px #FFEEB3)' }}
+          priority
+        />
         <p className="mt-6 max-w-3xl text-lg text-white md:text-xl">
           Everyone knows how to speak,
           <br />

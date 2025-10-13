@@ -69,7 +69,7 @@ export function Header() {
             alt="COMMUNICATIONAL Logo"
             width={346}
             height={150}
-            style={{ height: '150px', width: 'auto' }}
+            className="h-[150px] w-auto"
             priority
           />
         </Link>
@@ -99,7 +99,7 @@ export function Header() {
                         alt="COMMUNICATIONAL Logo"
                         width={346}
                         height={150}
-                        style={{ height: '150px', width: 'auto' }}
+                        className="h-[150px] w-auto"
                      />
                   </Link>
                 </div>

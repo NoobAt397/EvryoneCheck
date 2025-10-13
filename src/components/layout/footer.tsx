@@ -21,7 +21,7 @@ export function Footer() {
               alt="COMMUNICATIONAL Logo"
               width={346}
               height={150}
-              style={{ height: '150px', width: 'auto' }}
+              className="h-[150px] w-auto"
             />
           </Link>
           <div className="flex items-center gap-4">
