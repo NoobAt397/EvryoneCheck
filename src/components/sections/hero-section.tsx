@@ -17,7 +17,9 @@ export function HeroSection() {
           <span className="night-sky-heading">COMMUNICATIONAL</span>
         </h1>
         <p className="mt-6 max-w-3xl text-lg text-white md:text-xl">
-          Our vision is to empower individuals and organizations to connect with clarity, confidence, and creativity.
+          Everyone knows how to speak,
+          <br />
+          Not everyone knows how to talk.
         </p>
         <div className="mt-10">
           <Link href="#services" className="night-sky-button">
