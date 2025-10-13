@@ -19,7 +19,10 @@ export function HeroSection() {
           alt="COMMUNICATIONAL Logo"
           width={800}
           height={346}
-          style={{ filter: 'drop-shadow(0 0 10px #FFEEB3)' }}
+          style={{ 
+            filter: 'drop-shadow(0 0 10px #FFEEB3)',
+            mixBlendMode: 'lighten' 
+          }}
           priority
         />
         <p className="mt-6 max-w-3xl text-lg text-white md:text-xl">
