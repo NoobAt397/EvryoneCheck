@@ -13,7 +13,7 @@ export function HeroSection() {
       }}
     >
       <div className="relative z-10 container mx-auto flex flex-col items-center justify-center px-4 text-center">
-        <h1 className="font-headline text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
+        <h1 className="font-logo text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
           <span className="night-sky-heading">COMMUNICATIONAL</span>
         </h1>
         <p className="mt-6 max-w-3xl text-lg text-white md:text-xl">
