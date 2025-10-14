@@ -10,8 +10,8 @@ const founders = [
   },
   {
     id: 'founder2',
-    name: 'Jordan Smith',
-    message: "We started COMMUNICATIONAL to create a space for growth. Seeing our clients find their voice and confidence is the most rewarding part of our journey.",
+    name: 'Sanskaar Dutt',
+    message: "“At Communicational, we’ve always believed that communication isn’t just about speaking well — it’s about connecting deeply. Our goal is to help people express themselves with confidence, clarity, and authenticity, because when you learn to communicate right, every door in life opens a little easier.”",
   },
 ];
 
