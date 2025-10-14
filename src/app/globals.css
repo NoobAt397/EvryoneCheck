@@ -99,6 +99,17 @@
     transform: translateY(-2px);
   }
 
+  .light .glass-glow-button {
+    background-color: #00C49A;
+    color: white;
+    backdrop-filter: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .light .glass-glow-button:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
   .speech-bubble {
     position: relative;
     background-color: rgba(255, 255, 255, 0.05);
