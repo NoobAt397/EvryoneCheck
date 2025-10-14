@@ -13,7 +13,7 @@ export function HeroSection() {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      <div className="relative z-10 container mx-auto flex flex-col items-center justify-center px-4 text-center">
+      <div className="relative z-10 container mx-auto flex flex-col items-center justify-center px-4 py-8 text-center sm:py-0">
         <div className="w-full flex justify-center">
           <h1
             className="font-logo night-sky-heading"
