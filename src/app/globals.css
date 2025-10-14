@@ -78,8 +78,12 @@
   }
 
   .night-sky-heading {
+    font-size: clamp(3rem, 10vw, 6rem) !important;
+    text-align: center;
+    text-shadow: 0 0 1px transparent !important; /* Fixes rendering bug */
+    line-height: 1.1;
+    /* Keep the existing gradient text styles */
     @apply bg-gradient-to-r from-[#FFEEB3] to-[#F0F0F0] text-transparent bg-clip-text;
-    font-size: clamp(2.5rem, 8vw, 5.5rem) !important;
   }
 
   .glass-glow-button {

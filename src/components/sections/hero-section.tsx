@@ -14,7 +14,7 @@ export function HeroSection() {
       }}
     >
       <div className="relative z-10 container mx-auto flex flex-col items-center justify-center px-4 text-center">
-        <div className="w-full max-w-7xl flex justify-start">
+        <div className="w-full flex justify-center">
           <h1
             className="font-logo night-sky-heading"
           >
