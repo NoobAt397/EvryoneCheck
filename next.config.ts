@@ -56,5 +56,5 @@ const nextConfig: NextConfig = {
     ]
   }
 };
-
+// Force server restart to clear cache
 export default nextConfig;
