@@ -1,6 +1,8 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Instagram, Linkedin } from 'lucide-react';
 
 const founders = [
   {
@@ -47,9 +49,17 @@ export function AboutSection() {
                        />
                     </div>
                   )}
-                  <div className="p-6">
+                  <div className="p-6 glass-card-content">
                     <h3 className="text-xl font-bold">{founder.name}</h3>
                     <p className="mt-2 text-foreground/80">"{founder.message}"</p>
+                    <div className="mt-4 flex items-center gap-4">
+                      <Link href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <Instagram className="h-6 w-6 text-slate-400 transition-colors hover:text-primary" />
+                      </Link>
+                      <Link href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <Linkedin className="h-6 w-6 text-slate-400 transition-colors hover:text-primary" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>

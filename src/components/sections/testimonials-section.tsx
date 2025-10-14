@@ -39,7 +39,7 @@ export function TestimonialsSection() {
               key={index}
               className={`relative transform ${testimonial.rotation} transition-transform hover:scale-105`}
             >
-              <div className="speech-bubble p-8 rounded-lg shadow-lg">
+              <div className="speech-bubble p-8 rounded-lg shadow-lg glass-card-content">
                 <p className="relative text-white">
                   <span className="absolute -top-4 -left-4 text-6xl font-bold text-primary opacity-50">
                     “

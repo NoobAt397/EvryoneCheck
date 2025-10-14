@@ -15,7 +15,7 @@ export function HeroSection() {
     >
       <div className="relative z-10 container mx-auto flex flex-col items-center justify-center px-4 text-center">
         <h1
-          className="night-sky-heading font-logo"
+          className="font-logo night-sky-heading w-full max-w-4xl text-[clamp(2.5rem,10vw,6rem)]"
         >
           COMMUNICATIONAL
         </h1>
