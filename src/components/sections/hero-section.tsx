@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { cn } from '@/lib/utils';
 
 export function HeroSection() {
   return (
@@ -15,11 +14,11 @@ export function HeroSection() {
       }}
     >
       <div className="relative z-10 container mx-auto flex flex-col items-center justify-center px-4 text-center">
-        <h1 
+        <h1
           className="night-sky-heading font-logo"
-          style={{ 
-            lineHeight: '1.1', 
-            fontSize: 'clamp(3.5rem, 10vw, 7.5rem) !important' 
+          style={{
+            lineHeight: '1.1',
+            fontSize: 'clamp(7rem, 20vw, 15rem) !important',
           }}
         >
           COMMUNICATIONAL
