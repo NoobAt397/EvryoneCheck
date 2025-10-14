@@ -38,12 +38,12 @@ export function AboutSection() {
               <div key={founder.id} className="overflow-hidden rounded-lg border border-gray-200">
                 <div className="p-0">
                   {founderImage && (
-                    <div className="relative h-80 w-full">
+                    <div className="relative h-80 w-full bg-muted">
                        <Image
                           src={founderImage.imageUrl}
                           alt={founderImage.description}
                           fill
-                          className="object-cover rounded-t-lg object-top"
+                          className="object-contain rounded-t-lg"
                           data-ai-hint={founderImage.imageHint}
                           quality={100}
                        />
