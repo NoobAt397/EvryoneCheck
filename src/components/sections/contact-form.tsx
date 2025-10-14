@@ -55,7 +55,7 @@ export function ContactForm() {
               rows={5}
             />
           </div>
-          <button type="submit" className="gradient-button w-full">
+          <button type="submit" className="glass-glow-button w-full">
             Send Message
           </button>
         </form>

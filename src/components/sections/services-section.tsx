@@ -44,7 +44,13 @@ export function ServicesSection() {
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <AlertDialog key={service.title}>
-              <div className="flex flex-col text-center rounded-lg border border-gray-200">
+              <div 
+                className="flex flex-col text-center rounded-lg border border-white/10"
+                style={{
+                  backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                  backdropFilter: 'blur(10px)',
+                }}
+              >
                 <div className="flex flex-col flex-grow p-6">
                   <div className="flex-grow">
                     <h3 className="text-2xl font-bold">{service.title}</h3>
@@ -53,7 +59,7 @@ export function ServicesSection() {
                   <div className="mt-6">
                     <p className="text-3xl font-bold gradient-text">{service.price}</p>
                     <AlertDialogTrigger asChild>
-                      <button className="gradient-button mt-4 w-full">Buy Now</button>
+                      <button className="glass-glow-button mt-4 w-full">Buy Now</button>
                     </AlertDialogTrigger>
                   </div>
                 </div>

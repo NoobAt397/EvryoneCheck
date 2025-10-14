@@ -16,9 +16,6 @@ export function HeroSection() {
       <div className="relative z-10 container mx-auto flex flex-col items-center justify-center px-4 text-center">
         <h1
           className="night-sky-heading font-logo"
-          style={{
-            lineHeight: '1.1',
-          }}
         >
           COMMUNICATIONAL
         </h1>

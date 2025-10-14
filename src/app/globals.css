@@ -80,7 +80,7 @@
   .night-sky-heading {
     @apply bg-gradient-to-r from-[#FFEEB3] to-[#F0F0F0] text-transparent bg-clip-text;
     text-shadow: 0 0 15px rgba(255, 238, 179, 0.4);
-    font-size: clamp(3.5rem, 10vw, 7.5rem) !important;
+    font-size: clamp(2.5rem, 10vw, 6rem) !important;
   }
 
   .glass-glow-button {
@@ -102,7 +102,9 @@
 
   .speech-bubble {
     position: relative;
-    background-color: #1E293B; /* deep blue */
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 1.5rem;
     padding: 2rem;
     transform: rotate(var(--tw-rotate, 0));
@@ -120,7 +122,7 @@
     width: 0;
     height: 0;
     border: 20px solid transparent;
-    border-top-color: #1E293B; /* Match speech bubble background */
+    border-top-color: rgba(255, 255, 255, 0.05);
     border-bottom: 0;
     margin-bottom: -20px;
   }
@@ -128,15 +130,15 @@
   /* Position tails */
   .grid > div:nth-child(1) .speech-bubble::after {
     left: 25%;
-    border-left-color: #1E293B;
+    border-left-color: rgba(255, 255, 255, 0.05);
   }
   .grid > div:nth-child(2) .speech-bubble::after {
     left: 50%;
-    border-right-color: #1E293B;
+    border-right-color: rgba(255, 255, 255, 0.05);
   }
   .grid > div:nth-child(3) .speech-bubble::after {
     left: 75%;
-    border-left-color: #1E293B;
+    border-left-color: rgba(255, 255, 255, 0.05);
   }
 
   /* Responsive adjustments for tails */
@@ -145,12 +147,12 @@
     .grid > div:nth-child(3) .speech-bubble::after {
       left: 50%;
       border-left-color: transparent;
-      border-right-color: #1E293B;
+      border-right-color: rgba(255, 255, 255, 0.05);
     }
     .grid > div:nth-child(2) .speech-bubble::after {
       left: 25%;
       border-right-color: transparent;
-      border-left-color: #1E293B;
+      border-left-color: rgba(255, 255, 255, 0.05);
     }
   }
 
@@ -158,7 +160,7 @@
     .grid > div .speech-bubble::after {
       left: 75% !important;
       border-right-color: transparent !important;
-      border-left-color: #1E293B !important;
+      border-left-color: rgba(255, 255, 255, 0.05) !important;
     }
   }
 }
