@@ -177,4 +177,8 @@
   .light .glass-card-content {
     color: #0F172A !important; /* A dark slate color */
   }
+
+  .light .speech-bubble.glass-card-content > p {
+    color: #0F172A !important;
+  }
 }
