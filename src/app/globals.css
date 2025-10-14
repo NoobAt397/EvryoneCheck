@@ -81,17 +81,22 @@
     @apply bg-gradient-to-r from-[#FFEEB3] to-[#F0F0F0] text-transparent bg-clip-text;
     text-shadow: 0 0 15px rgba(255, 238, 179, 0.4);
   }
-  
-  .night-sky-button {
-    background-color: rgba(255, 255, 255, 0.1);
+
+  .glass-glow-button {
+    padding: 1rem 2.5rem;
+    font-weight: bold;
+    color: #FFEEB3; /* Pale Gold Text */
+    background-color: rgba(20, 10, 5, 0.4); /* Dark, semi-transparent brown */
+    border: 2px solid rgba(255, 238, 179, 0.5); /* Pale Gold Border */
+    border-radius: 50px;
     backdrop-filter: blur(10px);
-    border: 2px solid #FFEEB3;
-    color: #F0F0F0;
-    @apply inline-block rounded-full px-8 py-3 text-center font-bold shadow-lg transition-all duration-300 ease-in-out;
+    box-shadow: 0 0 15px rgba(255, 238, 179, 0.2); /* Subtle Glow */
+    transition: all 0.3s ease;
   }
-  .night-sky-button:hover {
-    box-shadow: 0 0 20px #FFEEB3;
-    transform: scale(1.05);
+
+  .glass-glow-button:hover {
+    box-shadow: 0 0 25px rgba(255, 238, 179, 0.5); /* Brighter Glow on Hover */
+    transform: translateY(-2px);
   }
 
   .speech-bubble {
