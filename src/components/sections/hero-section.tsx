@@ -18,7 +18,6 @@ export function HeroSection() {
           className="night-sky-heading font-logo"
           style={{
             lineHeight: '1.1',
-            fontSize: 'clamp(7rem, 20vw, 15rem) !important',
           }}
         >
           COMMUNICATIONAL

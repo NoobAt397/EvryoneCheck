@@ -80,6 +80,7 @@
   .night-sky-heading {
     @apply bg-gradient-to-r from-[#FFEEB3] to-[#F0F0F0] text-transparent bg-clip-text;
     text-shadow: 0 0 15px rgba(255, 238, 179, 0.4);
+    font-size: clamp(3.5rem, 10vw, 7.5rem) !important;
   }
 
   .glass-glow-button {
