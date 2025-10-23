@@ -65,15 +65,16 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
           </p>
 
           {service.demoVideoUrl && (
-            <div className="mb-8 rounded-lg overflow-hidden shadow-2xl border border-gray-200">
+            <div className="mb-8 rounded-lg overflow-hidden shadow-2xl border border-gray-200 aspect-video">
               <video
                 src={service.demoVideoUrl}
                 controls
-                className="w-full"
-                style={{ maxHeight: '60vh' }}
+                className="w-full h-full"
+                style={{ objectFit: 'cover' }}
                 autoPlay
                 muted
                 loop
+                preload="auto"
               >
                 Your browser does not support the video tag.
               </video>
