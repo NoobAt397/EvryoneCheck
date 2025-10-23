@@ -10,12 +10,15 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
+import Link from 'next/link';
+import { Button } from '../ui/button';
 
 const services = [
   {
     title: 'Personal Branding Workshops',
     description: 'Define your unique story and learn how to communicate it effectively across all platforms.',
     price: '$299',
+    demoVideoUrl: 'https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/communicational%20video.mp4?alt=media&token=ba5950e8-7c78-4830-acd4-52c2dafc83d8'
   },
   {
     title: 'Corporate Communication Training',
@@ -58,9 +61,18 @@ export function ServicesSection() {
                   </div>
                   <div className="mt-6">
                     <p className="text-3xl font-bold gradient-text">{service.price}</p>
-                    <AlertDialogTrigger asChild>
-                      <button className="glass-glow-button mt-4 w-full">Buy Now</button>
-                    </AlertDialogTrigger>
+                    <div className="mt-4 flex flex-col sm:flex-row gap-2 justify-center">
+                      <AlertDialogTrigger asChild>
+                        <button className="glass-glow-button w-full sm:w-auto flex-1">Buy Now</button>
+                      </AlertDialogTrigger>
+                      {(service as any).demoVideoUrl && (
+                        <Link href={`/demo/${encodeURIComponent((service as any).demoVideoUrl)}`} passHref>
+                          <Button variant="outline" className="w-full sm:w-auto flex-1 bg-transparent hover:bg-white/10 text-white border-white/50 hover:text-white">
+                            Watch Demo
+                          </Button>
+                        </Link>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
