@@ -1,0 +1,264 @@
+{
+  "entities": {
+    "User": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "User",
+      "type": "object",
+      "description": "Represents a user in the BrandBloom application.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the user. (Primary Key)"
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the user.",
+          "format": "email"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Display name of the user."
+        },
+        "photoURL": {
+          "type": "string",
+          "description": "URL of the user's profile photo.",
+          "format": "uri"
+        },
+        "phoneNumber": {
+          "type": "string",
+          "description": "Phone number of the user."
+        }
+      },
+      "required": [
+        "id",
+        "email",
+        "displayName"
+      ]
+    },
+    "Testimonial": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Testimonial",
+      "type": "object",
+      "description": "Represents a customer testimonial.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the testimonial. (Primary Key)"
+        },
+        "author": {
+          "type": "string",
+          "description": "Name of the testimonial author."
+        },
+        "content": {
+          "type": "string",
+          "description": "The text content of the testimonial."
+        },
+        "userProfileId": {
+          "type": "string",
+          "description": "Reference to the UserProfile who provided the testimonial. (Relationship: UserProfile 1:N Testimonial)"
+        }
+      },
+      "required": [
+        "id",
+        "author",
+        "content",
+        "userProfileId"
+      ]
+    },
+    "Event": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Event",
+      "type": "object",
+      "description": "Represents an event in the events gallery.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the event. (Primary Key)"
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of the event."
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "URL of the event image.",
+          "format": "uri"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the event."
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "imageUrl"
+      ]
+    },
+    "ContactMessage": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "ContactMessage",
+      "type": "object",
+      "description": "Represents a contact message submitted through the contact form.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the contact message. (Primary Key)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the sender."
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the sender.",
+          "format": "email"
+        },
+        "message": {
+          "type": "string",
+          "description": "The message content."
+        },
+        "sentAt": {
+          "type": "string",
+          "description": "Timestamp of when the message was sent.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "email",
+        "message",
+        "sentAt"
+      ]
+    },
+    "Announcement": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Announcement",
+      "type": "object",
+      "description": "Represents a temporary announcement to be displayed in a banner.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the announcement. (Primary Key)"
+        },
+        "content": {
+          "type": "string",
+          "description": "The text content of the announcement."
+        },
+        "startDate": {
+          "type": "string",
+          "description": "Date and time when the announcement should start being displayed.",
+          "format": "date-time"
+        },
+        "endDate": {
+          "type": "string",
+          "description": "Date and time when the announcement should stop being displayed.",
+          "format": "date-time"
+        },
+        "isActive": {
+          "type": "boolean",
+          "description": "Indicates whether the announcement is currently active."
+        }
+      },
+      "required": [
+        "id",
+        "content",
+        "startDate",
+        "endDate",
+        "isActive"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/users/{userId}",
+        "definition": {
+          "entityName": "User",
+          "schema": {
+            "$ref": "#/backend/entities/User"
+          },
+          "description": "Stores user profile information. Access is restricted to the user with matching userId.  No denormalization required; path-based ownership ensures authorization independence.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the user."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/testimonials/{testimonialId}",
+        "definition": {
+          "entityName": "Testimonial",
+          "schema": {
+            "$ref": "#/backend/entities/Testimonial"
+          },
+          "description": "Stores customer testimonials. Each testimonial document contains a `userProfileId` field.",
+          "params": [
+            {
+              "name": "testimonialId",
+              "description": "The unique identifier of the testimonial."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/events/{eventId}",
+        "definition": {
+          "entityName": "Event",
+          "schema": {
+            "$ref": "#/backend/entities/Event"
+          },
+          "description": "Stores event information. Public read access is assumed, with administrative write access.",
+          "params": [
+            {
+              "name": "eventId",
+              "description": "The unique identifier of the event."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/contactMessages/{contactMessageId}",
+        "definition": {
+          "entityName": "ContactMessage",
+          "schema": {
+            "$ref": "#/backend/entities/ContactMessage"
+          },
+          "description": "Stores contact messages submitted through the contact form. No user-specific access control is required.",
+          "params": [
+            {
+              "name": "contactMessageId",
+              "description": "The unique identifier of the contact message."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/announcements/{announcementId}",
+        "definition": {
+          "entityName": "Announcement",
+          "schema": {
+            "$ref": "#/backend/entities/Announcement"
+          },
+          "description": "Stores temporary announcements to be displayed in a banner. No user-specific access control is required.",
+          "params": [
+            {
+              "name": "announcementId",
+              "description": "The unique identifier of the announcement."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to ensure secure and scalable user profile management, testimonials, events, contact messages and temporary announcements.  The cornerstone of this structure is Authorization Independence, achieved through path-based ownership for `User` data and segregation of data based on access requirements. \n\n1.  **Users Collection:** The `/users/{userId}` collection stores user profiles.  Since access control is based on user ID, no denormalization is needed here. This adheres to Path-Based ownership, which is the simplest and most efficient security model.  QAPs are inherently satisfied due to the direct mapping of user ID to document access. The `signInWithGoogle` and `updateUserPhone` functions directly interact with this collection.\n\n2.  **Testimonials Collection:** The `/testimonials/{testimonialId}` collection stores customer testimonials. Each testimonial document contains a `userProfileId` field. Access control is managed with the `userProfileId`. Denormalization is needed in this case.\n\n3.  **Events Collection:** The `/events/{eventId}` collection stores event information.  Public read access is assumed, with administrative write access. Segregation ensures QAPs are met, as the entire collection shares the same access control policy.\n\n4.  **ContactMessages Collection:** The `/contactMessages/{contactMessageId}` collection stores contact messages submitted through the contact form. No user-specific access control is required as this data is intended for admin/owner access only.\n\n5.  **Announcements Collection:** The `/announcements/{announcementId}` collection stores temporary announcements to be displayed in a banner. No user-specific access control is required as this data is intended for admin/owner access only."
+  }
+}
