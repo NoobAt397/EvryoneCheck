@@ -70,7 +70,7 @@ export function AuthWidget() {
         </CardHeader>
         <CardContent>
           <Button
-            className="w-full"
+            className="w-full bg-[#22D3EE] text-[#111827] hover:bg-[#22D3EE]/90"
             onClick={() => signInWithGoogle(auth, firestore)}
           >
             Sign Up with Google
