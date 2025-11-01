@@ -35,7 +35,7 @@ export function ServicesSection() {
             Tailored solutions to help you or your organization communicate with impact.
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-1 lg:grid-cols-1 justify-center">
+        <div className="mt-12 flex justify-center">
           {services.map((service) => (
             <div 
               key={service.title}
