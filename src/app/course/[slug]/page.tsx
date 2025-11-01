@@ -19,22 +19,8 @@ const services = [
     title: 'Personal Branding Workshops',
     slug: 'personal-branding-workshops',
     description: 'Define your unique story and learn how to communicate it effectively across all platforms. This workshop will cover personal narrative development, social media strategy, and public speaking techniques to build a compelling brand.',
-    price: '$299',
+    price: '₹200',
     demoVideoUrl: 'https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/communicational%20video.mp4?alt=media&token=ba5950e8-7c78-4830-acd4-52c2dafc83d8'
-  },
-  {
-    title: 'Corporate Communication Training',
-    slug: 'corporate-communication-training',
-    description: 'Equip your team with the skills to foster a collaborative and efficient work environment. Our training focuses on internal communication strategies, conflict resolution, and effective meeting facilitation.',
-    price: '$1,500',
-    demoVideoUrl: null,
-  },
-  {
-    title: 'Public Speaking Coaching',
-    slug: 'public-speaking-coaching',
-    description: 'Overcome stage fright and master the art of delivering compelling presentations. We provide one-on-one coaching to refine your delivery, structure your content, and engage any audience.',
-    price: '$450',
-    demoVideoUrl: null,
   },
 ];
 
@@ -55,7 +41,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
-      <main className="flex-grow container mx-auto px-4 py-16 lg:py-24">
+      <main className="flex-grow container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
           <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl gradient-text mb-4">
             {service.title}
