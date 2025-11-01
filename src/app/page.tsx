@@ -3,6 +3,7 @@ import { Footer } from '@/components/layout/footer';
 import { Header } from '@/components/layout/header';
 import { AboutSection } from '@/components/sections/about-section';
 import { ContactSection } from '@/components/sections/contact-section';
+import { DownloadRibbon } from '@/components/sections/download-ribbon';
 import { EventsSection } from '@/components/sections/events-section';
 import { HeroSection } from '@/components/sections/hero-section';
 import { ServicesSection } from '@/components/sections/services-section';
@@ -15,10 +16,11 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <HeroSection />
+        <DownloadRibbon />
         <AboutSection />
         <ServicesSection />
-        <EventsSection />
         <TestimonialsSection />
+        <EventsSection />
         <ContactSection />
       </main>
       <Footer />
