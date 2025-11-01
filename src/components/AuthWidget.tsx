@@ -65,8 +65,8 @@ export function AuthWidget() {
     return (
       <Card className="w-full max-w-sm">
         <CardHeader>
-          <CardTitle>Join BrandBloom</CardTitle>
-          <CardDescription>Sign up to get started.</CardDescription>
+          <CardTitle>Join Us</CardTitle>
+          <CardDescription>Sign up with Google to continue.</CardDescription>
         </CardHeader>
         <CardContent>
           <Button
