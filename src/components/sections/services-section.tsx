@@ -15,7 +15,7 @@ import { Button } from '../ui/button';
 
 const services = [
   {
-    title: 'Personal Branding Workshops',
+    title: 'PUBLIC SPEAKING COURSE',
     slug: 'personal-branding-workshops',
     description: 'Define your unique story and learn how to communicate it effectively across all platforms.',
     price: '₹200',
@@ -35,11 +35,11 @@ export function ServicesSection() {
             Tailored solutions to help you or your organization communicate with impact.
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 justify-center">
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-1 lg:grid-cols-1 justify-center">
           {services.map((service) => (
             <div 
               key={service.title}
-              className="flex flex-col text-center rounded-lg border border-white/10"
+              className="flex flex-col text-center rounded-lg border border-white/10 max-w-sm"
               style={{
                 backgroundColor: 'rgba(255, 255, 255, 0.05)',
                 backdropFilter: 'blur(10px)',
