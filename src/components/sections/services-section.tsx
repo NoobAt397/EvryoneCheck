@@ -15,7 +15,7 @@ import { Button } from '../ui/button';
 
 const services = [
   {
-    title: 'PUBLIC SPEAKING COURSE',
+    title: 'PERSONAL TRAINING',
     slug: 'personal-branding-workshops',
     description: 'Define your unique story and learn how to communicate it effectively across all platforms.',
     price: '₹200',
