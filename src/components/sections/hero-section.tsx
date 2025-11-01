@@ -1,3 +1,4 @@
+import { AuthWidget } from '@/components/AuthWidget';
 import Link from 'next/link';
 
 export function HeroSection() {
@@ -26,7 +27,8 @@ export function HeroSection() {
           <br />
           Not everyone knows how to talk.
         </p>
-        <div className="mt-10">
+        <div className="mt-10 flex flex-col items-center gap-6">
+          <AuthWidget />
           <Link href="#services" className="glass-glow-button">
             Explore Our Services
           </Link>
