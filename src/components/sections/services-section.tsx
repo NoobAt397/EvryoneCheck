@@ -45,7 +45,7 @@ export function ServicesSection() {
                 backdropFilter: 'blur(10px)',
               }}
             >
-              <div className="flex flex-col flex-grow p-6 glass-card-content">
+              <div className="flex flex-col flex-grow p-6 glass-card-content text-center">
                 <div className="flex-grow">
                   <h3 className="text-2xl font-bold">{service.title}</h3>
                   <p className="mt-2 text-sm text-foreground/80">{service.description}</p>
