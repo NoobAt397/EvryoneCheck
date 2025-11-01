@@ -2,11 +2,22 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu } from 'lucide-react';
+import { Menu, LogIn, LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import { useFirebase, useUser } from '@/firebase';
+import { handleSignOut, signInWithGoogle } from '@/lib/auth';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const navLinks = [
   { href: '#home', label: 'Home' },
@@ -19,6 +30,9 @@ const navLinks = [
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const { user, isUserLoading } = useUser();
+  const { auth, firestore } = useFirebase();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,11 +88,47 @@ export function Header() {
             priority
           />
         </Link>
-        <nav className="hidden md:block">
-          <ul className="flex items-center gap-2">
-            {navLinks.map(renderNavLink)}
-          </ul>
-        </nav>
+        <div className='flex items-center gap-4'>
+          <nav className="hidden md:block">
+            <ul className="flex items-center gap-2">
+              {navLinks.map(renderNavLink)}
+            </ul>
+          </nav>
+          
+          {isUserLoading ? (
+            <div className="h-10 w-10 animate-pulse rounded-full bg-slate-700" />
+          ) : user ? (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="rounded-full transition-opacity hover:opacity-80">
+                  <Avatar>
+                    <AvatarImage src={user.photoURL ?? undefined} alt={user.displayName ?? 'User'} />
+                    <AvatarFallback>
+                      {user.displayName?.charAt(0) ?? user.email?.charAt(0)}
+                    </AvatarFallback>
+                  </Avatar>
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuLabel>{user.displayName}</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={() => handleSignOut(auth)}>
+                  <LogOut className="mr-2 h-4 w-4" />
+                  <span>Sign Out</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ) : (
+            <Button
+              variant="ghost"
+              className="text-slate-300 hover:bg-slate-700 hover:text-white"
+              onClick={() => signInWithGoogle(auth, firestore)}
+            >
+              <LogIn className="mr-2 h-5 w-5" />
+              Login
+            </Button>
+          )}
+        </div>
         <div className="md:hidden">
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>

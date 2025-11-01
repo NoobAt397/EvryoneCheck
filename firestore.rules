@@ -39,30 +39,18 @@ service cloud.firestore {
       return isSignedIn() && request.auth.uid == userId;
     }
 
-    /**
-     * @description Checks if the requested user ID matches the authenticated user's ID and the resource exists.
-     */
-    function isExistingOwner(userId) {
-      return isOwner(userId) && resource != null;
-    }
-
     /****************** Users Collection Rules ******************/
 
     /**
      * @description Manages user profile data.
      * @path /users/{userId}
-     * @allow (create) User 'user_abc' can create their own profile.
-     * @allow (get, update, delete) User 'user_abc' can get, update, and delete their own profile.
-     * @deny (create) User 'user_xyz' cannot create a profile for user 'user_abc'.
-     * @deny (get, update, delete) User 'user_xyz' cannot get, update, or delete user 'user_abc' profile.
+     * @allow (get, create, update) User can manage their own profile.
+     * @deny (list, delete) Listing or deleting users is not permitted.
      * @principle Enforces document ownership for all operations.
      */
     match /users/{userId} {
-      allow get: if isOwner(userId);
-      allow list: if false; // Listing users is not permitted.
-      allow create: if isOwner(userId) && request.resource.data.id == userId;
-      allow update: if isExistingOwner(userId) && request.resource.data.id == resource.data.id;
-      allow delete: if isExistingOwner(userId);
+      allow get, create, update: if isOwner(userId);
+      allow list, delete: if false; 
     }
 
     /****************** Testimonials Collection Rules ******************/
