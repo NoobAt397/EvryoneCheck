@@ -5,12 +5,9 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="hero-section flex flex-col w-full items-center justify-center pt-16 pb-12"
-      style={{
-        minHeight: '70vh',
-      }}
+      className="hero-section flex min-h-[75vh] flex-col w-full items-center justify-center px-4 py-16 text-center"
     >
-      <div className="relative z-10 container mx-auto flex flex-col items-center justify-center px-4 py-8 text-center">
+      <div className="relative z-10 container mx-auto flex flex-col items-center justify-center">
         <div className="w-full flex justify-center mb-2">
           <h1 className="hero-heading font-logo">
             COMMUNICATIONAL

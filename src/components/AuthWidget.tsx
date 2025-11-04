@@ -50,25 +50,25 @@ export function AuthWidget() {
   const isLoading = isUserLoading || (user && isLoadingFirestore);
 
   return (
-    <div className="auth-widget-card w-full max-w-sm">
+    <div className="auth-widget-card w-full max-w-sm p-8">
       {isLoading ? (
-        <div className="p-6">
+        <div>
            <div className="h-6 bg-white/20 rounded w-3/4 animate-pulse mx-auto mb-4"></div>
            <div className="h-10 bg-white/20 rounded-lg w-full animate-pulse"></div>
         </div>
       ) : !user ? (
-        <div className='p-6 text-center'>
+        <div className='text-center'>
           <h2 className='text-xl font-bold mb-2 text-white'>Join Us</h2>
           <p className='text-white/80 text-sm mb-4'>Sign up with Google to continue.</p>
           <button
-            className="hero-button w-full"
+            className="hero-button w-full !mt-0"
             onClick={() => signInWithGoogle(auth, firestore)}
           >
             Sign Up with Google
           </button>
         </div>
       ) : !userData?.phoneNumber ? (
-        <div className='p-6'>
+        <div>
            <h2 className='text-xl font-bold mb-2 text-white text-center'>Complete Your Profile</h2>
            <p className='text-white/80 text-sm mb-4 text-center'>Please provide your phone number.</p>
           <form onSubmit={handleSavePhone} className="space-y-4">
@@ -84,13 +84,13 @@ export function AuthWidget() {
                 className="auth-widget-input"
               />
             </div>
-            <button type="submit" className="hero-button w-full">
+            <button type="submit" className="hero-button w-full !mt-0">
               Save Phone Number
             </button>
           </form>
         </div>
       ) : (
-        <div className='p-6 text-center'>
+        <div className='text-center'>
           <h2 className="text-xl font-bold text-white">Welcome Back!</h2>
           <p className="mt-2 text-lg text-white/90">
             Hello, <span className="font-semibold">{user.displayName}!</span>
