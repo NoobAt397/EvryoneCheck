@@ -63,14 +63,14 @@ export function AuthWidget() {
 
   if (!user) {
     return (
-      <Card className="w-full max-w-sm">
+      <Card className="w-full max-w-sm bg-card text-card-foreground">
         <CardHeader>
           <CardTitle>Join Us</CardTitle>
           <CardDescription>Sign up with Google to continue.</CardDescription>
         </CardHeader>
         <CardContent>
           <Button
-            className="w-full bg-[#22D3EE] text-[#111827] hover:bg-[#22D3EE]/90"
+            className="w-full"
             onClick={() => signInWithGoogle(auth, firestore)}
           >
             Sign Up with Google
@@ -82,7 +82,7 @@ export function AuthWidget() {
 
   if (!userData?.phoneNumber) {
     return (
-      <Card className="w-full max-w-sm">
+      <Card className="w-full max-w-sm bg-card text-card-foreground">
         <CardHeader>
           <CardTitle>Complete Your Profile</CardTitle>
           <CardDescription>Please provide your phone number.</CardDescription>
@@ -110,7 +110,7 @@ export function AuthWidget() {
   }
 
   return (
-    <Card className="w-full max-w-sm">
+    <Card className="w-full max-w-sm bg-card text-card-foreground">
       <CardHeader>
         <CardTitle>Welcome Back!</CardTitle>
       </CardHeader>

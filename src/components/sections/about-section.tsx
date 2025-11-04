@@ -21,7 +21,7 @@ export function AboutSection() {
   const founderImages = PlaceHolderImages.filter(img => img.id.startsWith('founder'));
 
   return (
-    <section id="about" className="py-12">
+    <section id="about" className="py-16">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl gradient-text">
@@ -35,7 +35,7 @@ export function AboutSection() {
           {founders.map((founder) => {
             const founderImage = founderImages.find(img => img.id === founder.id);
             return (
-              <div key={founder.id} className="overflow-hidden rounded-xl border border-gray-200 shadow-lg">
+              <div key={founder.id} className="overflow-hidden rounded-xl border bg-card text-card-foreground shadow-lg">
                 <div className="p-0">
                   {founderImage && (
                     <div className="relative h-80 w-full bg-muted">
@@ -49,15 +49,15 @@ export function AboutSection() {
                        />
                     </div>
                   )}
-                  <div className="p-6 glass-card-content">
+                  <div className="p-6">
                     <h3 className="text-lg font-bold">{founder.name}</h3>
-                    <p className="mt-2 text-foreground/80 text-sm">"{founder.message}"</p>
+                    <p className="mt-2 text-muted-foreground text-sm">"{founder.message}"</p>
                     <div className="mt-4 flex items-center gap-4">
                       <Link href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                        <Instagram className="h-6 w-6 text-slate-400 transition-colors hover:text-primary" />
+                        <Instagram className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" />
                       </Link>
                       <Link href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <Linkedin className="h-6 w-6 text-slate-400 transition-colors hover:text-primary" />
+                        <Linkedin className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" />
                       </Link>
                     </div>
                   </div>

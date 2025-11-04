@@ -7,55 +7,55 @@
     @apply scroll-smooth;
   }
   :root {
-    --background: 60 48% 96%; /* Light Beige - updated for gradient effect */
-    --foreground: 222 84% 5%; /* Dark Slate text */
+    --background: 207 82% 94%; /* light: #E3F2FD */
+    --foreground: 215 83% 35%; /* dark: #0D47A1 */
 
-    --card: 240 10% 98%;
-    --card-foreground: 222 84% 5%;
+    --card: 207 82% 94%;
+    --card-foreground: 215 83% 35%;
 
-    --popover: 0 0% 98%;
-    --popover-foreground: 222 84% 5%;
+    --popover: 207 82% 94%;
+    --popover-foreground: 215 83% 35%;
 
-    --primary: 160 100% 35%; /* Bright Teal */
+    --primary: 207 90% 54%; /* primary: #2196F3 */
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 48 96% 69%; /* Sunny Yellow */
-    --secondary-foreground: 224 71% 10%;
+    --secondary: 187 100% 42%; /* secondary: #00BCD4 */
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 240 5% 96%; /* Light grey for alternating backgrounds */
-    --muted-foreground: 0 0% 45%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
     
-    --accent: 160 100% 50%;
+    --accent: 187 100% 42%;
     --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 240 5% 90%; /* Light grey border */
-    --input: 240 5% 90%;
-    --ring: 160 100% 35%;
-    --radius: 0.75rem; /* Increased from 0.5rem for more rounded corners */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 207 90% 54%;
+    --radius: 0.75rem;
   }
   .dark {
-    --background: 222 84% 5%; /* Dark Slate */
-    --foreground: 0 0% 98%;
-    --card: 222 84% 5%;
-    --card-foreground: 0 0% 98%;
-    --popover: 222 84% 5%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 160 100% 35%;
+    --background: 215 83% 35%; /* dark: #0D47A1 */
+    --foreground: 207 82% 94%; /* light: #E3F2FD */
+    --card: 215 83% 35%;
+    --card-foreground: 207 82% 94%;
+    --popover: 215 83% 35%;
+    --popover-foreground: 207 82% 94%;
+    --primary: 207 90% 54%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 48 96% 69%;
-    --secondary-foreground: 224 71% 10%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 160 100% 50%;
+    --secondary: 187 100% 42%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 187 100% 42%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 160 100% 35%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 207 90% 54%;
   }
 }
 
@@ -74,7 +74,7 @@
 
 @layer components {
   .gradient-text {
-    @apply bg-gradient-to-r from-teal-400 to-yellow-400 text-transparent bg-clip-text;
+    @apply bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text;
   }
 
   .primary-button {
@@ -86,36 +86,24 @@
     text-align: center;
     text-shadow: 0 0 1px transparent !important; /* Fixes rendering bug */
     line-height: 1.1;
-    /* Keep the existing gradient text styles */
-    @apply bg-gradient-to-r from-[#FFEEB3] to-[#F0F0F0] text-transparent bg-clip-text;
+    @apply text-white;
   }
 
   .glass-glow-button {
     padding: 1rem 2.5rem;
     font-weight: bold;
-    color: #22D3EE;
-    background-color: rgba(20, 10, 5, 0.4);
-    border: 2px solid rgba(34, 211, 238, 0.5);
+    color: hsl(var(--primary-foreground));
+    background-color: hsl(var(--primary));
+    border: 2px solid hsl(var(--primary));
     border-radius: 50px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 15px rgba(34, 211, 238, 0.2);
+    box-shadow: 0 0 15px hsla(var(--primary), 0.5);
     transition: all 0.3s ease;
   }
 
   .glass-glow-button:hover {
-    box-shadow: 0 0 25px rgba(34, 211, 238, 0.5);
+    box-shadow: 0 0 25px hsla(var(--primary), 0.8);
     transform: translateY(-2px);
-  }
-
-  .light .glass-glow-button {
-    background-color: #22D3EE;
-    color: #111827;
-    backdrop-filter: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
-  
-  .light .glass-glow-button:hover {
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    background-color: hsl(var(--primary) / 0.9);
   }
 
   .speech-bubble {
@@ -183,10 +171,10 @@
   }
 
   .light .glass-card-content {
-    color: #0F172A !important; /* A dark slate color */
+    color: hsl(var(--foreground)) !important;
   }
 
   .light .speech-bubble.glass-card-content > p {
-    color: #0F172A !important;
+    color: hsl(var(--foreground)) !important;
   }
 }
