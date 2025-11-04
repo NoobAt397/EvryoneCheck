@@ -25,13 +25,13 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-16 bg-foreground/5">
+    <section id="services" className="py-12 bg-foreground/5">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl gradient-text">
+          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl gradient-text">
             Our Services
           </h2>
-          <p className="mt-2 text-lg text-foreground/80">
+          <p className="mt-2 text-base text-foreground/80">
             Tailored solutions to help you or your organization communicate with impact.
           </p>
         </div>
@@ -47,7 +47,7 @@ export function ServicesSection() {
             >
               <div className="flex flex-col flex-grow p-6 glass-card-content text-center">
                 <div className="flex-grow">
-                  <h3 className="text-2xl font-bold">{service.title}</h3>
+                  <h3 className="text-xl font-bold">{service.title}</h3>
                   <p className="mt-2 text-sm text-foreground/80">{service.description}</p>
                 </div>
                 <div className="mt-6">

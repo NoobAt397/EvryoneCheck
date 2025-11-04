@@ -22,7 +22,7 @@ export function HeroSection() {
             COMMUNICATIONAL
           </h1>
         </div>
-        <p className="mt-6 max-w-3xl text-lg text-white md:text-xl">
+        <p className="mt-6 max-w-3xl text-base text-white md:text-lg">
           Everyone knows how to speak,
           <br />
           Not everyone knows how to talk.

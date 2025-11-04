@@ -21,13 +21,13 @@ export function AboutSection() {
   const founderImages = PlaceHolderImages.filter(img => img.id.startsWith('founder'));
 
   return (
-    <section id="about" className="py-16">
+    <section id="about" className="py-12">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl gradient-text">
+          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl gradient-text">
             Meet Our Founders
           </h2>
-          <p className="mt-2 text-lg text-foreground/80">
+          <p className="mt-2 text-base text-foreground/80">
             The driving force behind our vision of clearer communication.
           </p>
         </div>
@@ -50,8 +50,8 @@ export function AboutSection() {
                     </div>
                   )}
                   <div className="p-6 glass-card-content">
-                    <h3 className="text-xl font-bold">{founder.name}</h3>
-                    <p className="mt-2 text-foreground/80">"{founder.message}"</p>
+                    <h3 className="text-lg font-bold">{founder.name}</h3>
+                    <p className="mt-2 text-foreground/80 text-sm">"{founder.message}"</p>
                     <div className="mt-4 flex items-center gap-4">
                       <Link href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                         <Instagram className="h-6 w-6 text-slate-400 transition-colors hover:text-primary" />
