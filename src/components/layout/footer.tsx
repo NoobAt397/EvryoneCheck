@@ -26,13 +26,13 @@ export function Footer() {
           </Link>
           <div className="flex items-center gap-4">
             <Link href="#" aria-label="Instagram">
-              <Instagram className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" />
+              <Instagram className="h-6 w-6 text-muted-foreground transition-colors duration-200 ease-in-out hover:text-primary" />
             </Link>
             <Link href="#" aria-label="LinkedIn">
-              <Linkedin className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" />
+              <Linkedin className="h-6 w-6 text-muted-foreground transition-colors duration-200 ease-in-out hover:text-primary" />
             </Link>
             <Link href="#" aria-label="Twitter">
-              <Twitter className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" />
+              <Twitter className="h-6 w-6 text-muted-foreground transition-colors duration-200 ease-in-out hover:text-primary" />
             </Link>
           </div>
         </div>

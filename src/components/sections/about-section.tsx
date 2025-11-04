@@ -50,8 +50,8 @@ export function AboutSection() {
                     </div>
                   )}
                   <div className="p-6">
-                    <h3 className="text-lg font-bold">{founder.name}</h3>
-                    <p className="mt-2 text-muted-foreground text-sm">"{founder.message}"</p>
+                    <h3 className="text-lg font-bold font-headline">{founder.name}</h3>
+                    <p className="mt-2 text-muted-foreground text-sm font-body leading-relaxed">"{founder.message}"</p>
                     <div className="mt-4 flex items-center gap-4">
                       <Link href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                         <Instagram className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" />
