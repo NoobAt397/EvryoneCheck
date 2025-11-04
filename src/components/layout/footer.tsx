@@ -12,7 +12,7 @@ export function Footer() {
   }, []);
 
   return (
-    <footer className="bg-background/80 text-foreground">
+    <footer className="bg-background text-foreground">
       <div className="container mx-auto px-4 py-6 md:px-6">
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <Link href="#home" className="flex items-center gap-2 font-bold text-lg">

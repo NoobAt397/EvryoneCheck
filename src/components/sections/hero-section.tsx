@@ -5,18 +5,18 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="hero-section relative flex flex-col w-full items-center justify-center overflow-hidden"
+      className="hero-section flex flex-col w-full items-center justify-center pt-16 pb-12"
       style={{
-        minHeight: 'calc(100vh - 6rem)',
+        minHeight: '70vh',
       }}
     >
       <div className="relative z-10 container mx-auto flex flex-col items-center justify-center px-4 py-8 text-center">
         <div className="w-full flex justify-center mb-2">
-          <h1 className="hero-heading font-logo text-white">
+          <h1 className="hero-heading font-logo">
             COMMUNICATIONAL
           </h1>
         </div>
-        <p className="mt-4 mb-7 max-w-3xl text-lg text-white/90 md:text-xl">
+        <p className="max-w-2xl text-lg text-white/90 mx-auto mb-8 md:text-xl">
           Everyone knows how to speak,
           <br />
           Not everyone knows how to talk.
