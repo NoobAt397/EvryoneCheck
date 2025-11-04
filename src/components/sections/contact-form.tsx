@@ -16,10 +16,10 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-lg border border-gray-200">
+      <div className="contact-form-container">
         <div className="p-8 text-center">
           <CheckCircle className="mx-auto h-12 w-12 text-green-500" />
-          <h3 className="mt-4 text-2xl font-semibold">Thank you!</h3>
+          <h3 className="mt-4 text-2xl font-semibold" style={{ color: '#0D47A1' }}>Thank you!</h3>
           <p className="mt-2 text-muted-foreground">
             We'll be in touch soon.
           </p>
@@ -29,33 +29,34 @@ export function ContactForm() {
   }
 
   return (
-    <div className="rounded-lg border border-gray-200">
+    <div className="contact-form-container">
       <div className="p-8">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
-            <Label htmlFor="name">Name</Label>
-            <Input id="name" type="text" placeholder="Your Name" required />
+            <Label htmlFor="name" className="contact-form-label">Name</Label>
+            <Input id="name" type="text" placeholder="Your Name" required className="contact-form-input" />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email" className="contact-form-label">Email</Label>
             <input
               id="email"
               type="email"
               placeholder="your@email.com"
               required
-              className="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              className="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 contact-form-input"
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="message">Message</Label>
+            <Label htmlFor="message" className="contact-form-label">Message</Label>
             <Textarea
               id="message"
               placeholder="How can we help you?"
               required
               rows={5}
+              className="contact-form-textarea"
             />
           </div>
-          <button type="submit" className="glass-glow-button w-full">
+          <button type="submit" className="contact-form-button w-full">
             Send Message
           </button>
         </form>
