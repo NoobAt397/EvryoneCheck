@@ -43,7 +43,7 @@ export function AboutSection() {
                           src={founderImage.imageUrl}
                           alt={founderImage.description}
                           fill
-                          className="object-cover object-top rounded-t-2xl"
+                          className="object-contain object-top rounded-t-2xl"
                           data-ai-hint={founderImage.imageHint}
                           quality={100}
                        />
