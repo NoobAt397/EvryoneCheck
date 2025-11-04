@@ -121,10 +121,10 @@ export function Header() {
           ) : (
             <Button
               variant="ghost"
-              className="text-slate-300 hover:bg-slate-700 hover:text-white"
+              className="hidden md:inline-flex text-slate-300 hover:bg-slate-700 hover:text-white"
               onClick={() => signInWithGoogle(auth, firestore)}
             >
-              <LogIn className="mr-2 h-5 w-5" />
+              Sign Up
             </Button>
           )}
         </div>
@@ -157,6 +157,33 @@ export function Header() {
                 <nav className="mt-6 flex-grow">
                   <ul className="flex flex-col gap-4">
                     {navLinks.map(mobileRenderNavLink)}
+                     <li>
+                      {user ? (
+                        <Button
+                          className="w-full justify-start"
+                          variant="ghost"
+                          onClick={() => {
+                            handleSignOut(auth);
+                            setIsMobileMenuOpen(false);
+                          }}
+                        >
+                          <LogOut className="mr-2 h-4 w-4" />
+                          Sign Out
+                        </Button>
+                      ) : (
+                        <Button
+                          className="w-full justify-start"
+                          variant="ghost"
+                          onClick={() => {
+                            signInWithGoogle(auth, firestore);
+                            setIsMobileMenuOpen(false);
+                          }}
+                        >
+                          <LogIn className="mr-2 h-4 w-4" />
+                          Sign Up
+                        </Button>
+                      )}
+                    </li>
                   </ul>
                 </nav>
               </div>
