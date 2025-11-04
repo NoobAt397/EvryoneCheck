@@ -118,7 +118,10 @@
 
 @layer components {
   .hero-section {
-    background: linear-gradient(135deg, #00BCD4 0%, #0288D1 50%, #0D47A1 100%);
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/Untitled%20design%20(9).png?alt=media&token=780b8978-4e19-49fb-9b7a-f9343b51d92a');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
     color: white;
@@ -127,9 +130,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
-    pointer-events: none;
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
     z-index: 0;
   }
   .hero-section::after {
@@ -145,13 +146,13 @@
   }
 
   .hero-heading {
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 0.5rem;
-    background: linear-gradient(90deg, hsl(var(--accent)), #E3F2FD);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 3px 8px rgba(13, 71, 161, 0.4);
+    position: relative;
+    z-index: 2;
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
     animation: fadeIn 1.2s ease-out;
   }
 
