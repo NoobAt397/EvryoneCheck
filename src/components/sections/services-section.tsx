@@ -39,7 +39,7 @@ export function ServicesSection() {
           {services.map((service) => (
             <div 
               key={service.title}
-              className="flex flex-col text-center rounded-lg border bg-card text-card-foreground shadow-lg max-w-sm"
+              className="flex flex-col text-center rounded-2xl border bg-card text-card-foreground shadow-lg max-w-sm interactive-element"
             >
               <div className="flex flex-col flex-grow p-6 text-center">
                 <div className="flex-grow">

@@ -10,9 +10,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['PT Sans', 'sans-serif'],
-        headline: ['PT Sans', 'sans-serif'],
-        logo: ['Orbitron', 'sans-serif'],
+        body: ['var(--font-inter)', 'sans-serif'],
+        headline: ['var(--font-poppins)', 'sans-serif'],
+        logo: ['var(--font-poppins)', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {

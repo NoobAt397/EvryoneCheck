@@ -35,7 +35,7 @@ export function AboutSection() {
           {founders.map((founder) => {
             const founderImage = founderImages.find(img => img.id === founder.id);
             return (
-              <div key={founder.id} className="overflow-hidden rounded-xl border bg-card text-card-foreground shadow-lg">
+              <div key={founder.id} className="overflow-hidden rounded-2xl border bg-card text-card-foreground shadow-lg interactive-element">
                 <div className="p-0">
                   {founderImage && (
                     <div className="relative h-80 w-full bg-muted">
@@ -43,7 +43,7 @@ export function AboutSection() {
                           src={founderImage.imageUrl}
                           alt={founderImage.description}
                           fill
-                          className="object-contain rounded-t-xl"
+                          className="object-contain rounded-t-2xl"
                           data-ai-hint={founderImage.imageHint}
                           quality={100}
                        />

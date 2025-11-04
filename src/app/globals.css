@@ -34,7 +34,7 @@
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 207 90% 54%;
-    --radius: 0.75rem;
+    --radius: 1rem; /* 16px */
   }
   .dark {
     --background: 215 83% 35%; /* dark: #0D47A1 */
@@ -59,6 +59,15 @@
   }
 }
 
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -68,7 +77,9 @@
   }
 
   .light body {
-    background-image: linear-gradient(to right, #e0f7fa, #e3f2fd);
+    background: linear-gradient(120deg, #bbdefb, #b2ebf2);
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite alternate;
   }
 }
 
@@ -96,14 +107,13 @@
     background-color: hsl(var(--primary));
     border: 2px solid hsl(var(--primary));
     border-radius: 50px;
-    box-shadow: 0 0 15px hsla(var(--primary), 0.5);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1), inset 0 1px 2px rgba(255,255,255,0.5);
+    transition: all 0.2s ease;
   }
 
   .glass-glow-button:hover {
-    box-shadow: 0 0 25px hsla(var(--primary), 0.8);
-    transform: translateY(-2px);
-    background-color: hsl(var(--primary) / 0.9);
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px hsla(var(--primary), 0.4), inset 0 1px 2px rgba(255,255,255,0.5);
   }
 
   .speech-bubble {
@@ -114,11 +124,12 @@
     border-radius: 1.5rem;
     padding: 2rem;
     transform: rotate(var(--tw-rotate, 0));
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1), inset 0 1px 2px rgba(255,255,255,0.2);
   }
   
   .speech-bubble:hover {
-    transform: scale(1.05) rotate(var(--tw-rotate, 0));
+    transform: scale(1.02) rotate(var(--tw-rotate, 0));
   }
   
   .speech-bubble::after {
@@ -176,5 +187,13 @@
 
   .light .speech-bubble.glass-card-content > p {
     color: hsl(var(--foreground)) !important;
+  }
+
+  .interactive-element {
+    transition: transform 0.2s ease;
+  }
+
+  .interactive-element:hover {
+    transform: scale(1.02);
   }
 }
