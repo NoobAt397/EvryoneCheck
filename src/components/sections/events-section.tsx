@@ -18,7 +18,7 @@ export function EventsSection() {
         </div>
         <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {eventImages.map((image) => (
-            <div key={image.id} className="overflow-hidden rounded-2xl border bg-card text-card-foreground shadow-lg interactive-element">
+            <div key={image.id} className="overflow-hidden rounded-2xl border bg-card/80 text-card-foreground shadow-lg interactive-element">
               <div className="p-0">
                 <div className="relative aspect-[4/3] w-full">
                   <Image
