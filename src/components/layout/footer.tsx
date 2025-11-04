@@ -12,31 +12,31 @@ export function Footer() {
   }, []);
 
   return (
-    <footer className="bg-slate-900 text-slate-300">
-      <div className="container mx-auto px-4 py-8 md:px-6">
+    <footer className="bg-slate-100 text-slate-600">
+      <div className="container mx-auto px-4 py-6 md:px-6">
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <Link href="#home" className="flex items-center gap-2 font-bold text-lg">
             <Image 
               src="https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/Blue%20Modern%20Podcast%20Typographic%20Logo.png?alt=media&token=1f54d3a7-3088-486f-be18-aa917a2fadf9" 
               alt="COMMUNICATIONAL Logo"
-              width={346}
-              height={150}
-              className="h-[150px] w-auto"
+              width={277}
+              height={120}
+              className="h-[120px] w-auto"
             />
           </Link>
           <div className="flex items-center gap-4">
             <Link href="#" aria-label="Instagram">
-              <Instagram className="h-6 w-6 text-slate-400 transition-colors hover:text-white" />
+              <Instagram className="h-6 w-6 text-slate-500 transition-colors hover:text-primary" />
             </Link>
             <Link href="#" aria-label="LinkedIn">
-              <Linkedin className="h-6 w-6 text-slate-400 transition-colors hover:text-white" />
+              <Linkedin className="h-6 w-6 text-slate-500 transition-colors hover:text-primary" />
             </Link>
             <Link href="#" aria-label="Twitter">
-              <Twitter className="h-6 w-6 text-slate-400 transition-colors hover:text-white" />
+              <Twitter className="h-6 w-6 text-slate-500 transition-colors hover:text-primary" />
             </Link>
           </div>
         </div>
-        <div className="mt-6 border-t border-slate-700 pt-6 text-center text-sm text-slate-400">
+        <div className="mt-6 border-t border-slate-200 pt-6 text-center text-sm text-slate-500">
           <p>&copy; {currentYear ?? ''} COMMUNICATIONAL. All rights reserved.</p>
         </div>
       </div>
