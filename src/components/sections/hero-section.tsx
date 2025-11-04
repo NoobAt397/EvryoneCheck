@@ -5,23 +5,23 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="hero-section relative grid w-full place-items-center overflow-hidden pt-16 md:pt-0"
+      className="hero-section relative flex flex-col w-full items-center justify-center overflow-hidden"
       style={{
-        minHeight: '100vh',
+        minHeight: 'calc(100vh - 6rem)',
       }}
     >
-      <div className="relative z-10 container mx-auto flex flex-col items-center justify-center px-4 py-8 text-center sm:py-0">
-        <div className="w-full flex justify-center">
+      <div className="relative z-10 container mx-auto flex flex-col items-center justify-center px-4 py-8 text-center">
+        <div className="w-full flex justify-center mb-2">
           <h1 className="hero-heading font-logo text-white">
             COMMUNICATIONAL
           </h1>
         </div>
-        <p className="mt-6 max-w-3xl text-base text-white/90 md:text-lg">
+        <p className="mt-4 mb-7 max-w-3xl text-lg text-white/90 md:text-xl">
           Everyone knows how to speak,
           <br />
           Not everyone knows how to talk.
         </p>
-        <div className="mt-10 flex flex-col items-center gap-6">
+        <div className="flex flex-col items-center gap-6">
           <AuthWidget />
           <Link href="#services" className="hero-button">
             Explore Our Services
