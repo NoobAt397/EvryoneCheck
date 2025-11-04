@@ -11,7 +11,7 @@ import { TestimonialsSection } from '@/components/sections/testimonials-section'
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-background">
+    <div className="flex min-h-screen flex-col">
       <AnnouncementBanner />
       <Header />
       <main className="flex-grow">

@@ -7,7 +7,7 @@
     @apply scroll-smooth;
   }
   :root {
-    --background: 240 10% 98%; /* Off-white */
+    --background: 60 48% 96%; /* Light Beige - updated for gradient effect */
     --foreground: 222 84% 5%; /* Dark Slate text */
 
     --card: 240 10% 98%;
@@ -34,7 +34,7 @@
     --border: 240 5% 90%; /* Light grey border */
     --input: 240 5% 90%;
     --ring: 160 100% 35%;
-    --radius: 0.5rem;
+    --radius: 0.75rem; /* Increased from 0.5rem for more rounded corners */
   }
   .dark {
     --background: 222 84% 5%; /* Dark Slate */
@@ -65,6 +65,10 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  .light body {
+    background-image: linear-gradient(to right, #e0f7fa, #e3f2fd);
   }
 }
 
@@ -107,11 +111,11 @@
     background-color: #22D3EE;
     color: #111827;
     backdrop-filter: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
   
   .light .glass-glow-button:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
   }
 
   .speech-bubble {
