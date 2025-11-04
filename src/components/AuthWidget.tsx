@@ -4,10 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { useUser, useFirebase } from '@/firebase';
 import { doc, getDoc } from 'firebase/firestore';
 import { signInWithGoogle, updateUserPhone } from '@/lib/auth';
-import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
 
 export function AuthWidget() {
   const { user, isUserLoading } = useUser();
@@ -29,13 +27,16 @@ export function AuthWidget() {
           setIsLoadingFirestore(false);
         })
         .catch((error) => {
-          console.error("Error fetching user data:", error);
+          console.error('Error fetching user data:', error);
           setIsLoadingFirestore(false);
         });
-    } else {
+    } else if (!user) {
+      // If there's no user, we're not loading any specific data
+      setUserData(null);
       setIsLoadingFirestore(false);
     }
   }, [user, firestore]);
+
 
   const handleSavePhone = (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,51 +47,33 @@ export function AuthWidget() {
     }
   };
   
-  const isLoading = isUserLoading || isLoadingFirestore;
+  const isLoading = isUserLoading || (user && isLoadingFirestore);
 
-  if (isLoading) {
-    return (
-      <Card className="w-full max-w-sm">
-        <CardHeader>
-          <div className="h-6 bg-muted rounded w-3/4 animate-pulse"></div>
-        </CardHeader>
-        <CardContent>
-          <div className="h-10 bg-muted rounded w-full animate-pulse"></div>
-        </CardContent>
-      </Card>
-    );
-  }
-
-  if (!user) {
-    return (
-      <Card className="w-full max-w-sm bg-card text-card-foreground">
-        <CardHeader>
-          <CardTitle>Join Us</CardTitle>
-          <CardDescription>Sign up with Google to continue.</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Button
-            className="w-full"
+  return (
+    <div className="auth-widget-card w-full max-w-sm">
+      {isLoading ? (
+        <div className="p-6">
+           <div className="h-6 bg-white/20 rounded w-3/4 animate-pulse mx-auto mb-4"></div>
+           <div className="h-10 bg-white/20 rounded-lg w-full animate-pulse"></div>
+        </div>
+      ) : !user ? (
+        <div className='p-6 text-center'>
+          <h2 className='text-xl font-bold mb-2 text-white'>Join Us</h2>
+          <p className='text-white/80 text-sm mb-4'>Sign up with Google to continue.</p>
+          <button
+            className="hero-button w-full"
             onClick={() => signInWithGoogle(auth, firestore)}
           >
             Sign Up with Google
-          </Button>
-        </CardContent>
-      </Card>
-    );
-  }
-
-  if (!userData?.phoneNumber) {
-    return (
-      <Card className="w-full max-w-sm bg-card text-card-foreground">
-        <CardHeader>
-          <CardTitle>Complete Your Profile</CardTitle>
-          <CardDescription>Please provide your phone number.</CardDescription>
-        </CardHeader>
-        <CardContent>
+          </button>
+        </div>
+      ) : !userData?.phoneNumber ? (
+        <div className='p-6'>
+           <h2 className='text-xl font-bold mb-2 text-white text-center'>Complete Your Profile</h2>
+           <p className='text-white/80 text-sm mb-4 text-center'>Please provide your phone number.</p>
           <form onSubmit={handleSavePhone} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="phone">Phone Number</Label>
+              <Label htmlFor="phone" className='text-white/90'>Phone Number</Label>
               <Input
                 id="phone"
                 type="tel"
@@ -98,27 +81,22 @@ export function AuthWidget() {
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="e.g., +1 555-123-4567"
                 required
+                className="auth-widget-input"
               />
             </div>
-            <Button type="submit" className="w-full">
+            <button type="submit" className="hero-button w-full">
               Save Phone Number
-            </Button>
+            </button>
           </form>
-        </CardContent>
-      </Card>
-    );
-  }
-
-  return (
-    <Card className="w-full max-w-sm bg-card text-card-foreground">
-      <CardHeader>
-        <CardTitle>Welcome Back!</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p className="text-center text-lg">
-          Hello, <span className="font-semibold">{user.displayName}!</span>
-        </p>
-      </CardContent>
-    </Card>
+        </div>
+      ) : (
+        <div className='p-6 text-center'>
+          <h2 className="text-xl font-bold text-white">Welcome Back!</h2>
+          <p className="mt-2 text-lg text-white/90">
+            Hello, <span className="font-semibold">{user.displayName}!</span>
+          </p>
+        </div>
+      )}
+    </div>
   );
 }
