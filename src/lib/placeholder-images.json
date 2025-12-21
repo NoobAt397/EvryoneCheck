@@ -3,13 +3,13 @@
     {
       "id": "founder1",
       "description": "Photo of Bineet Singh Chawla",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/bineetimage.jpg?alt=media&token=ce1796e9-fc99-4008-b739-56aebc4c6651",
+      "imageUrl": "/bineetimage1.png",
       "imageHint": "founder portrait"
     },
     {
       "id": "founder2",
       "description": "Photo of Sanskaar Dutt",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/sanskaar.jpg?alt=media&token=b687867e-1914-40b2-86a6-c8f4a4954bf7",
+      "imageUrl": "/sanskaarimage1.png",
       "imageHint": "professional headshot"
     },
     {

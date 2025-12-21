@@ -39,15 +39,15 @@ export function AboutSection() {
                 <div className="p-0">
                   {founderImage && (
                     <div className="relative h-80 w-full bg-accent/20">
-                       <Image
-                          src={founderImage.imageUrl}
-                          alt={founderImage.description}
-                          fill
-                          className="object-contain object-top"
-                          data-ai-hint={founderImage.imageHint}
-                          quality={100}
-                          sizes="(max-width: 768px) 100vw, 50vw"
-                       />
+                      <Image
+                        src={founderImage.imageUrl}
+                        alt={founderImage.description}
+                        fill
+                        className="object-contain object-top"
+                        data-ai-hint={founderImage.imageHint}
+                        unoptimized
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
                     </div>
                   )}
                   <div className="p-6">

@@ -28,7 +28,7 @@ export function EventsSection() {
                     className="object-cover"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     data-ai-hint={image.imageHint}
-                    quality={100}
+                    unoptimized
                   />
                 </div>
               </div>

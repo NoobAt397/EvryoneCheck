@@ -7,8 +7,8 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import { useFirebase, useUser } from '@/firebase';
-import { handleSignOut, signInWithGoogle } from '@/lib/auth';
+import { useUser } from '@/supabase';
+import { handleSignOut, signInWithGoogle } from '@/supabase/auth';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -32,7 +32,6 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const { user, isUserLoading } = useUser();
-  const { auth, firestore } = useFirebase();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,7 +53,7 @@ export function Header() {
       </a>
     </li>
   );
-  
+
   const mobileRenderNavLink = (link: typeof navLinks[0]) => (
     <li key={link.href}>
       <a
@@ -67,6 +66,10 @@ export function Header() {
     </li>
   );
 
+  // Get user display info from Supabase user metadata
+  const displayName = user?.user_metadata?.full_name || user?.email?.split('@')[0] || 'User';
+  const photoURL = user?.user_metadata?.avatar_url;
+
   return (
     <header
       className={cn(
@@ -78,14 +81,14 @@ export function Header() {
     >
       <div className="container mx-auto flex h-24 items-center justify-between px-4 md:px-6">
         <Link href="#home" className="flex items-center gap-2 text-lg font-bold -ml-8">
-          <Image 
-            src="https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/Blue%20Modern%20Podcast%20Typographic%20Logo.png?alt=media&token=1f54d3a7-3088-486f-be18-aa917a2fadf9" 
+          <Image
+            src="/communicational logo.png"
             alt="COMMUNICATIONAL Logo"
-            width={346}
-            height={150}
-            className="h-[150px] w-auto"
-            style={{ mixBlendMode: 'lighten' }}
+            width={280}
+            height={56}
+            className="h-14 w-auto object-contain"
             priority
+            unoptimized
           />
         </Link>
         <div className='flex items-center gap-4'>
@@ -94,7 +97,7 @@ export function Header() {
               {navLinks.map(renderNavLink)}
             </ul>
           </nav>
-          
+
           {isUserLoading ? (
             <div className="h-10 w-10 animate-pulse rounded-full bg-slate-700" />
           ) : user ? (
@@ -102,17 +105,17 @@ export function Header() {
               <DropdownMenuTrigger asChild>
                 <button className="rounded-full transition-opacity hover:opacity-80">
                   <Avatar>
-                    <AvatarImage src={user.photoURL ?? undefined} alt={user.displayName ?? 'User'} />
+                    <AvatarImage src={photoURL ?? undefined} alt={displayName} />
                     <AvatarFallback>
-                      {user.displayName?.charAt(0) ?? user.email?.charAt(0)}
+                      {displayName.charAt(0)}
                     </AvatarFallback>
                   </Avatar>
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuLabel>{user.displayName}</DropdownMenuLabel>
+                <DropdownMenuLabel>{displayName}</DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={() => handleSignOut(auth)}>
+                <DropdownMenuItem onClick={() => handleSignOut()}>
                   <LogOut className="mr-2 h-4 w-4" />
                   <span>Sign Out</span>
                 </DropdownMenuItem>
@@ -122,7 +125,7 @@ export function Header() {
             <Button
               variant="ghost"
               className="hidden md:inline-flex text-slate-300 hover:bg-slate-700 hover:text-white"
-              onClick={() => signInWithGoogle(auth, firestore)}
+              onClick={() => signInWithGoogle()}
             >
               Sign Up
             </Button>
@@ -144,26 +147,26 @@ export function Header() {
                     className="flex items-center gap-2 font-bold"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                     <Image 
-                        src="https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/Blue%20Modern%20Podcast%20Typographic%20Logo.png?alt=media&token=1f54d3a7-3088-486f-be18-aa917a2fadf9" 
-                        alt="COMMUNICATIONAL Logo"
-                        width={346}
-                        height={150}
-                        style={{ mixBlendMode: 'lighten' }}
-                        className="h-[150px] w-auto"
-                     />
+                    <Image
+                      src="/communicational logo.png"
+                      alt="COMMUNICATIONAL Logo"
+                      width={280}
+                      height={56}
+                      className="h-14 w-auto object-contain"
+                      unoptimized
+                    />
                   </Link>
                 </div>
                 <nav className="mt-6 flex-grow">
                   <ul className="flex flex-col gap-4">
                     {navLinks.map(mobileRenderNavLink)}
-                     <li>
+                    <li>
                       {user ? (
                         <Button
                           className="w-full justify-start"
                           variant="ghost"
                           onClick={() => {
-                            handleSignOut(auth);
+                            handleSignOut();
                             setIsMobileMenuOpen(false);
                           }}
                         >
@@ -175,7 +178,7 @@ export function Header() {
                           className="w-full justify-start"
                           variant="ghost"
                           onClick={() => {
-                            signInWithGoogle(auth, firestore);
+                            signInWithGoogle();
                             setIsMobileMenuOpen(false);
                           }}
                         >

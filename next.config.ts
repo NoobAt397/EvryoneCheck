@@ -1,4 +1,4 @@
-import type {NextConfig} from 'next';
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -9,6 +9,8 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
+    // This fixes the "quality 100" and "412" errors by disabling server-side resizing
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -37,5 +39,5 @@ const nextConfig: NextConfig = {
     ],
   },
 };
-// Force server restart to clear cache
+
 export default nextConfig;

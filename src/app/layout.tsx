@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
-import { FirebaseClientProvider } from '@/firebase/client-provider';
+import { SupabaseProvider } from '@/supabase/provider';
 import { Poppins, Inter } from 'next/font/google';
 
 const poppins = Poppins({
@@ -35,9 +35,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="font-body antialiased bg-background">
-        <FirebaseClientProvider>
+        <SupabaseProvider>
           {children}
-        </FirebaseClientProvider>
+        </SupabaseProvider>
         <Toaster />
       </body>
     </html>
