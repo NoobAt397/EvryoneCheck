@@ -148,19 +148,26 @@
   .hero-heading {
     position: relative;
     z-index: 2;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 900;
     letter-spacing: 1.5px;
     color: #ffffff;
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
     animation: fadeIn 1.2s ease-out;
   }
+  
+  @media (min-width: 768px) {
+    .hero-heading {
+      font-size: 4rem;
+    }
+  }
+
 
   .hero-paragraph {
     max-width: 850px;
     margin: 0 auto 2rem auto;
     line-height: 1.6;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: rgba(255, 255, 255, 0.95);
     text-align: center;
     letter-spacing: 0.3px;
@@ -169,9 +176,9 @@
     opacity: 0;
   }
   
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     .hero-paragraph {
-      font-size: 1rem;
+      font-size: 1.1rem;
       max-width: 90%;
     }
   }
@@ -255,7 +262,7 @@
 
   .glass-glow-button:hover {
     transform: scale(1.02);
-    box-shadow: 0 6px 12px hsla(var(--primary), 0.4), inset 0 1px 2px rgba(255,255,255,0.5);
+    box-shadow: 0 6px 12px hsla(var(--primary), 0.4), inset 0 1px 2px rgba(255,255,0.5);
   }
 
   .speech-bubble {

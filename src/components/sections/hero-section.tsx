@@ -5,7 +5,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="hero-section flex min-h-[75vh] flex-col w-full items-center justify-center px-4 py-16 text-center"
+      className="hero-section flex min-h-[75vh] md:min-h-[70vh] flex-col w-full items-center justify-center px-4 py-16 text-center"
     >
       <div className="relative z-10 container mx-auto flex flex-col items-center justify-center">
         <div className="w-full flex justify-center mb-2">

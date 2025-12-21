@@ -16,7 +16,7 @@ export function EventsSection() {
             Moments of connection and growth from our workshops and gatherings.
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 md:gap-8">
           {eventImages.map((image) => (
             <div key={image.id} className="overflow-hidden rounded-2xl border bg-card/80 text-card-foreground shadow-lg interactive-element">
               <div className="p-0">

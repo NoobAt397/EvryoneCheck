@@ -38,14 +38,15 @@ export function AboutSection() {
               <div key={founder.id} className="overflow-hidden rounded-2xl border bg-card text-card-foreground shadow-lg interactive-element">
                 <div className="p-0">
                   {founderImage && (
-                    <div className="relative h-80 w-full bg-card">
+                    <div className="relative h-80 w-full bg-accent/20">
                        <Image
                           src={founderImage.imageUrl}
                           alt={founderImage.description}
                           fill
-                          className="object-contain object-center bg-accent/20"
+                          className="object-contain object-top"
                           data-ai-hint={founderImage.imageHint}
                           quality={100}
+                          sizes="(max-width: 768px) 100vw, 50vw"
                        />
                     </div>
                   )}
