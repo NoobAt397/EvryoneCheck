@@ -38,7 +38,7 @@ export function AnnouncementBanner() {
     }
   };
 
-  if (!isMounted) {
+  if (!isMounted || !isVisible) {
     return null;
   }
 
