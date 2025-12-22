@@ -59,8 +59,8 @@ export function AuthWidget() {
         </div>
       ) : !user ? (
         <div className='text-center'>
-          <h2 className='text-xl font-bold mb-2 text-white'>Join Us</h2>
-          <p className='text-white/80 text-sm mb-4'>Sign up with Google to continue.</p>
+          <h2 className='text-xl font-bold mb-2 text-[#0D47A1]'>Join Us</h2>
+          <p className='text-[#1565C0] text-sm mb-4'>Sign up with Google to continue.</p>
           <button
             className="hero-button w-full !mt-0"
             onClick={() => signInWithGoogle()}
@@ -70,11 +70,11 @@ export function AuthWidget() {
         </div>
       ) : !userData?.phone_number ? (
         <div>
-          <h2 className='text-xl font-bold mb-2 text-white text-center'>Complete Your Profile</h2>
-          <p className='text-white/80 text-sm mb-4 text-center'>Please provide your phone number.</p>
+          <h2 className='text-xl font-bold mb-2 text-[#0D47A1] text-center'>Complete Your Profile</h2>
+          <p className='text-[#1565C0] text-sm mb-4 text-center'>Please provide your phone number.</p>
           <form onSubmit={handleSavePhone} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="phone" className='text-white/90'>Phone Number</Label>
+              <Label htmlFor="phone" className='text-[#0D47A1]'>Phone Number</Label>
               <Input
                 id="phone"
                 type="tel"
@@ -92,8 +92,8 @@ export function AuthWidget() {
         </div>
       ) : (
         <div className='text-center'>
-          <h2 className="text-xl font-bold text-white">Welcome Back!</h2>
-          <p className="mt-2 text-lg text-white/90">
+          <h2 className="text-xl font-bold text-[#0D47A1]">Welcome Back!</h2>
+          <p className="mt-2 text-lg text-[#1565C0]">
             Hello, <span className="font-semibold">{displayName}!</span>
           </p>
         </div>

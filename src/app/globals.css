@@ -6,9 +6,12 @@
   html {
     @apply scroll-smooth;
   }
+
   :root {
-    --background: 204 100% 97%; /* #EBFBFF */
-    --foreground: 220 39% 15%; /* dark blue: #1A2A3A */
+    --background: 204 100% 97%;
+    /* #EBFBFF */
+    --foreground: 220 39% 15%;
+    /* dark blue: #1A2A3A */
 
     --card: 48 43% 96%;
     --card-foreground: 220 39% 15%;
@@ -16,16 +19,19 @@
     --popover: 48 43% 96%;
     --popover-foreground: 220 39% 15%;
 
-    --primary: 214 89% 52%; /* primary: #2196F3 */
+    --primary: 214 89% 52%;
+    /* primary: #2196F3 */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 188 100% 42%; /* secondary: #00BCD4 */
+    --secondary: 188 100% 42%;
+    /* secondary: #00BCD4 */
     --secondary-foreground: 210 40% 98%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    
-    --accent: 204 90% 89%; /* accent: #B3E5FC */
+
+    --accent: 204 90% 89%;
+    /* accent: #B3E5FC */
     --accent-foreground: 220 39% 15%;
 
     --destructive: 0 84.2% 60.2%;
@@ -34,11 +40,15 @@
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 214 89% 52%;
-    --radius: 1rem; /* 16px */
+    --radius: 1rem;
+    /* 16px */
   }
+
   .dark {
-    --background: 220 39% 10%; /* dark: #0D1117 */
-    --foreground: 210 40% 98%; /* light: #FAFAFA */
+    --background: 220 39% 10%;
+    /* dark: #0D1117 */
+    --foreground: 210 40% 98%;
+    /* light: #FAFAFA */
     --card: 220 39% 10%;
     --card-foreground: 210 40% 98%;
     --popover: 220 39% 10%;
@@ -63,28 +73,52 @@
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
 
 @keyframes gradientFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeInText {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideDown {
@@ -92,10 +126,12 @@
     transform: translateY(-100%);
     opacity: 0;
   }
+
   60% {
     transform: translateY(10px);
     opacity: 1;
   }
+
   100% {
     transform: translateY(0);
     opacity: 1;
@@ -107,6 +143,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -118,21 +155,22 @@
 
 @layer components {
   .hero-section {
-    background-image: url('https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/Untitled%20design%20(9).png?alt=media&token=780b8978-4e19-49fb-9b7a-f9343b51d92a');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(135deg, #E0F7FA 0%, #B2EBF2 25%, #80DEEA 50%, #4DD0E1 75%, #26C6DA 100%);
+    background-size: 200% 200%;
+    animation: gradientFlow 8s ease infinite;
     position: relative;
     overflow: hidden;
-    color: white;
+    color: #0D47A1;
   }
+
   .hero-section::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
     z-index: 0;
   }
+
   .hero-section::after {
     content: "";
     position: absolute;
@@ -151,11 +189,11 @@
     font-size: 3rem;
     font-weight: 900;
     letter-spacing: 1.5px;
-    color: #ffffff;
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    color: #0D47A1;
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.6);
     animation: fadeIn 1.2s ease-out;
   }
-  
+
   @media (min-width: 768px) {
     .hero-heading {
       font-size: 4rem;
@@ -166,16 +204,16 @@
   .hero-paragraph {
     max-width: 850px;
     margin: 0 auto 2rem auto;
-    line-height: 1.6;
+    line-height: 1.7;
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.95);
+    color: #0D47A1;
     text-align: center;
     letter-spacing: 0.3px;
-    font-weight: 400;
+    font-weight: 600;
     animation: fadeInText 1s ease-out 0.3s forwards;
     opacity: 0;
   }
-  
+
   @media (min-width: 768px) {
     .hero-paragraph {
       font-size: 1.1rem;
@@ -184,31 +222,31 @@
   }
 
   .auth-widget-card {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(13, 71, 161, 0.2);
     border-radius: 16px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-    color: #E3F2FD;
+    box-shadow: 0 8px 24px rgba(0, 188, 212, 0.15);
+    color: #0D47A1;
     z-index: 2;
   }
 
   .auth-widget-input {
-    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border: 1.5px solid rgba(13, 71, 161, 0.3);
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.1) !important;
-    color: white !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    color: #0D47A1 !important;
     padding: 12px 15px;
     transition: all 0.2s ease;
   }
 
   .auth-widget-input::placeholder {
-    color: rgba(255, 255, 255, 0.6) !important;
+    color: rgba(13, 71, 161, 0.5) !important;
   }
 
   .auth-widget-input:focus {
     border-color: #00BCD4;
-    background-color: rgba(255, 255, 255, 0.2) !important;
+    background-color: rgba(255, 255, 255, 1) !important;
     outline: none;
     box-shadow: 0 0 8px rgba(0, 188, 212, 0.3);
   }
@@ -244,7 +282,8 @@
   .night-sky-heading {
     font-size: clamp(2.5rem, 10vw, 4rem) !important;
     text-align: center;
-    text-shadow: 0 0 1px transparent !important; /* Fixes rendering bug */
+    text-shadow: 0 0 1px transparent !important;
+    /* Fixes rendering bug */
     line-height: 1.1;
     @apply text-white;
   }
@@ -256,29 +295,29 @@
     background-color: hsl(var(--primary));
     border: 2px solid hsl(var(--primary));
     border-radius: 50px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1), inset 0 1px 2px rgba(255,255,255,0.5);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), inset 0 1px 2px rgba(255, 255, 255, 0.5);
     transition: all 0.2s ease;
   }
 
   .glass-glow-button:hover {
     transform: scale(1.02);
-    box-shadow: 0 6px 12px hsla(var(--primary), 0.4), inset 0 1px 2px rgba(255,255,0.5);
+    box-shadow: 0 6px 12px hsla(var(--primary), 0.4), inset 0 1px 2px rgba(255, 255, 0.5);
   }
 
   .speech-bubble {
     position: relative;
     background-color: transparent;
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 1.5rem;
     padding: 2rem;
     transform: rotate(var(--tw-rotate, 0));
     transition: transform 0.2s ease;
   }
-  
+
   .speech-bubble:hover {
     transform: scale(1.02) rotate(var(--tw-rotate, 0));
   }
-  
+
   .speech-bubble::after {
     content: '';
     position: absolute;
@@ -292,28 +331,32 @@
   }
 
   /* Position tails */
-  .grid > div:nth-child(1) .speech-bubble::after {
+  .grid>div:nth-child(1) .speech-bubble::after {
     left: 25%;
     border-left-color: hsl(var(--card));
   }
-  .grid > div:nth-child(2) .speech-bubble::after {
+
+  .grid>div:nth-child(2) .speech-bubble::after {
     left: 50%;
     border-right-color: hsl(var(--card));
   }
-  .grid > div:nth-child(3) .speech-bubble::after {
+
+  .grid>div:nth-child(3) .speech-bubble::after {
     left: 75%;
     border-left-color: hsl(var(--card));
   }
 
   /* Responsive adjustments for tails */
   @media (max-width: 1024px) {
-    .grid > div:nth-child(1) .speech-bubble::after,
-    .grid > div:nth-child(3) .speech-bubble::after {
+
+    .grid>div:nth-child(1) .speech-bubble::after,
+    .grid>div:nth-child(3) .speech-bubble::after {
       left: 50%;
       border-left-color: transparent;
       border-right-color: hsl(var(--card));
     }
-    .grid > div:nth-child(2) .speech-bubble::after {
+
+    .grid>div:nth-child(2) .speech-bubble::after {
       left: 25%;
       border-right-color: transparent;
       border-left-color: hsl(var(--card));
@@ -321,7 +364,7 @@
   }
 
   @media (max-width: 768px) {
-    .grid > div .speech-bubble::after {
+    .grid>div .speech-bubble::after {
       left: 75% !important;
       border-right-color: transparent !important;
       border-left-color: hsl(var(--card)) !important;
@@ -332,7 +375,7 @@
     color: hsl(var(--foreground)) !important;
   }
 
-  .light .speech-bubble.glass-card-content > p {
+  .light .speech-bubble.glass-card-content>p {
     color: hsl(var(--foreground)) !important;
   }
 
@@ -345,13 +388,14 @@
   }
 
   .contact-form-container {
-    background: linear-gradient(180deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
     border-radius: 16px;
     backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
-  .contact-form-input, .contact-form-textarea {
+  .contact-form-input,
+  .contact-form-textarea {
     border: 1.5px solid rgba(33, 150, 243, 0.6);
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.3) !important;
@@ -360,12 +404,14 @@
     transition: all 0.2s ease;
   }
 
-  .contact-form-input::placeholder, .contact-form-textarea::placeholder {
+  .contact-form-input::placeholder,
+  .contact-form-textarea::placeholder {
     color: hsl(var(--foreground)) !important;
     opacity: 0.6;
   }
-  
-  .contact-form-input:focus, .contact-form-textarea:focus {
+
+  .contact-form-input:focus,
+  .contact-form-textarea:focus {
     border-color: #2196F3;
     background-color: rgba(255, 255, 255, 0.6) !important;
     outline: none;
