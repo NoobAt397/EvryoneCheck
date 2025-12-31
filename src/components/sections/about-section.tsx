@@ -53,11 +53,11 @@ export function AboutSection() {
                   <div className="p-6">
                     <h3 className="text-lg font-bold font-headline">{founder.name}</h3>
                     <p className="mt-2 text-muted-foreground text-sm font-body leading-relaxed">"{founder.message}"</p>
-                    <div className="mt-4 flex items-center gap-4">
-                      <Link href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <div className="mt-4 flex items-center gap-2">
+                      <Link href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="p-2 hover:bg-accent rounded-lg transition-colors">
                         <Instagram className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" />
                       </Link>
-                      <Link href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                      <Link href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-2 hover:bg-accent rounded-lg transition-colors">
                         <Linkedin className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" />
                       </Link>
                     </div>

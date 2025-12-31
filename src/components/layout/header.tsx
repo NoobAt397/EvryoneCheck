@@ -79,14 +79,14 @@ export function Header() {
           : 'bg-slate-900'
       )}
     >
-      <div className="container mx-auto flex h-24 items-center justify-between px-4 md:px-6">
-        <Link href="#home" className="flex items-center gap-2 text-lg font-bold -ml-8">
+      <div className="container mx-auto flex h-20 md:h-24 items-center justify-between px-4 md:px-6">
+        <Link href="#home" className="flex items-center gap-2 text-lg font-bold md:-ml-8">
           <Image
             src="/communicational logo.png"
             alt="COMMUNICATIONAL Logo"
             width={320}
             height={64}
-            className="h-16 w-auto object-contain rounded-md shadow-md"
+            className="h-12 md:h-16 w-auto object-contain rounded-md shadow-md"
             priority
             unoptimized
           />
@@ -139,7 +139,7 @@ export function Header() {
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[240px] bg-background text-foreground">
+            <SheetContent side="right" className="w-[280px] bg-background text-foreground">
               <div className="flex h-full flex-col">
                 <div className="flex items-center justify-between border-b pb-4">
                   <Link
@@ -152,7 +152,7 @@ export function Header() {
                       alt="COMMUNICATIONAL Logo"
                       width={320}
                       height={64}
-                      className="h-16 w-auto object-contain rounded-md shadow-md"
+                      className="h-12 w-auto object-contain rounded-md shadow-md"
                       unoptimized
                     />
                   </Link>

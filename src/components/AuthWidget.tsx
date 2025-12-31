@@ -62,7 +62,7 @@ export function AuthWidget() {
           <h2 className='text-xl font-bold mb-2 text-[#0D47A1]'>Join Us</h2>
           <p className='text-[#1565C0] text-sm mb-4'>Sign up with Google to continue.</p>
           <button
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-all duration-200"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-100 min-h-[44px]"
             onClick={() => signInWithGoogle()}
           >
             Sign Up with Google
@@ -85,7 +85,7 @@ export function AuthWidget() {
                 className="auth-widget-input"
               />
             </div>
-            <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-all duration-200">
+            <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-100 min-h-[44px]">
               Save Phone Number
             </button>
           </form>

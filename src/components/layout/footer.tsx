@@ -21,18 +21,18 @@ export function Footer() {
               alt="COMMUNICATIONAL Logo"
               width={221}
               height={96}
-              className="h-24 w-auto"
+              className="h-16 sm:h-20 md:h-24 w-auto"
               unoptimized
             />
           </Link>
-          <div className="flex items-center gap-4">
-            <Link href="#" aria-label="Instagram">
+          <div className="flex items-center gap-2">
+            <Link href="#" aria-label="Instagram" className="p-2 hover:bg-accent rounded-lg transition-colors">
               <Instagram className="h-6 w-6 text-muted-foreground transition-colors duration-200 ease-in-out hover:text-primary" />
             </Link>
-            <Link href="#" aria-label="LinkedIn">
+            <Link href="#" aria-label="LinkedIn" className="p-2 hover:bg-accent rounded-lg transition-colors">
               <Linkedin className="h-6 w-6 text-muted-foreground transition-colors duration-200 ease-in-out hover:text-primary" />
             </Link>
-            <Link href="#" aria-label="Twitter">
+            <Link href="#" aria-label="Twitter" className="p-2 hover:bg-accent rounded-lg transition-colors">
               <Twitter className="h-6 w-6 text-muted-foreground transition-colors duration-200 ease-in-out hover:text-primary" />
             </Link>
           </div>

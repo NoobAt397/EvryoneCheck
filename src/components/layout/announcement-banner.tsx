@@ -50,12 +50,12 @@ export function AnnouncementBanner() {
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between p-3">
-          <div className="flex items-center">
-            <Megaphone className="mr-3 h-5 w-5" />
+        <div className="flex items-center justify-between gap-3 p-3">
+          <div className="flex items-center flex-1 min-w-0">
+            <Megaphone className="mr-3 h-5 w-5 flex-shrink-0" />
             <div className="text-center sm:text-left">
-              <p className="font-bold">New Workshop Alert!</p>
-              <p className="text-sm">
+              <p className="font-bold text-sm sm:text-base">New Workshop Alert!</p>
+              <p className="text-xs sm:text-sm">
                 Enroll in our "Public Speaking Mastery" course. Limited seats
                 available!
               </p>
@@ -64,7 +64,7 @@ export function AnnouncementBanner() {
           <Button
             variant="ghost"
             size="icon"
-            className="workshop-alert-close h-8 w-8 hover:bg-white/20"
+            className="workshop-alert-close h-10 w-10 min-w-[40px] hover:bg-white/20 flex-shrink-0"
             onClick={handleDismiss}
             aria-label="Dismiss announcement"
           >
