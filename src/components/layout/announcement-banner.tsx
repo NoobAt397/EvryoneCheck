@@ -10,6 +10,7 @@ const ANNOUNCEMENT_KEY = 'communicational-announcement-dismissed';
 export function AnnouncementBanner() {
   const [isVisible, setIsVisible] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
@@ -30,12 +31,16 @@ export function AnnouncementBanner() {
   }, [isMounted]);
 
   const handleDismiss = () => {
-    setIsVisible(false);
+    setIsClosing(true);
     try {
       localStorage.setItem(ANNOUNCEMENT_KEY, 'true');
     } catch (error) {
       console.error('Could not access localStorage:', error);
     }
+    // Wait for animation to complete before hiding
+    setTimeout(() => {
+      setIsVisible(false);
+    }, 400); // Match animation duration
   };
 
   if (!isMounted || !isVisible) {
@@ -46,14 +51,15 @@ export function AnnouncementBanner() {
     <div
       className={cn(
         'workshop-alert',
-        isVisible ? 'animate-slide-down' : 'hidden'
+        isVisible && !isClosing && 'animate-slide-down',
+        isClosing && 'animate-fade-out'
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between p-3">
-          <div className="flex items-center">
-            <Megaphone className="mr-3 h-5 w-5" />
-            <div className="text-center sm:text-left">
+          <div className="flex items-center flex-1 min-w-0">
+            <Megaphone className="mr-3 h-5 w-5 flex-shrink-0" />
+            <div className="text-center sm:text-left min-w-0">
               <p className="font-bold">New Workshop Alert!</p>
               <p className="text-sm">
                 Enroll in our "Public Speaking Mastery" course. Limited seats
@@ -64,11 +70,11 @@ export function AnnouncementBanner() {
           <Button
             variant="ghost"
             size="icon"
-            className="workshop-alert-close h-8 w-8 hover:bg-white/20"
+            className="workshop-alert-close h-10 w-10 min-h-10 min-w-10 ml-2 hover:bg-white/30 flex-shrink-0"
             onClick={handleDismiss}
             aria-label="Dismiss announcement"
           >
-            <X className="h-4 w-4" />
+            <X className="h-6 w-6" />
           </Button>
         </div>
       </div>

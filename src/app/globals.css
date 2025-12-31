@@ -195,6 +195,18 @@
   }
 }
 
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+}
+
 
 @layer base {
   * {
@@ -553,11 +565,30 @@
     animation: slideDown 0.8s ease-out 1.2s forwards;
   }
 
+  .animate-fade-out {
+    animation: fadeOut 0.4s ease-out forwards;
+  }
+
   .workshop-alert .workshop-alert-close {
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 0.5rem;
   }
 
   .workshop-alert .workshop-alert-close:hover {
-    transform: rotate(90deg);
+    transform: rotate(90deg) scale(1.1);
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+  }
+
+  .workshop-alert .workshop-alert-close:active {
+    transform: rotate(90deg) scale(0.95);
+  }
+
+  /* Ensure button is touch-friendly on mobile */
+  @media (max-width: 640px) {
+    .workshop-alert .workshop-alert-close {
+      min-height: 44px;
+      min-width: 44px;
+    }
   }
 }
