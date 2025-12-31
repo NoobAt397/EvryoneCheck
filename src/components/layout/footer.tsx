@@ -17,12 +17,11 @@ export function Footer() {
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <Link href="#home" className="flex items-center gap-2 font-bold text-lg">
             <Image
-              src="/communicational logo.png"
-              alt="COMMUNICATIONAL Logo"
-              width={221}
-              height={96}
-              className="h-16 sm:h-20 md:h-24 w-auto"
-              unoptimized
+              src="/communicational-logo.png"
+              alt="Communicational Logo"
+              width={1024}
+              height={1024}
+              className="h-16 sm:h-20 md:h-24 w-auto object-contain"
             />
           </Link>
           <div className="flex items-center gap-2">
