@@ -86,7 +86,7 @@ export function Header() {
             alt="COMMUNICATIONAL Logo"
             width={320}
             height={64}
-            className="h-16 w-auto object-contain"
+            className="h-16 w-auto object-contain rounded-md shadow-md"
             priority
             unoptimized
           />
@@ -152,7 +152,7 @@ export function Header() {
                       alt="COMMUNICATIONAL Logo"
                       width={320}
                       height={64}
-                      className="h-16 w-auto object-contain"
+                      className="h-16 w-auto object-contain rounded-md shadow-md"
                       unoptimized
                     />
                   </Link>
