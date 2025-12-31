@@ -286,21 +286,29 @@
   .hero-heading {
     position: relative;
     z-index: 2;
-    font-size: 3.5rem;
+    font-size: 2.25rem;
     font-weight: 900;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.05em;
     color: #ffffff;
     text-shadow: 0 6px 30px rgba(56, 189, 248, 0.5), 0 3px 15px rgba(0, 0, 0, 0.6);
     animation: fadeIn 1.2s ease-out;
     font-family: var(--font-poppins), sans-serif;
     text-transform: uppercase;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (min-width: 480px) {
+    .hero-heading {
+      font-size: 3rem;
+      letter-spacing: 0.08em;
+    }
   }
 
   @media (min-width: 768px) {
     .hero-heading {
       font-size: 5rem;
       letter-spacing: 0.1em;
+      margin-bottom: 2rem;
     }
   }
 
@@ -373,6 +381,7 @@
     color: #0D47A1 !important;
     padding: 12px 15px;
     transition: all 0.2s ease;
+    min-height: 44px;
   }
 
   .auth-widget-input::placeholder {
@@ -398,6 +407,7 @@
     box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4);
     transition: all 0.25s ease;
     z-index: 2;
+    min-height: 44px;
   }
 
   .hero-button:hover {
@@ -432,6 +442,7 @@
     border-radius: 50px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), inset 0 1px 2px rgba(255, 255, 255, 0.5);
     transition: all 0.2s ease;
+    min-height: 48px;
   }
 
   .glass-glow-button:hover {
@@ -539,6 +550,10 @@
     transition: all 0.2s ease;
   }
 
+  .contact-form-input {
+    min-height: 44px;
+  }
+
   .contact-form-input::placeholder,
   .contact-form-textarea::placeholder {
     color: hsl(var(--foreground)) !important;
@@ -562,6 +577,7 @@
     transition: 0.25s ease;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
+    min-height: 44px;
   }
 
   .contact-form-button:hover {

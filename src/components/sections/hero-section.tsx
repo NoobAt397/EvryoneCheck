@@ -13,10 +13,10 @@ export function HeroSection() {
             COMMUNICATIONAL
           </h1>
         </div>
-        <p className="max-w-4xl text-lg text-white/90 mx-auto hero-paragraph">
+        <p className="max-w-4xl text-base sm:text-lg text-white/90 mx-auto hero-paragraph px-4">
           Everyone knows how to speak, not everyone knows how to talk.
         </p>
-        <p className="max-w-4xl text-xl md:text-2xl text-white/95 mx-auto mb-12 font-semibold hero-subheading">
+        <p className="max-w-4xl text-lg sm:text-xl md:text-2xl text-white/95 mx-auto mb-12 font-semibold hero-subheading px-4">
           Transform communication into a learnable skill—express yourself with confidence, clarity, and authenticity.
         </p>
         <div className="flex flex-col items-center gap-8 mt-4">

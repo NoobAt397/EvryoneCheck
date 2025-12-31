@@ -5,31 +5,31 @@ const testimonials = [
     name: 'YASHASVI',
     quote:
       'I truly enjoyed attending the communicational workshop. It gave me new perspectives and helped me understand the depth and importance of effective communication.',
-    rotation: 'rotate-[-2deg]',
+    rotation: 'md:rotate-[-2deg]',
   },
   {
     name: 'ANSHUL',
     quote:
       'I joined about 4 of the online sessions during my summer break and the interaction activities really helped me open up and it gave me a better perspective on networking.',
-    rotation: 'rotate-[2deg]',
+    rotation: 'md:rotate-[2deg]',
   },
   {
     name: 'SADHYA',
     quote:
       'I had attended two sessions where I felt the concepts were clearly elaborated with help of a ppt, and I was pushed outside my comfort zone through the impromptu activities which made the learning fun for me.',
-    rotation: 'rotate-[-1deg]',
+    rotation: 'md:rotate-[-1deg]',
   },
   {
     name: 'KUNJAL',
     quote:
       'Communicational has been a wonderful experience for me. The structured sessions and regular practice greatly improved my confidence in communication. The efforts of Bineet and Sanskar, both in the sessions and through their personal guidance and encouragement, made the experience even more valuable.',
-    rotation: 'rotate-[2deg]',
+    rotation: 'md:rotate-[2deg]',
   },
   {
     name: 'VEDA',
     quote:
       'The experience that I had with Communicational was truly AMAZING! It made me realise that the skill of communication is much more than just public speaking or the ability to overcome stage fear. Communication comes into play everyday in every single conversation and after 1 month with Communicational I was able to improve every single conversation of mine that came after.',
-    rotation: 'rotate-[-2deg]',
+    rotation: 'md:rotate-[-2deg]',
   },
 ];
 
