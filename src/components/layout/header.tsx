@@ -82,13 +82,12 @@ export function Header() {
       <div className="container mx-auto flex h-20 md:h-24 items-center justify-between px-4 md:px-6">
         <Link href="#home" className="flex items-center gap-2 text-lg font-bold md:-ml-8">
           <Image
-            src="/communicational logo.png"
-            alt="COMMUNICATIONAL Logo"
-            width={320}
-            height={64}
-            className="h-12 md:h-16 w-auto object-contain rounded-md shadow-md"
+            src="/communicational-logo.png"
+            alt="Communicational Logo"
+            width={875}
+            height={875}
+            className="h-12 md:h-16 w-auto object-contain"
             priority
-            unoptimized
           />
         </Link>
         <div className='flex items-center gap-4'>
@@ -148,12 +147,11 @@ export function Header() {
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <Image
-                      src="/communicational logo.png"
-                      alt="COMMUNICATIONAL Logo"
-                      width={320}
-                      height={64}
-                      className="h-12 w-auto object-contain rounded-md shadow-md"
-                      unoptimized
+                      src="/communicational-logo.png"
+                      alt="Communicational Logo"
+                      width={875}
+                      height={875}
+                      className="h-12 w-auto object-contain"
                     />
                   </Link>
                 </div>
