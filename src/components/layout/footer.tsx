@@ -19,8 +19,8 @@ export function Footer() {
             <Image
               src="/communicational-logo.png"
               alt="Communicational Logo"
-              width={1024}
-              height={1024}
+              width={875}
+              height={875}
               className="h-16 sm:h-20 md:h-24 w-auto object-contain"
             />
           </Link>

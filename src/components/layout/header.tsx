@@ -84,8 +84,8 @@ export function Header() {
           <Image
             src="/communicational-logo.png"
             alt="Communicational Logo"
-            width={1024}
-            height={1024}
+            width={875}
+            height={875}
             className="h-12 md:h-16 w-auto object-contain"
             priority
           />
@@ -149,8 +149,8 @@ export function Header() {
                     <Image
                       src="/communicational-logo.png"
                       alt="Communicational Logo"
-                      width={1024}
-                      height={1024}
+                      width={875}
+                      height={875}
                       className="h-12 w-auto object-contain"
                     />
                   </Link>
