@@ -21,7 +21,7 @@ export function AboutSection() {
   const founderImages = PlaceHolderImages.filter(img => img.id.startsWith('founder'));
 
   return (
-    <section id="about" className="py-16">
+    <section id="about" className="py-6 md:py-8">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl gradient-text">
@@ -31,7 +31,7 @@ export function AboutSection() {
             The driving force behind our vision of clearer communication.
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="mt-5 md:mt-7 grid grid-cols-1 gap-8 md:grid-cols-2">
           {founders.map((founder) => {
             const founderImage = founderImages.find(img => img.id === founder.id);
             return (
