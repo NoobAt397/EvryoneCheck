@@ -6,7 +6,7 @@ export function EventsSection() {
   const eventImages = PlaceHolderImages.filter(img => img.id.startsWith('event'));
 
   return (
-    <section id="events" className="py-8 md:py-10">
+    <section id="events" className="py-6 md:py-8">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl gradient-text">
@@ -16,7 +16,7 @@ export function EventsSection() {
             Moments of connection and growth from our workshops and gatherings.
           </p>
         </div>
-        <div className="mt-6 md:mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 md:gap-8">
+        <div className="mt-5 md:mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 md:gap-8">
           {eventImages.map((image) => (
             <div key={image.id} className="overflow-hidden rounded-2xl border bg-card/80 text-card-foreground shadow-lg interactive-element">
               <div className="p-0">

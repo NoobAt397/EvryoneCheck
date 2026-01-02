@@ -25,7 +25,7 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-8 md:py-10">
+    <section id="services" className="py-6 md:py-8">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl gradient-text">
@@ -35,7 +35,7 @@ export function ServicesSection() {
             Tailored solutions to help you or your organization communicate with impact.
           </p>
         </div>
-        <div className="mt-6 md:mt-8 flex justify-center">
+        <div className="mt-5 md:mt-7 flex justify-center">
           {services.map((service) => (
             <div 
               key={service.title}

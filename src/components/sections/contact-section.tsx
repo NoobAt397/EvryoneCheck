@@ -2,7 +2,7 @@ import { ContactForm } from "./contact-form";
 
 export function ContactSection() {
   return (
-    <section id="contact" className="py-8 md:py-10">
+    <section id="contact" className="py-6 md:py-8">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl gradient-text">
@@ -15,7 +15,7 @@ export function ContactSection() {
             For collaborations, please email us at <a href="mailto:collab@communicational.com" className="font-semibold text-primary underline-offset-4 hover:underline">collab@communicational.com</a>.
           </p>
         </div>
-        <div className="mx-auto mt-6 md:mt-8 max-w-xl">
+        <div className="mx-auto mt-5 md:mt-7 max-w-xl">
           <ContactForm />
         </div>
       </div>
