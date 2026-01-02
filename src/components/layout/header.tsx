@@ -76,7 +76,7 @@ export function Header() {
         'sticky top-0 z-50 w-full transition-all duration-300',
         isScrolled
           ? 'bg-slate-900/70 shadow-lg backdrop-blur-md border-b border-white/10'
-          : 'bg-slate-900/80 backdrop-blur-sm'
+          : 'bg-slate-800/95 backdrop-blur-sm border-b border-slate-700/50'
       )}
     >
       <div className="container mx-auto flex h-20 md:h-24 items-center justify-between px-4 md:px-6">

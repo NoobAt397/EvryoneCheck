@@ -592,12 +592,13 @@
 
   .workshop-alert {
     position: relative;
-    background: linear-gradient(90deg, #01579B, #0288D1, #00BCD4);
-    color: #E3F2FD;
+    background: linear-gradient(135deg, #0288D1, #00BCD4, #00ACC1);
+    color: #FFFFFF;
     font-weight: 500;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.3);
     transform: translateY(-100%);
     opacity: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   .animate-slide-down {
@@ -605,10 +606,10 @@
   }
 
   .workshop-alert .workshop-alert-close {
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease;
   }
 
   .workshop-alert .workshop-alert-close:hover {
-    transform: rotate(90deg);
+    background-color: rgba(255, 255, 255, 0.25);
   }
 }
