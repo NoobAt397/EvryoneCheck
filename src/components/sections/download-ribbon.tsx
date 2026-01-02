@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 
 export function DownloadRibbon() {
   return (
-    <section className="bg-secondary text-secondary-foreground py-8">
+    <section className="bg-secondary text-secondary-foreground py-4 md:py-6">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
           <div>

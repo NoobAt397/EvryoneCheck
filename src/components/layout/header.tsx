@@ -86,7 +86,7 @@ export function Header() {
             alt="Communicational Logo"
             width={875}
             height={875}
-            className="h-12 md:h-16 w-auto object-contain"
+            className="h-16 md:h-20 lg:h-24 w-auto object-contain"
             priority
           />
         </Link>
@@ -151,7 +151,7 @@ export function Header() {
                       alt="Communicational Logo"
                       width={875}
                       height={875}
-                      className="h-12 w-auto object-contain"
+                      className="h-16 w-auto object-contain"
                     />
                   </Link>
                 </div>

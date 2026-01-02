@@ -294,13 +294,14 @@
     animation: fadeIn 1.2s ease-out;
     font-family: var(--font-poppins), sans-serif;
     text-transform: uppercase;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
   }
 
   @media (min-width: 480px) {
     .hero-heading {
       font-size: 3rem;
       letter-spacing: 0.08em;
+      margin-bottom: 1rem;
     }
   }
 
@@ -308,7 +309,7 @@
     .hero-heading {
       font-size: 5rem;
       letter-spacing: 0.1em;
-      margin-bottom: 2rem;
+      margin-bottom: 1.25rem;
     }
   }
 
@@ -321,7 +322,7 @@
 
   .hero-paragraph {
     max-width: 850px;
-    margin: 0 auto 1.5rem auto;
+    margin: 0 auto 0.75rem auto;
     line-height: 1.8;
     font-size: 1.125rem;
     color: rgba(255, 255, 255, 0.92);
@@ -337,7 +338,7 @@
     .hero-paragraph {
       font-size: 1.25rem;
       max-width: 90%;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
   }
 
