@@ -25,10 +25,10 @@ export function Footer() {
             />
           </Link>
           <div className="flex items-center gap-2">
-            <Link href="#" aria-label="Instagram" className="p-2 hover:bg-accent rounded-lg transition-colors">
+            <Link href="https://www.instagram.com/communicational_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="p-2 hover:bg-accent rounded-lg transition-colors">
               <Instagram className="h-6 w-6 text-muted-foreground transition-colors duration-200 ease-in-out hover:text-primary" />
             </Link>
-            <Link href="#" aria-label="LinkedIn" className="p-2 hover:bg-accent rounded-lg transition-colors">
+            <Link href="https://www.linkedin.com/company/communicational/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-2 hover:bg-accent rounded-lg transition-colors">
               <Linkedin className="h-6 w-6 text-muted-foreground transition-colors duration-200 ease-in-out hover:text-primary" />
             </Link>
             <Link href="#" aria-label="Twitter" className="p-2 hover:bg-accent rounded-lg transition-colors">
