@@ -2,8 +2,8 @@
 
 import { AuthWidget } from '@/components/AuthWidget';
 import Link from 'next/link';
-import { useEffect } from 'react';
-import { motion, useAnimate, stagger } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { motion, useAnimate, stagger, AnimatePresence } from 'framer-motion';
 
 function HeroHeadline() {
   const [scope, animate] = useAnimate();
@@ -31,6 +31,37 @@ function HeroHeadline() {
   );
 }
 
+function FlipSubheading() {
+  const words = ["confidence", "clarity", "authenticity", "power", "impact"];
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % words.length);
+    }, 3000); // Changes every 3 seconds
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <p className="max-w-4xl text-lg sm:text-xl md:text-2xl text-white/95 mx-auto mb-4 font-semibold hero-subheading px-4">
+      Transform communication into a learnable skill—express yourself with{" "}
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={words[index]}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.5 }}
+          className="inline-block gradient-text"
+        >
+          {words[index]}
+        </motion.span>
+      </AnimatePresence>
+      .
+    </p>
+  );
+}
+
 export function HeroSection() {
   return (
     <section
@@ -44,9 +75,7 @@ export function HeroSection() {
           </h1>
         </div>
         <HeroHeadline />
-        <p className="max-w-4xl text-lg sm:text-xl md:text-2xl text-white/95 mx-auto mb-4 font-semibold hero-subheading px-4">
-          Transform communication into a learnable skill—express yourself with confidence, clarity, and authenticity.
-        </p>
+        <FlipSubheading />
         <div className="flex flex-col items-center gap-3 mt-1">
           <AuthWidget />
           <Link href="#services" className="hero-button">
