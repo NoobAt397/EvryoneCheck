@@ -9,11 +9,15 @@ const founders = [
     id: 'founder1',
     name: 'Bineet Singh Chawla',
     message: 'To build a future India where the mastery of communication is not a privilege, but a practical skill accessible to anyone, everywhere. By turning Indians into phenomenal communicators one person at a time.',
+    instagram: 'https://www.instagram.com/bineet_81?igsh=MXhucHlzem5xODk1Mg==',
+    linkedin: 'https://www.linkedin.com/in/bineet-singh-80b158214/',
   },
   {
     id: 'founder2',
     name: 'Sanskaar Dutt',
-    message: "“At Communicational, we’ve always believed that communication isn’t just about speaking well — it’s about connecting deeply. Our goal is to help people express themselves with confidence, clarity, and authenticity, because when you learn to communicate right, every door in life opens a little easier.”",
+    message: ""At Communicational, we've always believed that communication isn't just about speaking well — it's about connecting deeply. Our goal is to help people express themselves with confidence, clarity, and authenticity, because when you learn to communicate right, every door in life opens a little easier."",
+    instagram: 'https://www.instagram.com/sanskaar_dutt?igsh=MThhaGpuYmFoNDlneg%3D%3D&utm_source=qr',
+    linkedin: 'https://www.linkedin.com/in/sanskaar-dutt-b48400216?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
   },
 ];
 
@@ -54,10 +58,10 @@ export function AboutSection() {
                     <h3 className="text-lg font-bold font-headline">{founder.name}</h3>
                     <p className="mt-2 text-muted-foreground text-sm font-body leading-relaxed">"{founder.message}"</p>
                     <div className="mt-4 flex items-center gap-2">
-                      <Link href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="p-2 hover:bg-accent rounded-lg transition-colors">
+                      <Link href={founder.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="p-2 hover:bg-accent rounded-lg transition-colors">
                         <Instagram className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" />
                       </Link>
-                      <Link href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-2 hover:bg-accent rounded-lg transition-colors">
+                      <Link href={founder.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-2 hover:bg-accent rounded-lg transition-colors">
                         <Linkedin className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" />
                       </Link>
                     </div>
