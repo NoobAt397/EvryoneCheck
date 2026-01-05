@@ -70,7 +70,7 @@ export function HeroSection() {
     >
       <div className="relative z-10 container mx-auto flex flex-col items-center justify-center max-w-6xl">
         <div className="w-full flex justify-center mb-1">
-          <h1 className="hero-heading font-logo">
+          <h1 className="hero-heading font-logo bg-gradient-to-r from-white via-white/95 to-white/80 text-transparent bg-clip-text">
             COMMUNICATIONAL
           </h1>
         </div>
