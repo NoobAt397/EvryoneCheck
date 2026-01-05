@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, LogIn, LogOut } from 'lucide-react';
+import { Menu, LogIn, LogOut, Linkedin, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -90,6 +90,29 @@ export function Header() {
             priority
           />
         </Link>
+
+        {/* Social Media Icons */}
+        <div className="hidden md:flex items-center gap-2">
+          <Link
+            href="https://www.linkedin.com/company/communicational/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="p-2 hover:bg-slate-700/50 rounded-lg transition-colors"
+          >
+            <Linkedin className="h-5 w-5 text-slate-300 hover:text-white transition-colors" />
+          </Link>
+          <Link
+            href="https://www.instagram.com/communicational_/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="p-2 hover:bg-slate-700/50 rounded-lg transition-colors"
+          >
+            <Instagram className="h-5 w-5 text-slate-300 hover:text-white transition-colors" />
+          </Link>
+        </div>
+
         <div className='flex items-center gap-4'>
           <nav className="hidden md:block">
             <ul className="flex items-center gap-2">
@@ -158,6 +181,33 @@ export function Header() {
                 <nav className="mt-6 flex-grow">
                   <ul className="flex flex-col gap-4">
                     {navLinks.map(mobileRenderNavLink)}
+
+                    {/* Social Media Links in Mobile Menu */}
+                    <li className="pt-4 border-t">
+                      <div className="flex items-center gap-3 px-3">
+                        <Link
+                          href="https://www.linkedin.com/company/communicational/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="LinkedIn"
+                          className="p-2 hover:bg-accent rounded-lg transition-colors"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          <Linkedin className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
+                        </Link>
+                        <Link
+                          href="https://www.instagram.com/communicational_/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Instagram"
+                          className="p-2 hover:bg-accent rounded-lg transition-colors"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          <Instagram className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
+                        </Link>
+                      </div>
+                    </li>
+
                     <li>
                       {user ? (
                         <Button
