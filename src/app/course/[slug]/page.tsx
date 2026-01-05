@@ -19,7 +19,7 @@ const services = [
     title: 'Personal Branding Workshops',
     slug: 'personal-branding-workshops',
     description: 'Define your unique story and learn how to communicate it effectively across all platforms. This workshop will cover personal narrative development, social media strategy, and public speaking techniques to build a compelling brand.',
-    price: '₹200',
+    price: '₹10,000',
     demoVideoUrl: 'https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/communicational%20video.mp4?alt=media&token=ba5950e8-7c78-4830-acd4-52c2dafc83d8'
   },
 ];
@@ -50,22 +50,12 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
             {service.description}
           </p>
 
-          {service.demoVideoUrl && (
-            <div className="mb-8 rounded-lg overflow-hidden shadow-2xl border border-gray-200 aspect-video">
-              <video
-                src={service.demoVideoUrl}
-                controls
-                className="w-full h-full"
-                style={{ objectFit: 'cover' }}
-                autoPlay
-                muted
-                loop
-                preload="auto"
-              >
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          )}
+          {/* Video placeholder - under development */}
+          <div className="mb-8 rounded-lg overflow-hidden shadow-2xl border border-gray-200 aspect-video bg-foreground/5 flex items-center justify-center p-8">
+            <p className="text-center text-lg text-foreground/80 max-w-2xl">
+              THIS AREA IS STILL UNDER DEVELOPMENT. THIS IS THE PREVIEW, HOWEVER ALL PRICES REFLECTED HERE, ARE TRUE AND ACCURATE.
+            </p>
+          </div>
 
           <div className="rounded-lg border border-gray-200 bg-foreground/5 p-8">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
