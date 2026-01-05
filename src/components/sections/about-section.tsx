@@ -42,12 +42,12 @@ export function AboutSection() {
               <div key={founder.id} className="overflow-hidden rounded-2xl border bg-card text-card-foreground shadow-lg interactive-element">
                 <div className="p-0">
                   {founderImage && (
-                    <div className="relative h-80 w-full bg-accent/20">
+                    <div className="relative aspect-[3/4] w-full overflow-hidden">
                       <Image
                         src={founderImage.imageUrl}
                         alt={founderImage.description}
                         fill
-                        className="object-contain object-top"
+                        className="object-cover object-top"
                         data-ai-hint={founderImage.imageHint}
                         unoptimized
                         sizes="(max-width: 768px) 100vw, 50vw"
