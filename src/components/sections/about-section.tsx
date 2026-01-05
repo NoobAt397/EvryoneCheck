@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Card, CardContent } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Instagram, Linkedin } from 'lucide-react';
 
@@ -49,7 +48,6 @@ export function AboutSection() {
                         fill
                         className="object-cover object-top"
                         data-ai-hint={founderImage.imageHint}
-                        unoptimized
                         sizes="(max-width: 768px) 100vw, 50vw"
                       />
                     </div>

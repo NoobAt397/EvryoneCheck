@@ -17,13 +17,13 @@ export async function signInWithGoogle() {
         });
 
         if (error) {
-            console.error('Error during Google sign-in:', error);
+            if (process.env.NODE_ENV === 'development') console.error('Error during Google sign-in:', error);
             throw error;
         }
 
         return data;
     } catch (error) {
-        console.error('Error during Google sign-in:', error);
+        if (process.env.NODE_ENV === 'development') console.error('Error during Google sign-in:', error);
         throw error;
     }
 }
@@ -97,9 +97,9 @@ export async function handleSignOut() {
     try {
         const { error } = await supabase.auth.signOut();
         if (error) {
-            console.error('Error signing out:', error);
+            if (process.env.NODE_ENV === 'development') console.error('Error signing out:', error);
         }
     } catch (error) {
-        console.error('Error signing out:', error);
+        if (process.env.NODE_ENV === 'development') console.error('Error signing out:', error);
     }
 }
