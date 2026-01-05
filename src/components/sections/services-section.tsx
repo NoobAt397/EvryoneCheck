@@ -18,7 +18,7 @@ const services = [
     title: 'PERSONAL TRAINING',
     slug: 'personal-branding-workshops',
     description: 'Define your unique story and learn how to communicate it effectively across all platforms.',
-    price: '₹200',
+    price: '₹10,000',
     demoVideoUrl: 'https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/communicational%20video.mp4?alt=media&token=ba5950e8-7c78-4830-acd4-52c2dafc83d8'
   },
 ];
