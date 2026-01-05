@@ -1,5 +1,35 @@
+'use client';
+
 import { AuthWidget } from '@/components/AuthWidget';
 import Link from 'next/link';
+import { useEffect } from 'react';
+import { motion, useAnimate, stagger } from 'framer-motion';
+
+function HeroHeadline() {
+  const [scope, animate] = useAnimate();
+  const words = "Everyone knows how to speak, not everyone knows how to talk.".split(" ");
+
+  useEffect(() => {
+    animate(
+      "span",
+      { opacity: 1 },
+      { duration: 2, delay: stagger(0.2) }
+    );
+  }, [animate]);
+
+  return (
+    <p className="max-w-4xl text-base sm:text-lg text-white/90 mx-auto hero-paragraph px-4" ref={scope}>
+      {words.map((word, idx) => (
+        <motion.span
+          key={word + idx}
+          className="opacity-0 inline-block mr-1"
+        >
+          {word}
+        </motion.span>
+      ))}
+    </p>
+  );
+}
 
 export function HeroSection() {
   return (
@@ -13,9 +43,7 @@ export function HeroSection() {
             COMMUNICATIONAL
           </h1>
         </div>
-        <p className="max-w-4xl text-base sm:text-lg text-white/90 mx-auto hero-paragraph px-4">
-          Everyone knows how to speak, not everyone knows how to talk.
-        </p>
+        <HeroHeadline />
         <p className="max-w-4xl text-lg sm:text-xl md:text-2xl text-white/95 mx-auto mb-4 font-semibold hero-subheading px-4">
           Transform communication into a learnable skill—express yourself with confidence, clarity, and authenticity.
         </p>
