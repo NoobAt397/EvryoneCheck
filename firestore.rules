@@ -91,13 +91,14 @@ service cloud.firestore {
      * @description Manages contact messages submitted through the contact form.
      * @path /contactMessages/{contactMessageId}
      * @allow (get, list) Any user can read the contact messages.
-     * @allow (create, update, delete) No write access for non-admin users.
-     * @deny (create) Non-admin users cannot create a contact message.
-     * @principle Public read, restricted write access.
+     * @allow (create) Any user can submit a contact message (even unauthenticated).
+     * @allow (update, delete) No write access for non-admin users.
+     * @principle Public read and create, restricted update/delete access.
      */
     match /contactMessages/{contactMessageId} {
       allow get, list: if true;
-      allow create, update, delete: if false; // TODO: Add admin role check if needed.
+      allow create: if true; // Allow anyone to submit contact form messages
+      allow update, delete: if false; // TODO: Add admin role check if needed.
     }
 
     /****************** Announcements Collection Rules ******************/
