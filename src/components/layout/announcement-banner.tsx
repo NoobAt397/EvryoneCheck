@@ -26,7 +26,7 @@ export function AnnouncementBanner() {
         }
       } catch (error) {
         // In environments where localStorage is not available, we can default to not showing the banner.
-        console.error('Could not access localStorage:', error);
+        if (process.env.NODE_ENV === 'development') console.error('Could not access localStorage:', error);
       }
     }
   }, [isMounted]);
@@ -36,7 +36,7 @@ export function AnnouncementBanner() {
     try {
       localStorage.setItem(ANNOUNCEMENT_KEY, 'true');
     } catch (error) {
-      console.error('Could not access localStorage:', error);
+      if (process.env.NODE_ENV === 'development') console.error('Could not access localStorage:', error);
     }
   };
 

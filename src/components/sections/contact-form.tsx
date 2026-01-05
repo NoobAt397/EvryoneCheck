@@ -92,7 +92,7 @@ export function ContactForm() {
       }, 100);
 
     } catch (error: any) {
-      console.error('Error submitting contact form:', error);
+      if (process.env.NODE_ENV === 'development') console.error('Error submitting contact form:', error);
       setErrorMessage(error.message || 'Something went wrong. Please try again.');
     } finally {
       setIsSubmitting(false);

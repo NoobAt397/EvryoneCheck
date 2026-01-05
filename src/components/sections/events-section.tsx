@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Card, CardContent } from '@/components/ui/card';
 
 export function EventsSection() {
   const eventImages = PlaceHolderImages.filter(img => img.id.startsWith('event'));
@@ -28,7 +27,6 @@ export function EventsSection() {
                     className="object-cover"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     data-ai-hint={image.imageHint}
-                    unoptimized
                   />
                 </div>
               </div>
