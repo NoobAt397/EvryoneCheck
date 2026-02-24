@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { SupabaseProvider } from '@/supabase/provider';
+import { SmoothScrollProvider } from '@/components/providers/smooth-scroll-provider';
 import { Poppins, Inter } from 'next/font/google';
 
 const poppins = Poppins({
@@ -35,9 +36,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="font-body antialiased bg-background">
-        <SupabaseProvider>
-          {children}
-        </SupabaseProvider>
+        <SmoothScrollProvider>
+          <SupabaseProvider>
+            {children}
+          </SupabaseProvider>
+        </SmoothScrollProvider>
         <Toaster />
       </body>
     </html>

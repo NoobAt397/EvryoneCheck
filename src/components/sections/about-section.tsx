@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Instagram, Linkedin } from 'lucide-react';
+import { FadeIn } from '@/components/ui/fade-in';
 
 const founders = [
   {
@@ -24,48 +25,55 @@ export function AboutSection() {
   const founderImages = PlaceHolderImages.filter(img => img.id.startsWith('founder'));
 
   return (
-    <section id="about" className="py-6 md:py-8">
+    <section id="about" className="py-5 md:py-7">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl gradient-text">
-            Meet Our Founders
-          </h2>
-          <p className="mt-2 text-base text-foreground/80">
-            The driving force behind our vision of clearer communication.
-          </p>
-        </div>
-        <div className="mt-5 md:mt-7 grid grid-cols-1 gap-8 md:grid-cols-2">
-          {founders.map((founder) => {
+        <FadeIn>
+          <div className="mx-auto max-w-4xl text-center mb-5">
+            <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl gradient-text">
+              Meet Our Founders
+            </h2>
+            <p className="mt-1 text-sm text-foreground/80">
+              The driving force behind our vision of clearer communication.
+            </p>
+          </div>
+        </FadeIn>
+
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+          {founders.map((founder, index) => {
             const founderImage = founderImages.find(img => img.id === founder.id);
             return (
-              <div key={founder.id} className="overflow-hidden rounded-2xl border bg-card text-card-foreground shadow-lg interactive-element max-w-md mx-auto w-full">
-                <div className="p-0">
+              <FadeIn key={founder.id} delay={index * 0.12}>
+                <div className="flex flex-col items-center gap-4 p-6 rounded-2xl border bg-card/80 backdrop-blur-sm text-card-foreground shadow-lg interactive-element h-full md:flex-row md:items-start md:gap-6">
+                  {/* Circular avatar — smaller on mobile, larger on desktop */}
                   {founderImage && (
-                    <div className="relative aspect-[3/4] w-full overflow-hidden">
+                    <div className="relative w-[100px] h-[100px] md:w-[130px] md:h-[130px] rounded-full overflow-hidden shrink-0 border-2 border-primary/30">
                       <Image
                         src={founderImage.imageUrl}
                         alt={founderImage.description}
                         fill
                         className="object-cover object-top"
                         data-ai-hint={founderImage.imageHint}
-                        sizes="(max-width: 768px) 100vw, 50vw"
+                        sizes="(max-width: 768px) 100px, 130px"
                       />
                     </div>
                   )}
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold font-headline">{founder.name}</h3>
-                    <p className="mt-2 text-muted-foreground text-sm font-body leading-relaxed">"{founder.message}"</p>
-                    <div className="mt-4 flex items-center gap-2">
-                      <Link href={founder.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="p-2 hover:bg-accent rounded-lg transition-colors">
-                        <Instagram className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" />
+                  {/* Text content */}
+                  <div className="flex flex-col flex-1 min-w-0">
+                    <h3 className="text-lg font-bold font-headline text-center md:text-left">{founder.name}</h3>
+                    <p className="mt-1.5 text-muted-foreground text-sm font-body leading-relaxed line-clamp-5 text-center md:text-left">
+                      "{founder.message}"
+                    </p>
+                    <div className="mt-4 flex items-center gap-1 justify-center md:justify-start">
+                      <Link href={founder.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="p-1.5 hover:bg-accent rounded-xl transition-colors">
+                        <Instagram className="h-4 w-4 text-muted-foreground transition-colors hover:text-primary" />
                       </Link>
-                      <Link href={founder.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-2 hover:bg-accent rounded-lg transition-colors">
-                        <Linkedin className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" />
+                      <Link href={founder.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-1.5 hover:bg-accent rounded-xl transition-colors">
+                        <Linkedin className="h-4 w-4 text-muted-foreground transition-colors hover:text-primary" />
                       </Link>
                     </div>
                   </div>
                 </div>
-              </div>
+              </FadeIn>
             );
           })}
         </div>

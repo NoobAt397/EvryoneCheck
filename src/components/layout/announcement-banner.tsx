@@ -63,9 +63,9 @@ export function AnnouncementBanner() {
               <Megaphone className="h-5 w-5" />
             </div>
             <div className="flex-1 min-w-0">
-              <p className="font-bold text-sm sm:text-base mb-0.5">New Workshop Alert!</p>
+              <p className="font-bold text-sm sm:text-base mb-0.5">Programme starts at 8k!</p>
               <p className="text-xs sm:text-sm text-white/90">
-                Enroll in our "Public Speaking Mastery" course. Limited seats available!
+                Personal Branding &amp; Public Speaking — Limited seats available!
               </p>
             </div>
           </div>

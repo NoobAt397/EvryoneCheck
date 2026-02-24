@@ -17,11 +17,15 @@ export default function Home() {
       <main className="flex-grow">
         <HeroSection />
         <DownloadRibbon />
-        <AboutSection />
-        <ServicesSection />
-        <TestimonialsSection />
-        <EventsSection />
-        <ContactSection />
+        {/* Subtle gradient bridge from dark hero into the cool-blue sections */}
+        <div className="relative">
+          <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-[#203a43]/10 to-transparent pointer-events-none -z-0" />
+          <AboutSection />
+          <ServicesSection />
+          <TestimonialsSection />
+          <EventsSection />
+          <ContactSection />
+        </div>
       </main>
       <Footer />
     </div>

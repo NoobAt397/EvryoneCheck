@@ -101,7 +101,7 @@ export function ContactForm() {
 
   return (
     <div className="contact-form-container">
-      <div className="p-8">
+      <div className="p-5">
         {/* Success Message */}
         {successMessage && (
           <div
@@ -126,7 +126,7 @@ export function ContactForm() {
           </div>
         )}
 
-        <form ref={formRef} onSubmit={handleSubmit} className="space-y-6" noValidate>
+        <form ref={formRef} onSubmit={handleSubmit} className="space-y-4" noValidate>
           {/* Name Field */}
           <div className="space-y-2">
             <Label htmlFor="name" className="contact-form-label">
@@ -184,7 +184,7 @@ export function ContactForm() {
               name="message"
               placeholder="How can we help you?"
               required
-              rows={5}
+              rows={3}
               className={`contact-form-textarea ${formErrors.message ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
               aria-invalid={!!formErrors.message}
               aria-describedby={formErrors.message ? 'message-error' : undefined}

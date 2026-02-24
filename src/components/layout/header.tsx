@@ -79,49 +79,27 @@ export function Header() {
           : 'bg-slate-800/95 backdrop-blur-sm border-b border-slate-700/50'
       )}
     >
-      <div className="container mx-auto flex h-20 md:h-24 items-center justify-between px-4 md:px-6">
-        <Link href="#home" className="flex items-center gap-2 text-lg font-bold md:-ml-8">
+      <div className="container mx-auto flex h-14 md:h-32 items-center justify-between px-4 md:px-6">
+        <Link href="#home" className="flex items-center gap-2 text-lg font-bold md:-ml-4">
           <Image
             src="/communicational-logo.png"
             alt="Communicational Logo"
             width={875}
             height={875}
-            className="h-20 md:h-24 lg:h-28 w-auto object-contain"
+            className="h-9 md:h-28 w-auto object-contain"
             priority
           />
         </Link>
 
-        {/* Social Media Icons */}
-        <div className="hidden md:flex items-center gap-2">
-          <Link
-            href="https://www.linkedin.com/company/communicational/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            className="p-2 hover:bg-slate-700/50 rounded-lg transition-colors"
-          >
-            <Linkedin className="h-5 w-5 text-slate-300 hover:text-white transition-colors" />
-          </Link>
-          <Link
-            href="https://www.instagram.com/communicational_/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-            className="p-2 hover:bg-slate-700/50 rounded-lg transition-colors"
-          >
-            <Instagram className="h-5 w-5 text-slate-300 hover:text-white transition-colors" />
-          </Link>
-        </div>
-
-        <div className='flex items-center gap-4'>
+        <div className='flex items-center gap-3'>
           <nav className="hidden md:block">
-            <ul className="flex items-center gap-2">
+            <ul className="flex items-center gap-1">
               {navLinks.map(renderNavLink)}
             </ul>
           </nav>
 
           {isUserLoading ? (
-            <div className="h-10 w-10 animate-pulse rounded-full bg-slate-700" />
+            <div className="h-8 w-8 animate-pulse rounded-full bg-slate-700" />
           ) : user ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -146,12 +124,35 @@ export function Header() {
           ) : (
             <Button
               variant="ghost"
+              size="sm"
               className="hidden md:inline-flex text-slate-300 hover:bg-slate-700 hover:text-white"
               onClick={() => signInWithGoogle()}
             >
               Sign Up
             </Button>
           )}
+
+          {/* Social Media Icons — far right */}
+          <div className="hidden md:flex items-center gap-1 border-l border-slate-600/50 pl-2 ml-1">
+            <Link
+              href="https://www.linkedin.com/company/communicational/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="p-1.5 hover:bg-slate-700/50 rounded-lg transition-colors"
+            >
+              <Linkedin className="h-4 w-4 text-slate-300 hover:text-white transition-colors" />
+            </Link>
+            <Link
+              href="https://www.instagram.com/communicational_/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="p-1.5 hover:bg-slate-700/50 rounded-lg transition-colors"
+            >
+              <Instagram className="h-4 w-4 text-slate-300 hover:text-white transition-colors" />
+            </Link>
+          </div>
         </div>
         <div className="md:hidden">
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>

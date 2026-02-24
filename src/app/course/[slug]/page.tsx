@@ -19,7 +19,7 @@ const services = [
     title: 'Personal Branding Workshops',
     slug: 'personal-branding-workshops',
     description: 'Define your unique story and learn how to communicate it effectively across all platforms. This workshop will cover personal narrative development, social media strategy, and public speaking techniques to build a compelling brand.',
-    price: '₹10,000',
+    price: '₹8,000',
     demoVideoUrl: 'https://firebasestorage.googleapis.com/v0/b/studio-5719225374-524a4.firebasestorage.app/o/communicational%20video.mp4?alt=media&token=ba5950e8-7c78-4830-acd4-52c2dafc83d8'
   },
 ];
@@ -63,24 +63,32 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                 <p className="text-lg text-foreground/80">Price</p>
                 <p className="text-4xl font-bold gradient-text">{service.price}</p>
               </div>
-              <AlertDialog>
-                <AlertDialogTrigger asChild>
-                  <button className="glass-glow-button w-full md:w-auto">
-                    Buy Now
-                  </button>
-                </AlertDialogTrigger>
-                <AlertDialogContent>
-                  <AlertDialogHeader>
-                    <AlertDialogTitle>Coming Soon!</AlertDialogTitle>
-                    <AlertDialogDescription>
-                      Our payment system is being set up. Please check back later!
-                    </AlertDialogDescription>
-                  </AlertDialogHeader>
-                  <AlertDialogFooter>
-                    <AlertDialogAction>OK</AlertDialogAction>
-                  </AlertDialogFooter>
-                </AlertDialogContent>
-              </AlertDialog>
+              <div className="flex flex-col gap-3 w-full md:w-auto">
+                <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <button className="glass-glow-button w-full md:w-auto">
+                      Buy Now
+                    </button>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent>
+                    <AlertDialogHeader>
+                      <AlertDialogTitle>Coming Soon!</AlertDialogTitle>
+                      <AlertDialogDescription>
+                        Our payment system is being set up. Please check back later!
+                      </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                      <AlertDialogAction>OK</AlertDialogAction>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
+                <a
+                  href="#"
+                  className="w-full md:w-auto text-center py-2 px-5 text-sm font-semibold rounded-full border border-primary/50 text-primary bg-primary/5 hover:bg-primary/10 transition-colors duration-200 tracking-wide"
+                >
+                  Application Form
+                </a>
+              </div>
             </div>
           </div>
         </div>

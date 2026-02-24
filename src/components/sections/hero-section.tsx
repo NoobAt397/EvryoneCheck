@@ -66,7 +66,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="hero-section flex min-h-[60vh] md:min-h-[65vh] flex-col w-full items-center justify-center px-6 py-10 md:py-14 text-center"
+      className="hero-section flex min-h-[50vh] md:min-h-[52vh] flex-col w-full items-center justify-center px-6 py-6 md:py-8 text-center"
     >
       <div className="relative z-10 container mx-auto flex flex-col items-center justify-center max-w-6xl">
         <div className="w-full flex justify-center mb-1">
@@ -76,7 +76,7 @@ export function HeroSection() {
         </div>
         <HeroHeadline />
         <FlipSubheading />
-        <div className="flex flex-col items-center gap-3 mt-1">
+        <div className="flex flex-col items-center gap-2 mt-0">
           <AuthWidget />
           <Link href="#services" className="hero-button">
             Explore Our Services
