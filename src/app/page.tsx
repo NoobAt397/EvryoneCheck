@@ -20,12 +20,13 @@ export default function Home() {
         <div className="hidden">
           <DownloadRibbon />
         </div>
-        {/* Gradient bridge: hero dark navy → mid blue → background white */}
+        {/* Gradient bridge: hero dark navy → dissolves into page background */}
         <div
           aria-hidden="true"
-          className="h-28 w-full"
           style={{
-            background: 'linear-gradient(to bottom, #0f2027 0%, #203a43 35%, #2c5364 65%, hsl(220, 22%, 94%) 100%)',
+            height: '200px',
+            width: '100%',
+            background: 'linear-gradient(to bottom, #0f2027 0%, #162e3a 18%, #1e3d4f 34%, #2a4f5e 48%, #3d6472 60%, #7a9aaa 73%, #b4c8d0 84%, #d8e4e8 92%, hsl(220, 22%, 94%) 100%)',
           }}
         />
         <div className="relative">
