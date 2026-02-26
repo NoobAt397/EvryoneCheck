@@ -16,10 +16,19 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <HeroSection />
-        <DownloadRibbon />
-        {/* Subtle gradient bridge from dark hero into the cool-blue sections */}
+        {/* FREE GUIDE BANNER — temporarily hidden, re-enable when ready */}
+        <div className="hidden">
+          <DownloadRibbon />
+        </div>
+        {/* Gradient bridge: hero dark navy → mid blue → background white */}
+        <div
+          aria-hidden="true"
+          className="h-28 w-full"
+          style={{
+            background: 'linear-gradient(to bottom, #0f2027 0%, #203a43 35%, #2c5364 65%, hsl(220, 22%, 94%) 100%)',
+          }}
+        />
         <div className="relative">
-          <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-[#203a43]/10 to-transparent pointer-events-none -z-0" />
           <AboutSection />
           <ServicesSection />
           <TestimonialsSection />

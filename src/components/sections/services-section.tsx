@@ -93,9 +93,14 @@ export function ServicesSection() {
                         PROGRAMME STARTS AT Rs. 8,000/-
                       </button>
                     </Link>
-                    <button className="w-full py-2 px-4 text-xs font-semibold rounded-full border border-primary/50 text-primary bg-primary/5 hover:bg-primary/10 transition-colors duration-200 tracking-wide">
+                    <a
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSesocp5d604Ggj4uKJM_-m7SJezYY54Wm-ITtV-oJAKPt_ztg/viewform?usp=sharing&ouid=103632241568281244668"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-2 px-4 text-xs font-semibold rounded-full border border-primary/50 text-primary bg-primary/5 hover:bg-primary/10 transition-colors duration-200 tracking-wide text-center"
+                    >
                       Application Form
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>

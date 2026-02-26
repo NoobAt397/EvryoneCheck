@@ -83,7 +83,9 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                   </AlertDialogContent>
                 </AlertDialog>
                 <a
-                  href="#"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSesocp5d604Ggj4uKJM_-m7SJezYY54Wm-ITtV-oJAKPt_ztg/viewform?usp=sharing&ouid=103632241568281244668"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full md:w-auto text-center py-2 px-5 text-sm font-semibold rounded-full border border-primary/50 text-primary bg-primary/5 hover:bg-primary/10 transition-colors duration-200 tracking-wide"
                 >
                   Application Form
